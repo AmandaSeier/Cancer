@@ -14,3 +14,7 @@ config/name="Cancer"
 run/main_scene="res://scripts/Main_Scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+StateMachine="*res://scripts/StateMachine.gd"
