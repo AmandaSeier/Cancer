@@ -1,6 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://8xwsqxt7cwlf"]
+[gd_scene load_steps=11 format=3 uid="uid://8xwsqxt7cwlf"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
+[ext_resource type="Texture2D" uid="uid://bcyi7foyqhnyx" path="res://sprites/1x Button-1.png (1).png" id="2_j3b27"]
+[ext_resource type="Texture2D" uid="uid://bb4et5ummsgur" path="res://sprites/1x Button-2.png.png" id="3_8kphk"]
+[ext_resource type="Texture2D" uid="uid://c3hay011l7cla" path="res://sprites/5x Button-1.png.png" id="4_8878u"]
+[ext_resource type="Texture2D" uid="uid://drxo086euvgtg" path="res://sprites/5x Button-2.png.png" id="5_6fqro"]
+[ext_resource type="Texture2D" uid="uid://b2xr4ucimm6eu" path="res://sprites/10x Button-1.png.png" id="6_bthhl"]
+[ext_resource type="Texture2D" uid="uid://cle5rfi1a80mv" path="res://sprites/10x Button-2.png (1).png" id="7_y2o7k"]
+[ext_resource type="Texture2D" uid="uid://cmui5espswj1e" path="res://sprites/Pause Button-1.png.png" id="8_p0rg2"]
+[ext_resource type="Texture2D" uid="uid://cx60k18av66lt" path="res://sprites/Pause Button-2.png.png" id="9_1buq3"]
 
 [sub_resource type="FontFile" id="FontFile_shofe"]
 cache/0/16/0/ascent = 0.0
@@ -1646,6 +1654,7 @@ editor_description = "En Wrapper rundt om nogle statemachine funktioner der skal
 script = ExtResource("1_hbd8v")
 
 [node name="SpeedUp15" type="Button" parent="UI Handler"]
+visible = false
 offset_left = -1.0
 offset_top = -1.0
 offset_right = 396.0
@@ -1657,4 +1666,54 @@ text = "Set day speed
 to 15 days pr. second"
 clip_text = true
 
+[node name="1x button" type="TextureButton" parent="UI Handler"]
+texture_filter = 1
+offset_left = 1.0
+offset_top = 508.0
+offset_right = 248.0
+offset_bottom = 645.0
+size_flags_vertical = 10
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("2_j3b27")
+texture_pressed = ExtResource("3_8kphk")
+stretch_mode = 0
+
+[node name="5x button" type="TextureButton" parent="UI Handler"]
+texture_filter = 1
+offset_left = 220.0
+offset_top = 508.0
+offset_right = 470.0
+offset_bottom = 647.0
+size_flags_vertical = 10
+texture_normal = ExtResource("4_8878u")
+texture_pressed = ExtResource("5_6fqro")
+stretch_mode = 0
+
+[node name="10x button" type="TextureButton" parent="UI Handler"]
+texture_filter = 1
+offset_left = 442.0
+offset_top = 508.0
+offset_right = 694.0
+offset_bottom = 648.0
+size_flags_vertical = 10
+texture_normal = ExtResource("6_bthhl")
+texture_pressed = ExtResource("7_y2o7k")
+stretch_mode = 0
+
+[node name="Pause button" type="TextureButton" parent="UI Handler"]
+texture_filter = 1
+offset_left = 899.0
+offset_top = 508.0
+offset_right = 1153.0
+offset_bottom = 649.0
+texture_normal = ExtResource("8_p0rg2")
+texture_pressed = ExtResource("9_1buq3")
+stretch_mode = 0
+
+[node name="Node2D" type="Node2D" parent="."]
+
 [connection signal="pressed" from="UI Handler/SpeedUp15" to="UI Handler" method="ChangeDaySpeed" binds= [15.0]]
+[connection signal="pressed" from="UI Handler/1x button" to="UI Handler" method="ChangeDaySpeed" binds= [1.0]]
+[connection signal="pressed" from="UI Handler/5x button" to="UI Handler" method="ChangeDaySpeed" binds= [5.0]]
+[connection signal="pressed" from="UI Handler/10x button" to="UI Handler" method="ChangeDaySpeed" binds= [10.0]]
+[connection signal="pressed" from="UI Handler/Pause button" to="UI Handler" method="ChangeDaySpeed" binds= [0.0]]
