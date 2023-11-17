@@ -1671,10 +1671,10 @@ clip_text = true
 
 [node name="1x button" type="TextureButton" parent="UI Handler"]
 texture_filter = 1
-offset_left = 1.0
-offset_top = 555.0
-offset_right = 163.0
-offset_bottom = 645.0
+offset_left = 17.0
+offset_top = 563.0
+offset_right = 160.0
+offset_bottom = 642.0
 size_flags_vertical = 10
 size_flags_stretch_ratio = 0.0
 toggle_mode = true
