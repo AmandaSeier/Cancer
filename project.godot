@@ -24,7 +24,7 @@ StateMachine="*res://scripts/StateMachine.gd"
 window/size/viewport_width=320
 window/size/viewport_height=180
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
+window/stretch/aspect="keep_width"
 
 [rendering]
 

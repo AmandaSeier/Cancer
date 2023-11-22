@@ -34,3 +34,6 @@ func ChangeDaySpeed(speed: float):
 	_dayTimer.stop()
 	_dayTimer.start()  # restart the timer with the new remaining time
 	_dayTimer.wait_time = 1 / speed  # set the timer to it's actual speed
+
+func StopDayCycle():
+	_dayTimer.stop()
