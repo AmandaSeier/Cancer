@@ -2,10 +2,10 @@ extends Node
 
 # Timer and day counter
 var _dayTimer: Timer
-var _daySpeed: float = 1
 var _dayCount: int = 0
 
-var cancerCells: Array[Colony]
+var colonies: Array[Colony]
+var upgrades: Dictionary = {"range": 50}
 	
 signal OnNextDay
 
