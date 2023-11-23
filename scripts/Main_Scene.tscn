@@ -1657,4 +1657,4 @@ text = "Set day speed
 to 15 days pr. second"
 clip_text = true
 
-[connection signal="pressed" from="UI Handler/SpeedUp15" to="UI Handler" method="ChangeDaySpeed" binds= [0.0]]
+[connection signal="pressed" from="UI Handler/SpeedUp15" to="UI Handler" method="ChangeDaySpeed" binds= [15.0]]
