@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://tu4wbcgyarvw"]
+[gd_scene load_steps=3 format=3 uid="uid://tu4wbcgyarvw"]
+
+[ext_resource type="Script" path="res://scripts/cells/Colony.gd" id="1_twekv"]
+[ext_resource type="Texture2D" uid="uid://t3g2y2tddqah" path="res://sprites/game sprites/Cancer-test-Sheet.png" id="2_ccelp"]
 
 [node name="CancerColony" type="Node"]
+script = ExtResource("1_twekv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ccelp")
