@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://8xwsqxt7cwlf"]
+[gd_scene load_steps=17 format=3 uid="uid://8xwsqxt7cwlf"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
-[ext_resource type="Texture2D" uid="uid://qqfhaemxfcgy" path="res://sprites/1x button-1.png (20).png" id="2_7lpd1"]
+[ext_resource type="Texture2D" uid="uid://iche7snxw465" path="res://sprites/1x button-1.png (22).png" id="2_1ymsy"]
 [ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button_group_time_scale.tres" id="2_sj08s"]
-[ext_resource type="Texture2D" uid="uid://barfme1w27icw" path="res://sprites/1x button-2.png (18).png" id="3_ikqg4"]
+[ext_resource type="Texture2D" uid="uid://7kvjuaoovqh2" path="res://sprites/1x button-2.png (20).png" id="3_3hfan"]
+[ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
 [ext_resource type="Texture2D" uid="uid://b00xbgqnrjlh2" path="res://sprites/1x button-1.png (17).png" id="5_hrh14"]
 [ext_resource type="Texture2D" uid="uid://vo52mtqondai" path="res://sprites/1x button-2.png (15).png" id="6_cctsn"]
 [ext_resource type="Texture2D" uid="uid://dfrbjjygm87t" path="res://sprites/1x button-1.png (18).png" id="7_kvq4i"]
@@ -1658,14 +1659,15 @@ position = Vector2(-1, -1)
 editor_description = "En Wrapper rundt om nogle statemachine funktioner der skal kaldes af UI. Så man kan finde dem i editoren "
 script = ExtResource("1_hbd8v")
 
-[node name="Settings button" type="TextureButton" parent="UI Handler"]
+[node name="Pause menu button" type="TextureButton" parent="UI Handler"]
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 51.0
 offset_bottom = 29.0
-texture_normal = ExtResource("2_7lpd1")
-texture_pressed = ExtResource("3_ikqg4")
+texture_normal = ExtResource("2_1ymsy")
+texture_pressed = ExtResource("3_3hfan")
 stretch_mode = 3
+script = ExtResource("4_yl7dm")
 
 [node name="SpeedUp15" type="Button" parent="UI Handler"]
 visible = false
@@ -1724,16 +1726,17 @@ texture_normal = ExtResource("11_0geu8")
 texture_pressed = ExtResource("12_i8lwu")
 stretch_mode = 3
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 4.0
-offset_top = 153.0
-offset_right = 52.0
-offset_bottom = 178.0
+[node name="TextureButton" type="TextureButton" parent="UI Handler"]
+offset_left = 3.0
+offset_top = 152.0
+offset_right = 51.0
+offset_bottom = 177.0
 texture_normal = ExtResource("13_danpb")
 texture_pressed = ExtResource("14_0ahnw")
 
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="pressed" from="UI Handler/Pause menu button" to="UI Handler" method="_on_pause_menu_button_pressed"]
 [connection signal="pressed" from="UI Handler/SpeedUp15" to="UI Handler" method="ChangeDaySpeed" binds= [15.0]]
 [connection signal="pressed" from="UI Handler/1x button" to="UI Handler" method="ChangeDaySpeed" binds= [1.0]]
 [connection signal="pressed" from="UI Handler/5x button" to="UI Handler" method="ChangeDaySpeed" binds= [5.0]]
