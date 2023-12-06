@@ -12,6 +12,9 @@ script/source = "extends Control
 func _on_resume_button_pressed():
 	get_tree().change_scene_to_file(\"res://scripts/Main_Scene.tscn\")
 
+
+func _on_quit_button_pressed():
+	get_tree().quit()
 "
 
 [node name="PauseMenu" type="Control"]
@@ -56,3 +59,4 @@ texture_normal = ExtResource("4_6mgyv")
 texture_pressed = ExtResource("5_ob585")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit button" to="." method="_on_quit_button_pressed"]

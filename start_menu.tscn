@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dmocl1lfgsc8m"]
 
 [ext_resource type="Texture2D" uid="uid://dqtpa14j2rbt" path="res://sprites/1x button-2.png (6)-1.png.png" id="1_eb023"]
-[ext_resource type="Script" path="res://start_menu.gd" id="1_jvgsb"]
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_f08o0"]
 [ext_resource type="Texture2D" uid="uid://df0w0p23pobls" path="res://sprites/1x button-2.png (6)-2.png.png" id="2_d8md5"]
 [ext_resource type="Texture2D" uid="uid://byouu81g60wrk" path="res://sprites/1x button-1.png (7)-1.png.png" id="3_8smkx"]
 [ext_resource type="Texture2D" uid="uid://qqfhaemxfcgy" path="res://sprites/1x button-1.png (20).png" id="3_304fw"]
@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jvgsb")
+script = ExtResource("1_f08o0")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -61,3 +61,4 @@ texture_normal = ExtResource("3_8smkx")
 texture_pressed = ExtResource("4_dum61")
 
 [connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Start button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Quit button" to="." method="_on_quit_button_pressed"]
