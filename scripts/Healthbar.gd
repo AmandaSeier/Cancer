@@ -18,7 +18,7 @@ func _process(delta):
 func _calcHealth():
 	if _health != 0:
 		_health -= 1
-		print("Health   : ", _health)
+		print("Health: ", _health)
 		scale.x = _health * 0.005
 	else:
 		_health = 0
