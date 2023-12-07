@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dogs1a7qndlqi"]
+[gd_scene load_steps=10 format=3 uid="uid://bu5yqconeo332"]
 
 [ext_resource type="Texture2D" uid="uid://dqtpa14j2rbt" path="res://sprites/1x button-2.png (6)-1.png.png" id="1_eb023"]
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_f08o0"]
@@ -61,4 +61,5 @@ texture_normal = ExtResource("3_8smkx")
 texture_pressed = ExtResource("4_dum61")
 
 [connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Start button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Settings button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Quit button" to="." method="_on_quit_button_pressed"]

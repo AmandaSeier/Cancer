@@ -23,7 +23,7 @@ var upgradeHandler: UpgradeHandler = UpgradeHandler.new({
 	}, # grow chance
 	})
 
-var colonies: Array[Colony] # used to refrence colonies outside of script (is in use)
+# var colonies: Array[Colony] # used to refrence colonies outside of script (is in use)
 	
 signal OnNextDay
 

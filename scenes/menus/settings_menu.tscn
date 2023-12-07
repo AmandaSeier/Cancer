@@ -1,25 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://bypc7yfbr5hu"]
+[gd_scene load_steps=8 format=3 uid="uid://bxk6kc2qmvebb"]
 
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://bhd6uki1usn6c" path="res://sprites/1x button-1.png (5).png" id="1_ic5uf"]
-=======
-[ext_resource type="Texture2D" uid="uid://bhd6uki1usn6c" path="res://sprites/button sprites/1x button-1.png (5).png" id="1_ic5uf"]
->>>>>>> 6259d92 (<commiring so that i can pull :(>)
-[ext_resource type="Texture2D" uid="uid://df0w0p23pobls" path="res://sprites/1x button-2.png (6)-2.png.png" id="2_rjkyc"]
-[ext_resource type="Texture2D" uid="uid://qqfhaemxfcgy" path="res://sprites/1x button-1.png (20).png" id="3_stao5"]
-[ext_resource type="Texture2D" uid="uid://barfme1w27icw" path="res://sprites/1x button-2.png (18).png" id="4_ht64r"]
-[ext_resource type="Texture2D" uid="uid://csv7jvyacd6if" path="res://sprites/1x button-1.png (23)-1.png.png" id="5_7hbls"]
-[ext_resource type="Texture2D" uid="uid://b5nvy5jf0mg3f" path="res://sprites/1x button-1.png (23)-2.png.png" id="6_hcyyk"]
-[ext_resource type="Texture2D" uid="uid://byouu81g60wrk" path="res://sprites/1x button-1.png (7)-1.png.png" id="7_fd0cj"]
-[ext_resource type="Texture2D" uid="uid://dr0ibmbf4yyct" path="res://sprites/1x button-1.png (7)-2.png.png" id="8_xegsb"]
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_jbtxc"]
+[ext_resource type="Texture2D" uid="uid://c7xl5me7ygiur" path="res://sprites/button sprites/1x button-1.png (4).png" id="2_l13vl"]
+[ext_resource type="Texture2D" uid="uid://bnc1p38l68m1m" path="res://sprites/button sprites/1x button-2.png (4).png" id="3_2k7p0"]
+[ext_resource type="Texture2D" uid="uid://bhd6uki1usn6c" path="res://sprites/button sprites/1x button-1.png (5).png" id="4_1rqi7"]
+[ext_resource type="Texture2D" uid="uid://ej40pact2n7f" path="res://sprites/button sprites/1x button-2.png (5).png" id="5_a520h"]
+[ext_resource type="Texture2D" uid="uid://eprrhcwiba78" path="res://sprites/button sprites/1x button-1.png (7)-1.png-1.png.png" id="6_suypp"]
+[ext_resource type="Texture2D" uid="uid://c4uks8d0kksew" path="res://sprites/button sprites/1x button-1.png (7)-1.png-2.png.png" id="7_7tejc"]
 
-[node name="Settings_Menu" type="Control"]
+[node name="settings_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jbtxc")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -33,72 +29,64 @@ color = Color(0.188235, 0.188235, 0.188235, 1)
 [node name="CenterContainer" type="CenterContainer" parent="Background"]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 10.0
-offset_top = -59.5
-offset_right = 58.0
-offset_bottom = 59.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/CenterContainer"]
 layout_mode = 2
 
-[node name="Start button" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
+[node name="Music" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_ic5uf")
-texture_pressed = ExtResource("2_rjkyc")
+texture_normal = ExtResource("2_l13vl")
+texture_pressed = ExtResource("3_2k7p0")
 
-[node name="Settings button" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
+[node name="Sound" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_stao5")
-texture_pressed = ExtResource("4_ht64r")
+texture_normal = ExtResource("4_1rqi7")
+texture_pressed = ExtResource("5_a520h")
 
-[node name="Credits button" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
+[node name="Back" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_7hbls")
-texture_pressed = ExtResource("6_hcyyk")
+texture_normal = ExtResource("6_suypp")
+texture_pressed = ExtResource("7_7tejc")
+stretch_mode = 0
 
-[node name="Quit button" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("7_fd0cj")
-texture_pressed = ExtResource("8_xegsb")
+[node name="Background" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.188235, 0.188235, 0.188235, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="Background/Background"]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 110.0
-offset_top = -59.5
-offset_right = 158.0
-offset_bottom = 59.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Background/CenterContainer"]
 layout_mode = 2
 
-[node name="Start button" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+[node name="Music" type="TextureButton" parent="Background/Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_ic5uf")
-texture_pressed = ExtResource("2_rjkyc")
+texture_normal = ExtResource("2_l13vl")
+texture_pressed = ExtResource("3_2k7p0")
 
-[node name="Settings button" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+[node name="Sound" type="TextureButton" parent="Background/Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_stao5")
-texture_pressed = ExtResource("4_ht64r")
+texture_normal = ExtResource("4_1rqi7")
+texture_pressed = ExtResource("5_a520h")
 
-[node name="Credits button" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+[node name="Back" type="TextureButton" parent="Background/Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_7hbls")
-texture_pressed = ExtResource("6_hcyyk")
-
-[node name="Quit button" type="TextureButton" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("7_fd0cj")
-texture_pressed = ExtResource("8_xegsb")
+texture_normal = ExtResource("6_suypp")
+texture_pressed = ExtResource("7_7tejc")
+stretch_mode = 0
