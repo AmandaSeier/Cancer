@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://8xwsqxt7cwlf"]
+[gd_scene load_steps=19 format=3 uid="uid://8xwsqxt7cwlf"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
 [ext_resource type="Texture2D" uid="uid://iche7snxw465" path="res://sprites/1x button-1.png (22).png" id="2_1ymsy"]
 [ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button_group_time_scale.tres" id="2_sj08s"]
+[ext_resource type="Texture2D" uid="uid://cql34cavx4hxx" path="res://sprites/BACKGROUND_stue100%-1.png.png" id="2_uor7j"]
 [ext_resource type="Texture2D" uid="uid://7kvjuaoovqh2" path="res://sprites/1x button-2.png (20).png" id="3_3hfan"]
 [ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
 [ext_resource type="Texture2D" uid="uid://b00xbgqnrjlh2" path="res://sprites/1x button-1.png (17).png" id="5_hrh14"]
@@ -13,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://cycswqypk6xot" path="res://sprites/1x button-2.png (17).png" id="10_130g4"]
 [ext_resource type="Texture2D" uid="uid://df5fa2bh33d4k" path="res://sprites/1x button-1.png (16).png" id="11_0geu8"]
 [ext_resource type="Texture2D" uid="uid://djmb8itju1e5h" path="res://sprites/1x button-2.png (14).png" id="12_i8lwu"]
-[ext_resource type="Texture2D" uid="uid://75nymfb6u8l4" path="res://sprites/1x button-1.png (21).png" id="13_danpb"]
 [ext_resource type="Texture2D" uid="uid://bxp41tpktk8b1" path="res://sprites/1x button-2.png (19).png" id="14_0ahnw"]
 [ext_resource type="Texture2D" uid="uid://degf1fg7eq6hk" path="res://sprites/Health.png" id="16_4gpcf"]
 [ext_resource type="Script" path="res://scripts/Healthbar.gd" id="17_p0cqq"]
@@ -1661,6 +1661,10 @@ position = Vector2(-1, -1)
 editor_description = "En Wrapper rundt om nogle statemachine funktioner der skal kaldes af UI. Så man kan finde dem i editoren "
 script = ExtResource("1_hbd8v")
 
+[node name="Background_Stue" type="Sprite2D" parent="UI Handler"]
+texture = ExtResource("2_uor7j")
+offset = Vector2(160, 90)
+
 [node name="Pause menu button" type="TextureButton" parent="UI Handler"]
 offset_left = 3.0
 offset_top = 4.0
@@ -1733,8 +1737,6 @@ offset_left = 4.0
 offset_top = 153.0
 offset_right = 52.0
 offset_bottom = 178.0
->>>>>>> feature/health
-texture_normal = ExtResource("13_danpb")
 texture_pressed = ExtResource("14_0ahnw")
 
 [node name="Node2D" type="Node2D" parent="."]
