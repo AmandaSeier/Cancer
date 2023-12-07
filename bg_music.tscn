@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://col4q1lueexvg"]
-
-[ext_resource type="AudioStream" path="res://sounds/Background music/Audiio_Outland_Singles_RisingTides_Inst.wav" id="1_fd6ck"]
-[ext_resource type="Script" path="res://scripts/bg_music.gd" id="2_c4is6"]
-
-[node name="BackgroundMusic" type="AudioStreamPlayer"]
-stream = ExtResource("1_fd6ck")
-script = ExtResource("2_c4is6")
