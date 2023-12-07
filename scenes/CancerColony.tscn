@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://tu4wbcgyarvw"]
+[gd_scene load_steps=4 format=3 uid="uid://tu4wbcgyarvw"]
 
 [ext_resource type="Script" path="res://scripts/cells/Colony.gd" id="1_twekv"]
 [ext_resource type="Texture2D" uid="uid://t3g2y2tddqah" path="res://sprites/game sprites/Cancer-test-Sheet.png" id="2_ccelp"]
+[ext_resource type="Script" path="res://scripts/EconomyHandler.gd" id="3_d70h7"]
 
 [node name="CancerColony" type="Node2D"]
 script = ExtResource("1_twekv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("2_ccelp")
+
+[node name="CancerPoints" type="Label" parent="."]
+offset_left = 14.0
+offset_top = 45.0
+offset_right = 138.0
+offset_bottom = 71.0
+text = "Cancer points: 0"
+script = ExtResource("3_d70h7")
