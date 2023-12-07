@@ -5,7 +5,7 @@ var _dayTimer: Timer
 var _dayCount: int = 0
 
 var upgradeHandler: UpgradeHandler = UpgradeHandler.new({
-    "colonyRange": {
+    "range": {
         "base": 40.,
         "spread1": 5.,
         "spread2": 5.,
