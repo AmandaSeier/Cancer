@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Cancer"
-run/main_scene="res://scenes/Main_Scene.tscn"
+run/main_scene="res://scenes/menus/start_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 StateMachine="*res://scripts/StateMachine.gd"
+BgMusic="*res://scenes/bg_music.tscn"
 
 [display]
 
