@@ -5,23 +5,23 @@ var _dayTimer: Timer
 var _dayCount: int = 0
 
 var upgradeHandler: UpgradeHandler = UpgradeHandler.new({
-    "range": {
-        "base": 40.,
-        "spread1": 5.,
-        "spread2": 5.,
-        "spread3": 5.,
-        "bigger_colonies": 10.
-    }, # colonyRange
-    "max_size": {
-        "base": 750.,
-        "bigger_colonies": 1500., # duplicate upgrade name means it changes 3 stats
-    }, # max size
-    "grow_chance": {
-        "base": 3.,
-        "larger_blood_supply": 1.,
-        "bigger_colonies": -1.,
-    }, # grow chance
-    })
+	"range": {
+		"base": 40.,
+		"spread1": 5.,
+		"spread2": 5.,
+		"spread3": 5.,
+		"bigger_colonies": 10.
+	}, # colonyRange
+	"max_size": {
+		"base": 750.,
+		"bigger_colonies": 1500., # duplicate upgrade name means it changes 3 stats
+	}, # max size
+	"grow_chance": {
+		"base": 3.,
+		"larger_blood_supply": 1.,
+		"bigger_colonies": -1.,
+	}, # grow chance
+	})
 
 var colonies: Array[Colony] # used to refrence colonies outside of script (is in use)
 	
