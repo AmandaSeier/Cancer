@@ -5,8 +5,8 @@ class_name Colony
 
 var sprite: Sprite2D
 
-var _growChance: float = 6.9
 var _rng = RandomNumberGenerator.new()
+
 
 func _ready():
     sprite = get_node("Sprite2D")
@@ -16,28 +16,30 @@ func _ready():
     if active:
         ActivateColony()
 
-func ActivateColony():
+
+func ActivateColony() -> void:
     active = true
     sprite.visible = true
 
-func KillColony():
+
+func KillColony() -> void:
     active = false
     sprite.visible = false
 
-func _TrySpread():
+
+func _TrySpread() -> void:
     if not active:
         return
 
-
     for colony in StateMachine.colonies:
-        if colony == self:
-            continue
-
-        if self.position.distance_to(colony.position) <= StateMachine.upgrades.get("range"):
+        var spreadRange: float = StateMachine.upgradeHandler.GetUpgradeValues()["range"]
+        if self.position.distance_to(colony.position) <= spreadRange:
             colony.TryGrow()
 
+
 # When being spread to, try and grow
-func TryGrow():
-    if _rng.randf_range(0.0, 100.0) < _growChance:
+func TryGrow() -> void:
+    var growChance = StateMachine.upgradeHandler.GetUpgradeValues()["grow_chance"]
+    if _rng.randf_range(0.0, 100.0) < growChance:
         ActivateColony()
 
