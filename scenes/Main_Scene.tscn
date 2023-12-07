@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
 [ext_resource type="Texture2D" uid="uid://iche7snxw465" path="res://sprites/1x button-1.png (22).png" id="2_1ymsy"]
-[ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button_group_time_scale.tres" id="2_sj08s"]
+[ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button sprites/button_group_time_scale.tres" id="2_sj08s"]
 [ext_resource type="Texture2D" uid="uid://cql34cavx4hxx" path="res://sprites/BACKGROUND_stue100%-1.png.png" id="2_uor7j"]
 [ext_resource type="Texture2D" uid="uid://7kvjuaoovqh2" path="res://sprites/1x button-2.png (20).png" id="3_3hfan"]
 [ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
