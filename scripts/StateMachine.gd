@@ -2,9 +2,11 @@ extends Node
 
 # Timer and day counter
 var _dayTimer: Timer
-var _daySpeed: float = 1
 var _dayCount: int = 0
 
+var colonies: Array[Colony]
+var upgrades: Dictionary = {"range": 50}
+	
 signal OnNextDay
 
 # Called when the node enters the scene tree for the first time.
