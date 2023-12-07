@@ -5,6 +5,8 @@ var _upgradeValues: Dictionary  # @type: Dict[String, Dict[String, float]]
 
 
 func _init(upgradeValues: Dictionary) -> void:
+    assert(upgradeValues != null, "No upgradeValues provided to UpgradeHandler")
+
     # Copy the upgrade values i.e. what each upgrade contributes to
     _upgradeValues = upgradeValues
 
@@ -13,12 +15,12 @@ func _init(upgradeValues: Dictionary) -> void:
         for name in type.keys():
             _upgrades[name] = false
 
+    # base values always apply
+    _upgrades["base"] = true
+
 
 func TryUpgrade(upgradeName: String) -> bool:
     if not _upgrades.has(upgradeName):
-        return false
-
-    if IsUpgraded(upgradeName):
         return false
 
     _upgrades[upgradeName] = true
@@ -27,9 +29,6 @@ func TryUpgrade(upgradeName: String) -> bool:
 
 func TryDowngrade(upgradeName: String) -> bool:
     if not _upgrades.has(upgradeName):
-        return false
-
-    if not IsUpgraded(upgradeName):
         return false
 
     _upgrades[upgradeName] = false
@@ -44,11 +43,10 @@ func IsUpgraded(upgradeName: String) -> bool:
 func GetUpgradeValues() -> Dictionary:
     var outValues: Dictionary = {}  # @type: Dict[String, float]
     for category in _upgradeValues.keys():
-        outValues[category] = 0.0 as float
+        outValues[category] = 0.
         # For each upgrade within the current category 
         for upgrade in _upgradeValues[category].keys():
-            outValues[category] += _upgradeValues[category][upgrade] * _upgrades[upgrade]
+            outValues[category] += _upgradeValues[category][upgrade] * _upgrades[upgrade] as float
     
     return outValues;
-
 
