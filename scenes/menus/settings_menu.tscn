@@ -1,6 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bypc7yfbr5hu"]
 
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bhd6uki1usn6c" path="res://sprites/1x button-1.png (5).png" id="1_ic5uf"]
+=======
+[ext_resource type="Texture2D" uid="uid://bhd6uki1usn6c" path="res://sprites/button sprites/1x button-1.png (5).png" id="1_ic5uf"]
+>>>>>>> 6259d92 (<commiring so that i can pull :(>)
 [ext_resource type="Texture2D" uid="uid://df0w0p23pobls" path="res://sprites/1x button-2.png (6)-2.png.png" id="2_rjkyc"]
 [ext_resource type="Texture2D" uid="uid://qqfhaemxfcgy" path="res://sprites/1x button-1.png (20).png" id="3_stao5"]
 [ext_resource type="Texture2D" uid="uid://barfme1w27icw" path="res://sprites/1x button-2.png (18).png" id="4_ht64r"]
