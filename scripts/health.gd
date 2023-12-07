@@ -7,5 +7,10 @@ func _ready():
 	StateMachine.OnNextDay.connect(_calcHealth)
 
 func _calcHealth():
-	_health -= 1
-	print("Health: ", _health)
+	
+	if _health != 0:
+		_health -= 1
+		print("Health   : ", _health)
+	else:
+		_health = 0
+		print("You lost. You so bad. Buhuuu loser")
