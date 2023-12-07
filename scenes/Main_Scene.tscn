@@ -1,18 +1,22 @@
-[gd_scene load_steps=15 format=3 uid="uid://8xwsqxt7cwlf"]
+[gd_scene load_steps=18 format=3 uid="uid://dewp4wiarhp52"]
 
-[ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_o2jse"]
-[ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button sprites/button_group_time_scale.tres" id="2_202jl"]
-[ext_resource type="Texture2D" uid="uid://b0jtv7arx1rh2" path="res://sprites/button sprites/1x button-1.png.png" id="3_xe0h4"]
-[ext_resource type="Texture2D" uid="uid://bxqhbapshqxr0" path="res://sprites/button sprites/1x button-2.png.png" id="4_bpscb"]
-[ext_resource type="Texture2D" uid="uid://dsrvs0jxrou3q" path="res://sprites/button sprites/1x button-1.png (1).png" id="5_juiun"]
-[ext_resource type="Texture2D" uid="uid://iwvemkgyvw5v" path="res://sprites/button sprites/1x button-2.png (1).png" id="6_d5y78"]
-[ext_resource type="Texture2D" uid="uid://bgn14tvjd1jya" path="res://sprites/button sprites/1x button-1.png (2).png" id="7_ol5kg"]
-[ext_resource type="Texture2D" uid="uid://dy1nntjjekkyg" path="res://sprites/button sprites/1x button-2.png (2).png" id="8_444pc"]
-[ext_resource type="Texture2D" uid="uid://c27s23n5vvv7v" path="res://sprites/button sprites/1x button-1.png (8).png" id="9_vsr8y"]
-[ext_resource type="Texture2D" uid="uid://c5j73uxunpelb" path="res://sprites/button sprites/1x button-2.png (8).png" id="10_8svxu"]
-[ext_resource type="Texture2D" uid="uid://dc17aofqd72jc" path="res://sprites/button sprites/1x button-1.png (3).png" id="11_158sg"]
-[ext_resource type="Texture2D" uid="uid://f4o1y4cuy6r1" path="res://sprites/button sprites/1x button-2.png (3).png" id="12_c5gwd"]
-[ext_resource type="PackedScene" uid="uid://tu4wbcgyarvw" path="res://scenes/CancerColony.tscn" id="13_edd10"]
+[ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
+[ext_resource type="Texture2D" uid="uid://iche7snxw465" path="res://sprites/1x button-1.png (22).png" id="2_1ymsy"]
+[ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button_group_time_scale.tres" id="2_sj08s"]
+[ext_resource type="Texture2D" uid="uid://cql34cavx4hxx" path="res://sprites/BACKGROUND_stue100%-1.png.png" id="2_uor7j"]
+[ext_resource type="Texture2D" uid="uid://7kvjuaoovqh2" path="res://sprites/1x button-2.png (20).png" id="3_3hfan"]
+[ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
+[ext_resource type="Texture2D" uid="uid://b00xbgqnrjlh2" path="res://sprites/1x button-1.png (17).png" id="5_hrh14"]
+[ext_resource type="Texture2D" uid="uid://vo52mtqondai" path="res://sprites/1x button-2.png (15).png" id="6_cctsn"]
+[ext_resource type="Texture2D" uid="uid://dfrbjjygm87t" path="res://sprites/1x button-1.png (18).png" id="7_kvq4i"]
+[ext_resource type="Texture2D" uid="uid://cd3gvfu1abeh6" path="res://sprites/1x button-1.png (19).png" id="8_udbff"]
+[ext_resource type="Texture2D" uid="uid://ipndbd23jw6a" path="res://sprites/1x button-2.png (16).png" id="8_viyho"]
+[ext_resource type="Texture2D" uid="uid://cycswqypk6xot" path="res://sprites/1x button-2.png (17).png" id="10_130g4"]
+[ext_resource type="Texture2D" uid="uid://df5fa2bh33d4k" path="res://sprites/1x button-1.png (16).png" id="11_0geu8"]
+[ext_resource type="Texture2D" uid="uid://djmb8itju1e5h" path="res://sprites/1x button-2.png (14).png" id="12_i8lwu"]
+[ext_resource type="Texture2D" uid="uid://bxp41tpktk8b1" path="res://sprites/1x button-2.png (19).png" id="14_0ahnw"]
+[ext_resource type="Texture2D" path="res://sprites/Health.png" id="16_4gpcf"]
+[ext_resource type="Script" path="res://scripts/Healthbar.gd" id="17_p0cqq"]
 
 [sub_resource type="FontFile" id="FontFile_shofe"]
 cache/0/16/0/ascent = 0.0
@@ -1650,12 +1654,26 @@ cache/0/39/0/kerning_overrides/37/0 = Vector2(0, 0)
 cache/0/39/0/kerning_overrides/38/0 = Vector2(0, 0)
 cache/0/39/0/kerning_overrides/39/0 = Vector2(0, 0)
 
-[node name="In Game Scene" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 position = Vector2(-1, -1)
 
 [node name="UI Handler" type="Node" parent="."]
 editor_description = "En Wrapper rundt om nogle statemachine funktioner der skal kaldes af UI. Så man kan finde dem i editoren "
-script = ExtResource("1_o2jse")
+script = ExtResource("1_hbd8v")
+
+[node name="Background_Stue" type="Sprite2D" parent="UI Handler"]
+texture = ExtResource("2_uor7j")
+offset = Vector2(160, 90)
+
+[node name="Pause menu button" type="TextureButton" parent="UI Handler"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 51.0
+offset_bottom = 29.0
+texture_normal = ExtResource("2_1ymsy")
+texture_pressed = ExtResource("3_3hfan")
+stretch_mode = 3
+script = ExtResource("4_yl7dm")
 
 [node name="SpeedUp15" type="Button" parent="UI Handler"]
 visible = false
@@ -1671,130 +1689,70 @@ to 15 days pr. second"
 clip_text = true
 
 [node name="1x button" type="TextureButton" parent="UI Handler"]
-offset_top = 140.0
-offset_right = 40.0
-offset_bottom = 180.0
+offset_left = 235.0
+offset_top = 5.0
+offset_right = 260.0
+offset_bottom = 30.0
 toggle_mode = true
-button_pressed = true
-button_group = ExtResource("2_202jl")
-texture_normal = ExtResource("3_xe0h4")
-texture_pressed = ExtResource("4_bpscb")
+button_group = ExtResource("2_sj08s")
+texture_normal = ExtResource("5_hrh14")
+texture_pressed = ExtResource("6_cctsn")
 stretch_mode = 3
 
 [node name="5x button" type="TextureButton" parent="UI Handler"]
-offset_left = 36.0
-offset_top = 141.0
-offset_right = 76.0
-offset_bottom = 180.0
+offset_left = 261.0
+offset_top = 5.0
+offset_right = 286.0
+offset_bottom = 30.0
 toggle_mode = true
-button_group = ExtResource("2_202jl")
-texture_normal = ExtResource("5_juiun")
-texture_pressed = ExtResource("6_d5y78")
+button_group = ExtResource("2_sj08s")
+texture_normal = ExtResource("7_kvq4i")
+texture_pressed = ExtResource("8_viyho")
 stretch_mode = 3
 
 [node name="10x button" type="TextureButton" parent="UI Handler"]
-offset_left = 72.0
-offset_top = 140.0
-offset_right = 112.0
-offset_bottom = 180.0
+offset_left = 286.0
+offset_top = 5.0
+offset_right = 316.0
+offset_bottom = 30.0
 toggle_mode = true
-button_group = ExtResource("2_202jl")
-texture_normal = ExtResource("7_ol5kg")
-texture_pressed = ExtResource("8_444pc")
-stretch_mode = 3
+button_group = ExtResource("2_sj08s")
+texture_normal = ExtResource("8_udbff")
+texture_pressed = ExtResource("10_130g4")
+stretch_mode = 5
 
 [node name="Pause button" type="TextureButton" parent="UI Handler"]
-offset_left = 108.0
-offset_top = 141.0
-offset_right = 148.0
-offset_bottom = 180.0
+offset_left = 209.0
+offset_top = 5.0
+offset_right = 234.0
+offset_bottom = 30.0
 toggle_mode = true
-button_group = ExtResource("2_202jl")
-texture_normal = ExtResource("9_vsr8y")
-texture_pressed = ExtResource("10_8svxu")
+button_group = ExtResource("2_sj08s")
+texture_normal = ExtResource("11_0geu8")
+texture_pressed = ExtResource("12_i8lwu")
 stretch_mode = 3
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 5.0
-offset_top = -3.0
-offset_right = 53.0
-offset_bottom = 37.0
-texture_normal = ExtResource("11_158sg")
-texture_pressed = ExtResource("12_c5gwd")
-stretch_mode = 3
+offset_left = 4.0
+offset_top = 153.0
+offset_right = 52.0
+offset_bottom = 178.0
+texture_pressed = ExtResource("14_0ahnw")
 
-[node name="CancerColony" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(68, 109)
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="CancerColony8" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(82, 85)
+[node name="Health" type="Node2D" parent="."]
 
-[node name="CancerColony2" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(111, 109)
-
-[node name="CancerColony4" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(160, 108)
-
-[node name="CancerColony5" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(191, 126)
-
-[node name="CancerColony6" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(233, 130)
-
-[node name="CancerColony7" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(286, 101)
-
-[node name="CancerColony9" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(27, 52)
-
-[node name="CancerColony10" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(132, 120)
-
-[node name="CancerColony11" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(177, 75)
-
-[node name="CancerColony12" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(214, 82)
-
-[node name="CancerColony13" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(271, 153)
-
-[node name="CancerColony14" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(91, 32)
-
-[node name="CancerColony15" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(120, 56)
-
-[node name="CancerColony16" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(160, 33)
-
-[node name="CancerColony17" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(202, 54)
-
-[node name="CancerColony18" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(230, 33)
-
-[node name="CancerColony19" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(298, 55)
-
-[node name="CancerColony20" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(124, 20)
-
-[node name="CancerColony21" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(64, 56)
-
-[node name="CancerColony22" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(180, 18)
-
-[node name="CancerColony23" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(268, 30)
-
-[node name="CancerColony3" parent="." instance=ExtResource("13_edd10")]
-position = Vector2(27, 109)
-active = true
+[node name="Healthbar" type="Sprite2D" parent="Health"]
+position = Vector2(206, 154)
+scale = Vector2(0.499197, 0.0437501)
+texture = ExtResource("16_4gpcf")
+centered = false
+offset = Vector2(-80, 0)
+script = ExtResource("17_p0cqq")
 
 [connection signal="pressed" from="UI Handler/SpeedUp15" to="UI Handler" method="ChangeDaySpeed" binds= [15.0]]
 [connection signal="pressed" from="UI Handler/1x button" to="UI Handler" method="ChangeDaySpeed" binds= [1.0]]
 [connection signal="pressed" from="UI Handler/5x button" to="UI Handler" method="ChangeDaySpeed" binds= [5.0]]
 [connection signal="pressed" from="UI Handler/10x button" to="UI Handler" method="ChangeDaySpeed" binds= [10.0]]
-[connection signal="pressed" from="UI Handler/Pause button" to="UI Handler" method="ChangeDaySpeed" binds= [0.0]]
+[connection signal="pressed" from="UI Handler/Pause button" to="UI Handler" method="StopDayCycle"]
