@@ -1,5 +1,9 @@
 extends Node
 
+# Global variables
+var previousScene: String = "" 
+
+
 # Timer and day counter
 var _dayTimer: Timer
 var _dayCount: int = 0
@@ -44,6 +48,7 @@ func _process(delta):
 func _IncementDayCounter():
 	_dayCount += 1
 	print(_dayCount)
+	print(previousScene)
 	OnNextDay.emit()
 
 

@@ -90,3 +90,5 @@ layout_mode = 2
 texture_normal = ExtResource("6_suypp")
 texture_pressed = ExtResource("7_7tejc")
 stretch_mode = 0
+
+[connection signal="pressed" from="Background/Background/CenterContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

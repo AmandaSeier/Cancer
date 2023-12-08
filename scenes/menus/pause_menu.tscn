@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ia2lerpknwdq"]
+[gd_scene load_steps=9 format=3 uid="uid://ia2lerpknwdq"]
 
+[ext_resource type="Texture2D" uid="uid://1mliumhgr6wn" path="res://sprites/BACKGROUND_stue_blured.png" id="1_bnmxb"]
 [ext_resource type="Texture2D" uid="uid://cxnr8u1q0ytfw" path="res://sprites/1x button-1.png (23).png" id="2_i8p5t"]
 [ext_resource type="Texture2D" uid="uid://qqfhaemxfcgy" path="res://sprites/1x button-1.png (20).png" id="3_efmac"]
 [ext_resource type="Texture2D" uid="uid://dxw2geykl4wdw" path="res://sprites/1x button-2.png (21).png" id="3_qykvd"]
@@ -21,6 +22,7 @@ func _on_quit_button_pressed():
 
 func _on_settings_button_pressed():
 	get_tree().change_scene_to_file(\"res://scenes/menus/settings_menu.tscn\")
+	StateMachine.previousScene = \"res://scenes/menus/pause_menu.tscn\"
 "
 
 [node name="PauseMenu" type="Control"]
@@ -42,6 +44,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.188235, 0.188235, 0.188235, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundStueBlured" type="Sprite2D" parent="Background"]
+position = Vector2(161, 90)
+texture = ExtResource("1_bnmxb")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1

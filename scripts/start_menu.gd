@@ -19,6 +19,6 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 
 
-
 func _on_settings_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menus/settings_menu.tscn")
+	StateMachine.previousScene = "res://scenes/menus/start_menu.tscn"

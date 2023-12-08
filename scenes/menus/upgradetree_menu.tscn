@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://4vpu3yxnwjxl"]
+[gd_scene load_steps=10 format=3 uid="uid://4vpu3yxnwjxl"]
 
+[ext_resource type="Script" path="res://scenes/menus/upgradetree_menu.gd" id="1_kexo5"]
 [ext_resource type="Texture2D" uid="uid://b6k0v1agkv1go" path="res://sprites/upgradetree related/New Piskel-1.png (3).png" id="1_qvwju"]
-[ext_resource type="Texture2D" uid="uid://ddvfkm8jq3u4b" path="res://sprites/upgradetree related/New Piskel-1.png (5).png" id="2_f0omm"]
+[ext_resource type="Texture2D" uid="uid://dc04hvi8fvoxn" path="res://sprites/upgradetree related/New Piskel-1.png (2).png" id="1_tnd8p"]
 [ext_resource type="Texture2D" uid="uid://dyh5xww7g7qld" path="res://sprites/upgradetree related/New Piskel-1.png (4).png" id="3_l8a8t"]
-[ext_resource type="Texture2D" uid="uid://ua42ldeweg6u" path="res://sprites/upgradetree related/New Piskel-1.png (7).png" id="4_0hpf4"]
+[ext_resource type="Texture2D" uid="uid://dbk4yuwp4mu4d" path="res://sprites/upgradetree related/New Piskel-1.png (8).png" id="3_tugbo"]
 [ext_resource type="Texture2D" uid="uid://biag67gov01qq" path="res://sprites/upgradetree related/New Piskel-1.png (6).png" id="5_7s3v3"]
+[ext_resource type="Texture2D" uid="uid://dvpw6m3vj0tqs" path="res://sprites/upgradetree related/New Piskel-1.png.png" id="7_i8k2f"]
+[ext_resource type="Texture2D" uid="uid://eprrhcwiba78" path="res://sprites/button sprites/1x button-1.png (7)-1.png-1.png.png" id="7_tbih3"]
+[ext_resource type="Texture2D" uid="uid://c4uks8d0kksew" path="res://sprites/button sprites/1x button-1.png (7)-1.png-2.png.png" id="8_i32xd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kexo5")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -23,6 +28,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.188235, 0.188235, 0.188235, 1)
 
+[node name="path 1" type="Sprite2D" parent="Background"]
+position = Vector2(162, 95)
+scale = Vector2(2.5, 1)
+texture = ExtResource("1_tnd8p")
+
+[node name="path 2" type="Sprite2D" parent="Background"]
+position = Vector2(160, 80.9439)
+rotation = 1.5708
+scale = Vector2(1.47747, 1)
+texture = ExtResource("1_tnd8p")
+
 [node name="default" type="TextureButton" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
@@ -31,9 +47,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -16.0
-offset_top = -16.0
+offset_top = -10.0
 offset_right = 16.0
-offset_bottom = 16.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("1_qvwju")
@@ -46,12 +62,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 30.0
-offset_top = -16.0
+offset_top = -10.0
 offset_right = 62.0
-offset_bottom = 16.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_f0omm")
+texture_normal = ExtResource("3_tugbo")
 texture_pressed = ExtResource("3_l8a8t")
 
 [node name="imunity" type="TextureButton" parent="Background"]
@@ -62,10 +78,44 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_top = -16.0
+offset_top = -10.0
 offset_right = -28.0
-offset_bottom = 16.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_0hpf4")
+texture_normal = ExtResource("3_tugbo")
 texture_pressed = ExtResource("5_7s3v3")
+
+[node name="lymph nodes" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -50.0
+offset_right = 16.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_tugbo")
+texture_pressed = ExtResource("7_i8k2f")
+
+[node name="back button" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = 62.0
+offset_right = -109.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_tbih3")
+texture_pressed = ExtResource("8_i32xd")
+
+[connection signal="pressed" from="Background/back button" to="." method="_on_back_button_pressed"]
