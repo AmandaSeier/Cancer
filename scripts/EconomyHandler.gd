@@ -2,6 +2,7 @@ extends Node
 
 
 var cancerPoints: int = 0
+var pointsPrCancerCell: float = 1.
 
 # arbitrary placeholder variables
 # ------------
@@ -28,7 +29,7 @@ func _CalcCancerPoints():
 		return
 	daysTillPayout = payoutDelay
 	
-	cancerPoints += sizeDifference * moneyScale
+	cancerPoints += pointsPrCancerCell * sizeDifference * moneyScale
 	self.text = "Cancer points: {CP}".format({"CP": cancerPoints})
 
 func _AddCancerPoints():
