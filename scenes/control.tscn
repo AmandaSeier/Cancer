@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx0xmnn0mv77n"]
+
+[ext_resource type="Texture2D" uid="uid://c7xl5me7ygiur" path="res://sprites/button sprites/1x button-1.png (4).png" id="1_yif0p"]
+[ext_resource type="Texture2D" uid="uid://bnc1p38l68m1m" path="res://sprites/button sprites/1x button-2.png (4).png" id="2_3gw1c"]
+[ext_resource type="Texture2D" uid="uid://bhd6uki1usn6c" path="res://sprites/button sprites/1x button-1.png (5).png" id="3_76qgq"]
+[ext_resource type="Texture2D" uid="uid://ej40pact2n7f" path="res://sprites/button sprites/1x button-2.png (5).png" id="4_6ro7i"]
+[ext_resource type="Texture2D" uid="uid://eprrhcwiba78" path="res://sprites/button sprites/1x button-1.png (7)-1.png-1.png.png" id="5_veovw"]
+[ext_resource type="Texture2D" uid="uid://c4uks8d0kksew" path="res://sprites/button sprites/1x button-1.png (7)-1.png-2.png.png" id="6_hir1a"]
+
+[node name="settings_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Background"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CenterContainer"]
+layout_mode = 2
+
+[node name="Music" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_yif0p")
+texture_pressed = ExtResource("2_3gw1c")
+
+[node name="Sound" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_76qgq")
+texture_pressed = ExtResource("4_6ro7i")
+
+[node name="Back" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_veovw")
+texture_pressed = ExtResource("6_hir1a")
+stretch_mode = 0

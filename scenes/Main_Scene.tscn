@@ -1757,6 +1757,7 @@ texture_pressed = ExtResource("14_0ahnw")
 
 [node name="Node2D" type="Node2D" parent="."]
 
+[connection signal="pressed" from="UI Handler/Pause menu button" to="UI Handler" method="_on_pause_menu_button_pressed"]
 [connection signal="pressed" from="UI Handler/SpeedUp15" to="UI Handler" method="ChangeDaySpeed" binds= [15.0]]
 [connection signal="pressed" from="UI Handler/1x button" to="UI Handler" method="ChangeDaySpeed" binds= [1.0]]
 [connection signal="pressed" from="UI Handler/5x button" to="UI Handler" method="ChangeDaySpeed" binds= [5.0]]
