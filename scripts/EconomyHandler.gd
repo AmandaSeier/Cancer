@@ -25,7 +25,6 @@ func _stuff():
 func _CalcCancerPoints():
 	if not daysTillPayout == 1:
 		daysTillPayout -= 1
-		print("Days: ", daysTillPayout)
 		return
 	daysTillPayout = payoutDelay
 	
