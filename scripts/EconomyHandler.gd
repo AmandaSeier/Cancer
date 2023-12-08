@@ -30,9 +30,10 @@ func _CalcCancerPoints():
 	
 	cancerPoints += sizeDifference * moneyScale
 	self.text = "Cancer points: {CP}".format({"CP": cancerPoints})
-	
+
 func _AddCancerPoints():
 	pass
 
+# call on Upgrade-bought
 func _RemoveCancerPoints():
 	pass
