@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4vpu3yxnwjxl"]
+[gd_scene load_steps=13 format=3 uid="uid://byfliyn7lox7r"]
 
 [ext_resource type="Script" path="res://scenes/menus/upgradetree_menu.gd" id="1_kexo5"]
 [ext_resource type="Texture2D" uid="uid://b6k0v1agkv1go" path="res://sprites/upgradetree related/New Piskel-1.png (3).png" id="1_qvwju"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dvpw6m3vj0tqs" path="res://sprites/upgradetree related/New Piskel-1.png.png" id="7_i8k2f"]
 [ext_resource type="Texture2D" uid="uid://eprrhcwiba78" path="res://sprites/button sprites/1x button-1.png (7)-1.png-1.png.png" id="7_tbih3"]
 [ext_resource type="Texture2D" uid="uid://c4uks8d0kksew" path="res://sprites/button sprites/1x button-1.png (7)-1.png-2.png.png" id="8_i32xd"]
+[ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="10_jbs4u"]
+[ext_resource type="Texture2D" uid="uid://6s1rvjuf87qg" path="res://sprites/button sprites/1x button up.png" id="11_s04oq"]
+[ext_resource type="Texture2D" uid="uid://buvqco0bigf74" path="res://sprites/button sprites/1x button pressed.png.png" id="12_ps6xm"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -39,7 +42,7 @@ rotation = 1.5708
 scale = Vector2(1.47747, 1)
 texture = ExtResource("1_tnd8p")
 
-[node name="default" type="TextureButton" parent="Background"]
+[node name="Default" type="TextureButton" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -54,7 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("1_qvwju")
 
-[node name="growth" type="TextureButton" parent="Background"]
+[node name="Giga Growth" type="TextureButton" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,7 +73,7 @@ grow_vertical = 2
 texture_normal = ExtResource("3_tugbo")
 texture_pressed = ExtResource("3_l8a8t")
 
-[node name="imunity" type="TextureButton" parent="Background"]
+[node name="Medical Resistance" type="TextureButton" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -86,7 +89,7 @@ grow_vertical = 2
 texture_normal = ExtResource("3_tugbo")
 texture_pressed = ExtResource("5_7s3v3")
 
-[node name="lymph nodes" type="TextureButton" parent="Background"]
+[node name="Lymph Nodes" type="TextureButton" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -117,5 +120,63 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("7_tbih3")
 texture_pressed = ExtResource("8_i32xd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 35.0
+offset_right = 75.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(235, 0)
+color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="upgradeDescription" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -10.0
+offset_right = 70.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_jbs4u")
+theme_override_font_sizes/font_size = 5
+text = "d"
+
+[node name="upgradeTitle" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -20.0
+offset_right = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_jbs4u")
+theme_override_font_sizes/font_size = 7
+text = "d"
+
+[node name="buyButton" type="TextureButton" parent="ColorRect"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 5.0
+offset_right = 145.0
+offset_bottom = 45.0
+texture_normal = ExtResource("11_s04oq")
+texture_pressed = ExtResource("12_ps6xm")
 
 [connection signal="pressed" from="Background/back button" to="." method="_on_back_button_pressed"]
