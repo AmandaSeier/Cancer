@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp5b321n6axa7"
-path="res://.godot/imported/New Piskel-1.png (1).png-c068a20c369d90bd40ac568ddccb2f50.ctex"
+uid="uid://dbk4yuwp4mu4d"
+path="res://.godot/imported/LockedUpgrade.png-31447d80525209c7a6b8ee837ce802c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgradetree related/New Piskel-1.png (1).png"
-dest_files=["res://.godot/imported/New Piskel-1.png (1).png-c068a20c369d90bd40ac568ddccb2f50.ctex"]
+source_file="res://sprites/upgradetree related/LockedUpgrade.png"
+dest_files=["res://.godot/imported/LockedUpgrade.png-31447d80525209c7a6b8ee837ce802c2.ctex"]
 
 [params]
 

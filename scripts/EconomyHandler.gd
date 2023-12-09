@@ -1,7 +1,6 @@
 extends Node 
 
 
-var cancerPoints: int = 0
 var pointsPrCancerCell: float = 1.
 
 # arbitrary placeholder variables
@@ -29,8 +28,8 @@ func _CalcCancerPoints():
 		return
 	daysTillPayout = payoutDelay
 	
-	cancerPoints += pointsPrCancerCell * sizeDifference * moneyScale
-	self.text = "Cancer points: {CP}".format({"CP": cancerPoints})
+	StateMachine.cancerPoints += pointsPrCancerCell * sizeDifference * moneyScale
+	self.text = "Cancer points: {CP}".format({"CP": StateMachine.cancerPoints})
 
 func _AddCancerPoints():
 	pass
@@ -38,9 +37,3 @@ func _AddCancerPoints():
 # call on Upgrade-bought
 func _RemoveCancerPoints():
 	pass
-
-
-func tryBuy(cost: int) -> bool:
-	if cost > cancerPoints:
-		return false
-	return true

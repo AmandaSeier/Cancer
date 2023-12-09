@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biag67gov01qq"
-path="res://.godot/imported/New Piskel-1.png (6).png-4a554713a3d8b779ee33daf3611eea07.ctex"
+uid="uid://dc04hvi8fvoxn"
+path="res://.godot/imported/Path.png-5732100cfcc68462354dce6a8dbb3e7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgradetree related/New Piskel-1.png (6).png"
-dest_files=["res://.godot/imported/New Piskel-1.png (6).png-4a554713a3d8b779ee33daf3611eea07.ctex"]
+source_file="res://sprites/upgradetree related/Path.png"
+dest_files=["res://.godot/imported/Path.png-5732100cfcc68462354dce6a8dbb3e7b.ctex"]
 
 [params]
 

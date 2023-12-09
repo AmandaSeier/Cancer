@@ -1,45 +1,30 @@
 extends Control
 
-@onready var upgradeTitle := $ColorRect/upgradeTitle
-@onready var upgradeDescription := $ColorRect/upgradeDescription
-@onready var buyButton := $ColorRect/buyButton
-
-var upgradeInfo: Dictionary = {
-	"Default": {
-		"Description": "Unlock your first cancer colony.",
-		"State": "Locked",
-		"Price": 10
-	},
-	"Giga Growth": {
-		"Description": "Increase the growth-rate of your cancer by xxx.",
-		"State": "Locked",
-		"Price": 10	
-	},
-	"Lymph Nodes": {
-		"Description": "Gain access to the lymph nodes.",
-		"State": "Locked",
-		"Price": 10
-	},
-	"Medical Resistance": {
-		"Description": "Become more resistant to cancer treatment.",
-		"State": "Locked",
-		"Price": 10
-	}}
+@onready var upgradeTitle := $UpgradeDescriptionBox/upgradeTitle
+@onready var upgradeDescription := $UpgradeDescriptionBox/upgradeDescription
+@onready var buyButton := $UpgradeDescriptionBox/buyButton
+@onready var upgradeDescriptionBox := $UpgradeDescriptionBox
+@onready var borderRing := $UpgradeDescriptionBox/BorderRing
+@onready var backButton := $Background/backButton
 
 
-var nonUpgradeButtons: Array = ["back button", "buyButton"]
+var nonUpgradeableButtons: Array = [backButton, buyButton]
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	upgradeTitle.hide()
-	upgradeDescription.hide()
+	_HideUpgradeDescriptionBox()
 	
 	for child in $Background.get_children(): 
-		if child is TextureButton and not nonUpgradeButtons.has(child):
-			child.connect("pressed", _updateLabel.bind(child.get_name())) 
+		if child is TextureButton and child.get_name() != "backButton":
+			child.connect("pressed", _UpdateLabel.bind(child.get_name())) 
 	
-	buyButton.connect("pressed", Economy)
+	buyButton.connect("pressed", _TryBuy)
+	
+	for key in StateMachine.upgradeInfo.keys():
+		var value = StateMachine.upgradeInfo[key]
+		if value["State"] == "Bought":
+			_BoughtUpgradeTexture(key)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,29 +36,54 @@ func _on_back_button_pressed():
 	get_tree().change_scene_to_file(StateMachine.previousScene)
 
 
-func _updateLabel(button):
-	if upgradeInfo[button]["State"] == "Locked":
+func _UpdateLabel(button):
+	for item in StateMachine.upgradeInfo.values():
+		item["Active"] = false
+	StateMachine.upgradeInfo[button]["Active"] = true
+	
+	borderRing.global_position = get_node("Background/" + str(button)).global_position
+	
+	if StateMachine.upgradeInfo[button]["State"] == "Locked":
 		upgradeTitle.text = "Locked"
 		upgradeDescription.text = "Locked"
-		_showLabels()
+		_ShowUpgradeDescriptionBox()
 		return
 	
-	upgradeTitle.text = upgradeInfo[button]
-	upgradeDescription.text = upgradeInfo[button]["Description"]
-	print(buyButton.text)
-	_showLabels()
+	upgradeTitle.text = str(button)
+	upgradeDescription.text = str(StateMachine.upgradeInfo[button]["Description"])
+	
+	
+	_ShowUpgradeDescriptionBox()
 	
 
-func _showLabels():
-	upgradeTitle.show()
-	upgradeDescription.show()
+func _ShowUpgradeDescriptionBox():
+	upgradeDescriptionBox.show()
+	borderRing.show()
 
-func _hideLabel():
-	upgradeTitle.hide()
-	upgradeDescription.hide()
+func _HideUpgradeDescriptionBox():
+	upgradeDescriptionBox.hide()
+	borderRing.hide()
 	
 	
-func tryBuy():
-	print("You've clicked me")
+	
+
+func _TryBuy():
+	for key in StateMachine.upgradeInfo.keys():
+		var item = StateMachine.upgradeInfo[key]
+		
+		if item["Active"] and item["State"] == "Unlocked":
+			if item["Price"] > StateMachine.cancerPoints:
+				return
+				
+			item["State"] = "Bought"
+			StateMachine.cancerPoints -= item["Price"]
+			
+			_BoughtUpgradeTexture(key)
+			return
+
+
+func _BoughtUpgradeTexture(buttonname: String):
+	var path = get_node("Background/" + str(buttonname))
+	path.set_texture_normal(load("res://sprites/upgradetree related/" + buttonname + " - Bought.png"))
 
 

@@ -1,17 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://byfliyn7lox7r"]
+[gd_scene load_steps=10 format=3 uid="uid://byfliyn7lox7r"]
 
 [ext_resource type="Script" path="res://scenes/menus/upgradetree_menu.gd" id="1_kexo5"]
-[ext_resource type="Texture2D" uid="uid://b6k0v1agkv1go" path="res://sprites/upgradetree related/New Piskel-1.png (3).png" id="1_qvwju"]
-[ext_resource type="Texture2D" uid="uid://dc04hvi8fvoxn" path="res://sprites/upgradetree related/New Piskel-1.png (2).png" id="1_tnd8p"]
-[ext_resource type="Texture2D" uid="uid://dyh5xww7g7qld" path="res://sprites/upgradetree related/New Piskel-1.png (4).png" id="3_l8a8t"]
-[ext_resource type="Texture2D" uid="uid://dbk4yuwp4mu4d" path="res://sprites/upgradetree related/New Piskel-1.png (8).png" id="3_tugbo"]
-[ext_resource type="Texture2D" uid="uid://biag67gov01qq" path="res://sprites/upgradetree related/New Piskel-1.png (6).png" id="5_7s3v3"]
-[ext_resource type="Texture2D" uid="uid://dvpw6m3vj0tqs" path="res://sprites/upgradetree related/New Piskel-1.png.png" id="7_i8k2f"]
+[ext_resource type="Texture2D" uid="uid://dp5b321n6axa7" path="res://sprites/upgradetree related/Lymph Nodes - Bought.png" id="3_l6hk4"]
+[ext_resource type="Texture2D" uid="uid://dbk4yuwp4mu4d" path="res://sprites/upgradetree related/LockedUpgrade.png" id="3_w6yu4"]
 [ext_resource type="Texture2D" uid="uid://eprrhcwiba78" path="res://sprites/button sprites/1x button-1.png (7)-1.png-1.png.png" id="7_tbih3"]
 [ext_resource type="Texture2D" uid="uid://c4uks8d0kksew" path="res://sprites/button sprites/1x button-1.png (7)-1.png-2.png.png" id="8_i32xd"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="10_jbs4u"]
 [ext_resource type="Texture2D" uid="uid://6s1rvjuf87qg" path="res://sprites/button sprites/1x button up.png" id="11_s04oq"]
 [ext_resource type="Texture2D" uid="uid://buvqco0bigf74" path="res://sprites/button sprites/1x button pressed.png.png" id="12_ps6xm"]
+[ext_resource type="Texture2D" uid="uid://dvpw6m3vj0tqs" path="res://sprites/upgradetree related/BorderRing.png" id="13_iijyw"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -34,13 +31,11 @@ color = Color(0.188235, 0.188235, 0.188235, 1)
 [node name="path 1" type="Sprite2D" parent="Background"]
 position = Vector2(162, 95)
 scale = Vector2(2.5, 1)
-texture = ExtResource("1_tnd8p")
 
 [node name="path 2" type="Sprite2D" parent="Background"]
 position = Vector2(160, 80.9439)
 rotation = 1.5708
 scale = Vector2(1.47747, 1)
-texture = ExtResource("1_tnd8p")
 
 [node name="Default" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -55,7 +50,7 @@ offset_right = 16.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_qvwju")
+texture_normal = ExtResource("3_w6yu4")
 
 [node name="Giga Growth" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -70,8 +65,7 @@ offset_right = 62.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_tugbo")
-texture_pressed = ExtResource("3_l8a8t")
+texture_normal = ExtResource("3_w6yu4")
 
 [node name="Medical Resistance" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -86,8 +80,7 @@ offset_right = -28.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_tugbo")
-texture_pressed = ExtResource("5_7s3v3")
+texture_normal = ExtResource("3_w6yu4")
 
 [node name="Lymph Nodes" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -102,10 +95,10 @@ offset_right = 16.0
 offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_tugbo")
-texture_pressed = ExtResource("7_i8k2f")
+texture_normal = ExtResource("3_w6yu4")
+texture_pressed = ExtResource("3_l6hk4")
 
-[node name="back button" type="TextureButton" parent="Background"]
+[node name="backButton" type="TextureButton" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -121,7 +114,7 @@ grow_vertical = 2
 texture_normal = ExtResource("7_tbih3")
 texture_pressed = ExtResource("8_i32xd")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="UpgradeDescriptionBox" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -137,7 +130,12 @@ grow_vertical = 2
 pivot_offset = Vector2(235, 0)
 color = Color(0.121569, 0.121569, 0.121569, 1)
 
-[node name="upgradeDescription" type="Label" parent="ColorRect"]
+[node name="BorderRing" type="Sprite2D" parent="UpgradeDescriptionBox"]
+position = Vector2(15, -45)
+texture = ExtResource("13_iijyw")
+offset = Vector2(16, 16)
+
+[node name="upgradeDescription" type="Label" parent="UpgradeDescriptionBox"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -154,7 +152,7 @@ theme_override_fonts/font = ExtResource("10_jbs4u")
 theme_override_font_sizes/font_size = 5
 text = "d"
 
-[node name="upgradeTitle" type="Label" parent="ColorRect"]
+[node name="upgradeTitle" type="Label" parent="UpgradeDescriptionBox"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -170,7 +168,7 @@ theme_override_fonts/font = ExtResource("10_jbs4u")
 theme_override_font_sizes/font_size = 7
 text = "d"
 
-[node name="buyButton" type="TextureButton" parent="ColorRect"]
+[node name="buyButton" type="TextureButton" parent="UpgradeDescriptionBox"]
 layout_mode = 0
 offset_left = 105.0
 offset_top = 5.0
@@ -179,4 +177,4 @@ offset_bottom = 45.0
 texture_normal = ExtResource("11_s04oq")
 texture_pressed = ExtResource("12_ps6xm")
 
-[connection signal="pressed" from="Background/back button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Background/backButton" to="." method="_on_back_button_pressed"]

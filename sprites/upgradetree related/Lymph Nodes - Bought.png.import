@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ua42ldeweg6u"
-path="res://.godot/imported/New Piskel-1.png (7).png-6b6a13a9717be4dcd4f31628f23adb0a.ctex"
+uid="uid://dp5b321n6axa7"
+path="res://.godot/imported/Lymph Nodes - Bought.png-c886e02eb78dc7108c4c07d2a5cb163a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgradetree related/New Piskel-1.png (7).png"
-dest_files=["res://.godot/imported/New Piskel-1.png (7).png-6b6a13a9717be4dcd4f31628f23adb0a.ctex"]
+source_file="res://sprites/upgradetree related/Lymph Nodes - Bought.png"
+dest_files=["res://.godot/imported/Lymph Nodes - Bought.png-c886e02eb78dc7108c4c07d2a5cb163a.ctex"]
 
 [params]
 

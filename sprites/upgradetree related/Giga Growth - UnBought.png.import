@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvpw6m3vj0tqs"
-path="res://.godot/imported/New Piskel-1.png.png-af43b0cba837a03105bfddd730d82b98.ctex"
+uid="uid://ddvfkm8jq3u4b"
+path="res://.godot/imported/Giga Growth - UnBought.png-a139bd9645b0260acb3dec56cfb4ced6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgradetree related/New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-af43b0cba837a03105bfddd730d82b98.ctex"]
+source_file="res://sprites/upgradetree related/Giga Growth - UnBought.png"
+dest_files=["res://.godot/imported/Giga Growth - UnBought.png-a139bd9645b0260acb3dec56cfb4ced6.ctex"]
 
 [params]
 

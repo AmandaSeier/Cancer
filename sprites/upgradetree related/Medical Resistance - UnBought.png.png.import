@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbk4yuwp4mu4d"
-path="res://.godot/imported/New Piskel-1.png (8).png-2afa4ee2e73b299a1320273182cf09de.ctex"
+uid="uid://ua42ldeweg6u"
+path="res://.godot/imported/Medical Resistance - UnBought.png.png-ef2a514884e706468bebea2079c71089.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgradetree related/New Piskel-1.png (8).png"
-dest_files=["res://.godot/imported/New Piskel-1.png (8).png-2afa4ee2e73b299a1320273182cf09de.ctex"]
+source_file="res://sprites/upgradetree related/Medical Resistance - UnBought.png.png"
+dest_files=["res://.godot/imported/Medical Resistance - UnBought.png.png-ef2a514884e706468bebea2079c71089.ctex"]
 
 [params]
 

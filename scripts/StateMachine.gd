@@ -2,14 +2,21 @@ extends Node
 
 # Global variables
 var previousScene: String = "" 
+var colonies: Array[Colony] # used to refrence colonies outside of script (is in use)
+var cancerPoints: float = 100.
 
 
 # Timer and day counter
 var _dayTimer: Timer
 var _dayCount: int = 0
 
-var upgradeHandler: UpgradeHandler = UpgradeHandler.new({
+var upgradeInfo: Dictionary = {
 	"range": {
+		"Description": "Increase the range your colonies can spread to.",
+		"State": "Unlocked", # Three states: Locked, unlocked and bought.
+		"Price": 10.,
+		"Active": false,
+		
 		"base": 40.,
 		"spread1": 5.,
 		"spread2": 5.,
@@ -17,17 +24,52 @@ var upgradeHandler: UpgradeHandler = UpgradeHandler.new({
 		"bigger_colonies": 10.
 	}, # colonyRange
 	"max_size": {
+		"Description": "Increase max size of colonies.",
+		"State": "Unlocked",
+		"Price": 10.,
+		"Active": false,
+		
 		"base": 750.,
 		"bigger_colonies": 1500., # duplicate upgrade name means it changes 3 stats
 	}, # max size
 	"grow_chance": {
+		"Description": "Increase the change of colonies growing.",
+		"State": "Locked",
+		"Price": 10.,
+		"Active": false,
+		
 		"base": 3.,
 		"larger_blood_supply": 1.,
 		"bigger_colonies": -1.,
 	}, # grow chance
-	})
+	"Default": {
+		"Description": "Unlock your first cancer colony.",
+		"State": "Unlocked", # Three states: Locked, unlocked and bought.
+		"Price": 10.,
+		"Active": false
+	},
+	"Giga Growth": {
+		"Description": "Increase the growth-rate of your cancer by xxx.",
+		"State": "Unlocked",
+		"Price": 10.,
+		"Active": false
+	},
+	"Lymph Nodes": {
+		"Description": "Gain access to the lymph nodes.",
+		"State": "Locked",
+		"Price": 10.,
+		"Active": false
+	},
+	"Medical Resistance": {
+		"Description": "Become more resistant to cancer treatment.",
+		"State": "Locked",
+		"Price": 10.,
+		"Active": false
+	}
+	}
 
-var colonies: Array[Colony] # used to refrence colonies outside of script (is in use)
+var upgradeHandler: UpgradeHandler = UpgradeHandler.new(upgradeInfo)
+
 
 signal OnNextDay
 
@@ -62,3 +104,5 @@ func ChangeDaySpeed(speed: float):
 
 func StopDayCycle():
 	_dayTimer.stop()
+
+
