@@ -21,8 +21,8 @@ func _ready():
 	
 	buyButton.connect("pressed", _TryBuy)
 	
-	for key in StateMachine.upgradeInfo.keys():
-		var value = StateMachine.upgradeInfo[key]
+	for key in StateMachine.upgradeUIInfo.keys():
+		var value = StateMachine.upgradeUIInfo[key]
 		if value["State"] == "Bought":
 			_BoughtUpgradeTexture(key)
 
@@ -37,20 +37,20 @@ func _on_back_button_pressed():
 
 
 func _UpdateLabel(button):
-	for item in StateMachine.upgradeInfo.values():
+	for item in StateMachine.upgradeUIInfo.values():
 		item["Active"] = false
-	StateMachine.upgradeInfo[button]["Active"] = true
+	StateMachine.upgradeUIInfo[button]["Active"] = true
 	
 	borderRing.global_position = get_node("Background/" + str(button)).global_position
 	
-	if StateMachine.upgradeInfo[button]["State"] == "Locked":
+	if StateMachine.upgradeUIInfo[button]["State"] == "Locked":
 		upgradeTitle.text = "Locked"
 		upgradeDescription.text = "Locked"
 		_ShowUpgradeDescriptionBox()
 		return
 	
 	upgradeTitle.text = str(button)
-	upgradeDescription.text = str(StateMachine.upgradeInfo[button]["Description"])
+	upgradeDescription.text = str(StateMachine.upgradeUIInfo[button]["Description"])
 	
 	
 	_ShowUpgradeDescriptionBox()
@@ -58,18 +58,16 @@ func _UpdateLabel(button):
 
 func _ShowUpgradeDescriptionBox():
 	upgradeDescriptionBox.show()
-	borderRing.show()
 
 func _HideUpgradeDescriptionBox():
 	upgradeDescriptionBox.hide()
-	borderRing.hide()
 	
 	
 	
 
 func _TryBuy():
-	for key in StateMachine.upgradeInfo.keys():
-		var item = StateMachine.upgradeInfo[key]
+	for key in StateMachine.upgradeUIInfo.keys():
+		var item = StateMachine.upgradeUIInfo[key]
 		
 		if item["Active"] and item["State"] == "Unlocked":
 			if item["Price"] > StateMachine.cancerPoints:

@@ -6,8 +6,7 @@ var _posY: int = 162
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	StateMachine.OnNextDay.connect(_calcHealth)
-	
+	StateMachine.OnNextDay.connect(_calcHealth)	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

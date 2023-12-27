@@ -1,4 +1,4 @@
-extends Node2D
+extends TextureButton
 class_name Colony
 
 @export var active: bool = false

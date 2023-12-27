@@ -12,11 +12,6 @@ var _dayCount: int = 0
 
 var upgradeInfo: Dictionary = {
 	"range": {
-		"Description": "Increase the range your colonies can spread to.",
-		"State": "Unlocked", # Three states: Locked, unlocked and bought.
-		"Price": 10.,
-		"Active": false,
-		
 		"base": 40.,
 		"spread1": 5.,
 		"spread2": 5.,
@@ -24,24 +19,17 @@ var upgradeInfo: Dictionary = {
 		"bigger_colonies": 10.
 	}, # colonyRange
 	"max_size": {
-		"Description": "Increase max size of colonies.",
-		"State": "Unlocked",
-		"Price": 10.,
-		"Active": false,
-		
 		"base": 750.,
 		"bigger_colonies": 1500., # duplicate upgrade name means it changes 3 stats
 	}, # max size
 	"grow_chance": {
-		"Description": "Increase the change of colonies growing.",
-		"State": "Locked",
-		"Price": 10.,
-		"Active": false,
-		
 		"base": 3.,
 		"larger_blood_supply": 1.,
 		"bigger_colonies": -1.,
-	}, # grow chance
+	}
+	}
+	
+var upgradeUIInfo: Dictionary = {
 	"Default": {
 		"Description": "Unlock your first cancer colony.",
 		"State": "Unlocked", # Three states: Locked, unlocked and bought.
@@ -67,6 +55,11 @@ var upgradeInfo: Dictionary = {
 		"Active": false
 	}
 	}
+
+
+var colonyInfo: Dictionary = {
+	
+}
 
 var upgradeHandler: UpgradeHandler = UpgradeHandler.new(upgradeInfo)
 
