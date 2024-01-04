@@ -1833,6 +1833,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Colony1" type="TextureButton" parent="UiHandler/Colonies"]
+visible = false
 layout_mode = 0
 offset_left = 156.0
 offset_top = 101.0

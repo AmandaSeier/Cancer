@@ -13,15 +13,16 @@ script/source = "extends Control
 
 
 func _on_resume_button_pressed():
-	self.visible = false
+    self.visible = false
 
 
 func _on_quit_button_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/menus/start_menu.tscn\")
+    self.visible = false
+    get_node(\"../StartMenu\").visible = true
 
 
 func _on_settings_button_pressed():
-	get_node(\"../SettingsMenu\").visible = true
+    get_node(\"../SettingsMenu\").visible = true
 "
 
 [node name="PauseMenu" type="Control"]
