@@ -1,7 +1,7 @@
 extends ColorRect
 
 @onready var colonyInfo := $/root/Node2D/UI_Handler/ColonyInfo
-@onready var colonyInfoNode := get_node(colonyInfo.get_path())
+@onready var colonyInfoNode := get_node("colo")
 @onready var colonyName := $/root/Node2D/UI_Handler/ColonyInfo/ColonyName
 @onready var colonyInformation := $/root/Node2D/UI_Handler/ColonyInfo/ColonyName/ColonyInformation
 
@@ -10,10 +10,11 @@ extends ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	colonyInfo.hide()
-	
+	# colonyInfo.hide()
+	"""
 	for child in colonyGroup.get_children():
 		child.connect("pressed", _UpdateLabel.bind(child))
+	"""
 
 
 # Updates the positioning and textual contents of the colony info box.

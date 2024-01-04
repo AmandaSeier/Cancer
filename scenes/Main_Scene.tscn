@@ -1665,22 +1665,22 @@ cache/0/39/0/kerning_overrides/37/0 = Vector2(0, 0)
 cache/0/39/0/kerning_overrides/38/0 = Vector2(0, 0)
 cache/0/39/0/kerning_overrides/39/0 = Vector2(0, 0)
 
-[node name="Node2D" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 position = Vector2(-1, -1)
 
-[node name="MainScene" type="Node" parent="."]
+[node name="UiHandler" type="Node" parent="."]
 editor_description = "En Wrapper rundt om nogle statemachine funktioner der skal kaldes af UI. Så man kan finde dem i editoren "
 script = ExtResource("1_hbd8v")
 
-[node name="Background_Stue" type="Sprite2D" parent="MainScene"]
+[node name="Background_Stue" type="Sprite2D" parent="UiHandler"]
 texture = ExtResource("2_uor7j")
 offset = Vector2(160, 90)
 
-[node name="TorsoAnatomy" type="Sprite2D" parent="MainScene"]
+[node name="TorsoAnatomy" type="Sprite2D" parent="UiHandler"]
 texture = ExtResource("3_fka0q")
 offset = Vector2(160, 90)
 
-[node name="Pause menu button" type="TextureButton" parent="MainScene"]
+[node name="Pause menu button" type="TextureButton" parent="UiHandler"]
 offset_left = 3.0
 offset_top = 125.0
 offset_right = 51.0
@@ -1690,7 +1690,7 @@ texture_pressed = ExtResource("3_3hfan")
 stretch_mode = 3
 script = ExtResource("4_yl7dm")
 
-[node name="SpeedUp15" type="Button" parent="MainScene"]
+[node name="SpeedUp15" type="Button" parent="UiHandler"]
 visible = false
 offset_left = -1.0
 offset_top = -1.0
@@ -1703,18 +1703,19 @@ text = "Set day speed
 to 15 days pr. second"
 clip_text = true
 
-[node name="1x button" type="TextureButton" parent="MainScene"]
+[node name="1x button" type="TextureButton" parent="UiHandler"]
 offset_left = 235.0
 offset_top = 5.0
 offset_right = 260.0
 offset_bottom = 30.0
 toggle_mode = true
+button_pressed = true
 button_group = ExtResource("2_sj08s")
 texture_normal = ExtResource("5_hrh14")
 texture_pressed = ExtResource("6_cctsn")
 stretch_mode = 3
 
-[node name="5x button" type="TextureButton" parent="MainScene"]
+[node name="5x button" type="TextureButton" parent="UiHandler"]
 offset_left = 261.0
 offset_top = 5.0
 offset_right = 286.0
@@ -1725,7 +1726,7 @@ texture_normal = ExtResource("7_kvq4i")
 texture_pressed = ExtResource("8_viyho")
 stretch_mode = 3
 
-[node name="10x button" type="TextureButton" parent="MainScene"]
+[node name="10x button" type="TextureButton" parent="UiHandler"]
 offset_left = 286.0
 offset_top = 5.0
 offset_right = 316.0
@@ -1736,7 +1737,7 @@ texture_normal = ExtResource("8_udbff")
 texture_pressed = ExtResource("10_130g4")
 stretch_mode = 5
 
-[node name="Pause button" type="TextureButton" parent="MainScene"]
+[node name="Pause button" type="TextureButton" parent="UiHandler"]
 offset_left = 209.0
 offset_top = 5.0
 offset_right = 234.0
@@ -1747,7 +1748,7 @@ texture_normal = ExtResource("11_0geu8")
 texture_pressed = ExtResource("12_i8lwu")
 stretch_mode = 3
 
-[node name="Upgrade" type="TextureButton" parent="MainScene"]
+[node name="Upgrade" type="TextureButton" parent="UiHandler"]
 offset_left = 3.0
 offset_top = 152.0
 offset_right = 51.0
@@ -1756,10 +1757,10 @@ texture_normal = ExtResource("16_bdaav")
 texture_pressed = ExtResource("14_0ahnw")
 stretch_mode = 3
 
-[node name="Health" type="Node2D" parent="MainScene"]
+[node name="Health" type="Node2D" parent="UiHandler"]
 position = Vector2(-1, -1)
 
-[node name="Healthbar" type="Sprite2D" parent="MainScene/Health"]
+[node name="Healthbar" type="Sprite2D" parent="UiHandler/Health"]
 position = Vector2(7, 7)
 scale = Vector2(0.499197, 0.0437501)
 texture = ExtResource("16_4gpcf")
@@ -1767,7 +1768,7 @@ centered = false
 offset = Vector2(-80, 0)
 script = ExtResource("17_p0cqq")
 
-[node name="ColonyInfo" type="ColorRect" parent="MainScene"]
+[node name="ColonyInfo" type="ColorRect" parent="UiHandler"]
 visible = false
 offset_left = 63.0
 offset_top = 67.0
@@ -1776,7 +1777,7 @@ offset_bottom = 102.0
 color = Color(0.121569, 0.121569, 0.121569, 1)
 script = ExtResource("20_2nwra")
 
-[node name="ColonyName" type="Label" parent="MainScene/ColonyInfo"]
+[node name="ColonyName" type="Label" parent="UiHandler/ColonyInfo"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -1788,7 +1789,7 @@ offset_bottom = -3.0
 theme_override_fonts/font = ExtResource("21_tcjlp")
 theme_override_font_sizes/font_size = 5
 
-[node name="ColonyInformation" type="Label" parent="MainScene/ColonyInfo/ColonyName"]
+[node name="ColonyInformation" type="Label" parent="UiHandler/ColonyInfo/ColonyName"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.254
@@ -1798,11 +1799,11 @@ offset_top = 0.0140004
 theme_override_fonts/font = ExtResource("21_tcjlp")
 theme_override_font_sizes/font_size = 3
 
-[node name="Colonies" type="Control" parent="MainScene"]
+[node name="Colonies" type="Control" parent="UiHandler"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Colony1" type="TextureButton" parent="MainScene/Colonies"]
+[node name="Colony1" type="TextureButton" parent="UiHandler/Colonies"]
 visible = false
 layout_mode = 0
 offset_left = 156.0
@@ -1813,7 +1814,7 @@ texture_normal = ExtResource("23_8orth")
 script = ExtResource("21_cbdxg")
 active = true
 
-[node name="Colony2" type="TextureButton" parent="MainScene/Colonies"]
+[node name="Colony2" type="TextureButton" parent="UiHandler/Colonies"]
 visible = false
 layout_mode = 0
 offset_left = 169.0
@@ -1823,7 +1824,7 @@ offset_bottom = 136.0
 texture_normal = ExtResource("23_8orth")
 script = ExtResource("21_cbdxg")
 
-[node name="CancerPoints" type="Label" parent="MainScene"]
+[node name="CancerPoints" type="Label" parent="UiHandler"]
 offset_left = 11.0
 offset_top = 24.0
 offset_right = 51.0
@@ -1837,26 +1838,26 @@ theme_override_font_sizes/font_size = 6
 text = "Cancer Points: 0"
 script = ExtResource("25_jl0ia")
 
-[node name="UpgradeMenu" parent="MainScene" instance=ExtResource("25_r5fj5")]
+[node name="UpgradeMenu" parent="UiHandler" instance=ExtResource("25_r5fj5")]
 visible = false
 
-[node name="PauseMenu" parent="MainScene" instance=ExtResource("26_15dxr")]
+[node name="PauseMenu" parent="UiHandler" instance=ExtResource("26_15dxr")]
 visible = false
 
-[node name="StartMenu" parent="MainScene" instance=ExtResource("27_f7wyd")]
+[node name="StartMenu" parent="UiHandler" instance=ExtResource("27_f7wyd")]
 visible = false
 offset_left = 1.0
 offset_top = -1.0
 offset_right = 1.0
 offset_bottom = -1.0
 
-[node name="SettingsMenu" parent="MainScene" instance=ExtResource("27_jyjyq")]
+[node name="SettingsMenu" parent="UiHandler" instance=ExtResource("27_jyjyq")]
 visible = false
 
-[connection signal="pressed" from="MainScene/Pause menu button" to="MainScene" method="_on_pause_menu_button_pressed"]
-[connection signal="pressed" from="MainScene/SpeedUp15" to="MainScene" method="ChangeDaySpeed" binds= [15.0]]
-[connection signal="pressed" from="MainScene/1x button" to="MainScene" method="ChangeDaySpeed" binds= [1.0]]
-[connection signal="pressed" from="MainScene/5x button" to="MainScene" method="ChangeDaySpeed" binds= [5.0]]
-[connection signal="pressed" from="MainScene/10x button" to="MainScene" method="ChangeDaySpeed" binds= [10.0]]
-[connection signal="pressed" from="MainScene/Pause button" to="MainScene" method="StopDayCycle"]
-[connection signal="pressed" from="MainScene/Upgrade" to="MainScene" method="_on_upgrade_pressed"]
+[connection signal="pressed" from="UiHandler/Pause menu button" to="UiHandler" method="_on_pause_menu_button_pressed"]
+[connection signal="pressed" from="UiHandler/SpeedUp15" to="UiHandler" method="ChangeDaySpeed" binds= [15.0]]
+[connection signal="pressed" from="UiHandler/1x button" to="UiHandler" method="ChangeDaySpeed" binds= [1.0]]
+[connection signal="pressed" from="UiHandler/5x button" to="UiHandler" method="ChangeDaySpeed" binds= [5.0]]
+[connection signal="pressed" from="UiHandler/10x button" to="UiHandler" method="ChangeDaySpeed" binds= [10.0]]
+[connection signal="pressed" from="UiHandler/Pause button" to="UiHandler" method="StopDayCycle"]
+[connection signal="pressed" from="UiHandler/Upgrade" to="UiHandler" method="_on_upgrade_pressed"]

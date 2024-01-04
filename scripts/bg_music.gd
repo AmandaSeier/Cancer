@@ -5,7 +5,7 @@ extends AudioStreamPlayer
 func _ready():
 	# Start playing when the game starts
 	# this scene (BackgroundMusic) is autoloaded at the start of the game
-	play()
+	# play()
 	print("Playing music")
 	
 	# the music need to toogle depending on a signal

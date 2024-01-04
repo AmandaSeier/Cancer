@@ -25,7 +25,13 @@ var upgradeInfo: Dictionary = {
 		"base": 3.,
 		"larger_blood_supply": 1.,
 		"bigger_colonies": -1.,
-		"Giga Growth": 1000.,
+		"Giga Growth": 1.,
+		"cigarettes": 0.2,
+	},
+	"damage_multiplyer": {
+		"base": 1.,
+		"cigarettes": .2,
+		"alcohol": .1,
 	}
 }
 
