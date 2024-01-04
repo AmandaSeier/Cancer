@@ -21,7 +21,7 @@ var upgradeInfo: Dictionary = {
 		"base": 750.,
 		"bigger_colonies": 1500., # duplicate upgrade name means it changes 3 stats
 	}, # max size
-	"grow_chance": { # in procent
+	"grow_multiplier": { # in procent
 		"base": 3.,
 		"larger_blood_supply": 1.,
 		"bigger_colonies": -1.,
@@ -32,7 +32,10 @@ var upgradeInfo: Dictionary = {
 		"base": 1.,
 		"cigarettes": .2,
 		"alcohol": .1,
-	}
+	},
+    "misc.": {
+        "brain": 0,
+    },
 }
 
 var upgradeUIInfo: Dictionary = {

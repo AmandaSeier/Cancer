@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dewp4wiarhp52"]
+[gd_scene load_steps=29 format=3 uid="uid://dewp4wiarhp52"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
 [ext_resource type="Texture2D" uid="uid://iche7snxw465" path="res://sprites/1x button-1.png (22).png" id="2_1ymsy"]
@@ -20,9 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://75nymfb6u8l4" path="res://sprites/1x button-1.png (21).png" id="16_bdaav"]
 [ext_resource type="Script" path="res://scripts/Healthbar.gd" id="17_p0cqq"]
 [ext_resource type="Script" path="res://scripts/ColonyInfo.gd" id="20_2nwra"]
-[ext_resource type="Script" path="res://scripts/cells/Colony.gd" id="21_cbdxg"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="21_tcjlp"]
-[ext_resource type="Texture2D" uid="uid://t3g2y2tddqah" path="res://sprites/game sprites/Cancer-test-Sheet.png" id="23_8orth"]
+[ext_resource type="PackedScene" uid="uid://tu4wbcgyarvw" path="res://scenes/CancerColony.tscn" id="22_7eyt3"]
 [ext_resource type="Script" path="res://scripts/EconomyHandler.gd" id="25_jl0ia"]
 [ext_resource type="PackedScene" uid="uid://byfliyn7lox7r" path="res://scenes/menus/upgradetree_menu.tscn" id="25_r5fj5"]
 [ext_resource type="PackedScene" uid="uid://ia2lerpknwdq" path="res://scenes/menus/pause_menu.tscn" id="26_15dxr"]
@@ -1799,30 +1798,143 @@ offset_top = 0.0140004
 theme_override_fonts/font = ExtResource("21_tcjlp")
 theme_override_font_sizes/font_size = 3
 
-[node name="Colonies" type="Control" parent="UiHandler"]
+[node name="Colonies" type="Node" parent="UiHandler"]
+
+[node name="Heart" type="Control" parent="UiHandler/Colonies"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Colony1" type="TextureButton" parent="UiHandler/Colonies"]
+[node name="Heart1" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
 visible = false
-layout_mode = 0
+offset_left = 165.0
+offset_top = 86.0
+offset_right = 181.0
+offset_bottom = 102.0
+active = false
+
+[node name="Heart2" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
+visible = false
+offset_left = 168.0
+offset_top = 90.0
+offset_right = 184.0
+offset_bottom = 106.0
+active = false
+
+[node name="Lungs" type="Control" parent="UiHandler/Colonies"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lung1" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
+visible = false
+offset_left = 145.0
+offset_top = 92.0
+offset_right = 161.0
+offset_bottom = 108.0
+active = false
+organ = 1
+
+[node name="Lung2" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
+visible = false
+offset_left = 150.0
+offset_top = 77.0
+offset_right = 166.0
+offset_bottom = 93.0
+active = false
+organ = 1
+
+[node name="Lung3" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
+visible = false
+offset_left = 175.0
+offset_top = 81.0
+offset_right = 191.0
+offset_bottom = 97.0
+active = false
+organ = 1
+
+[node name="Liver" type="Control" parent="UiHandler/Colonies"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Liver1" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
+visible = false
+offset_left = 147.0
+offset_top = 103.0
+offset_right = 163.0
+offset_bottom = 119.0
+active = false
+organ = 2
+
+[node name="Liver2" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
+visible = false
+offset_left = 157.0
+offset_top = 99.0
+offset_right = 173.0
+offset_bottom = 115.0
+active = false
+organ = 2
+
+[node name="Intestines" type="Control" parent="UiHandler/Colonies"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Intestines1" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
+visible = false
 offset_left = 156.0
-offset_top = 101.0
+offset_top = 114.0
 offset_right = 172.0
-offset_bottom = 117.0
-texture_normal = ExtResource("23_8orth")
-script = ExtResource("21_cbdxg")
-active = true
+offset_bottom = 130.0
+active = false
+organ = 3
 
-[node name="Colony2" type="TextureButton" parent="UiHandler/Colonies"]
+[node name="Intestines2" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
-layout_mode = 0
-offset_left = 169.0
-offset_top = 120.0
-offset_right = 185.0
-offset_bottom = 136.0
-texture_normal = ExtResource("23_8orth")
-script = ExtResource("21_cbdxg")
+offset_left = 173.0
+offset_top = 118.0
+offset_right = 189.0
+offset_bottom = 134.0
+active = false
+organ = 3
+
+[node name="Intestines3" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
+visible = false
+offset_left = 146.0
+offset_top = 124.0
+offset_right = 162.0
+offset_bottom = 140.0
+active = false
+organ = 3
+
+[node name="Brain" type="Control" parent="UiHandler/Colonies"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="brain1" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+offset_left = 152.0
+offset_top = 32.0
+offset_right = 168.0
+offset_bottom = 48.0
+
+[node name="brain2" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+offset_left = 164.0
+offset_top = 37.0
+offset_right = 180.0
+offset_bottom = 53.0
+
+[node name="brain3" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+offset_left = 160.0
+offset_top = 26.0
+offset_right = 176.0
+offset_bottom = 42.0
 
 [node name="CancerPoints" type="Label" parent="UiHandler"]
 offset_left = 11.0
