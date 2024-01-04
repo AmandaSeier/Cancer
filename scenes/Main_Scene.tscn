@@ -4,28 +4,28 @@
 [ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button sprites/button_group_time_scale.tres" id="2_sj08s"]
 [ext_resource type="Texture2D" uid="uid://cql34cavx4hxx" path="res://sprites/BACKGROUND_stue100%-1.png.png" id="2_uor7j"]
 [ext_resource type="Texture2D" uid="uid://byrs1ycgrd0t1" path="res://sprites/patient character-models/TORSO_anatomy.png" id="3_fka0q"]
-[ext_resource type="Texture2D" uid="uid://0v3lg8t8r7h3" path="res://sprites/New Piskel-1.png (4).png" id="4_res03"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-1.png (4).png" id="4_res03"]
 [ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
-[ext_resource type="Texture2D" uid="uid://6k0phlv6uw38" path="res://sprites/New Piskel-2.png (4).png" id="5_yfmpb"]
-[ext_resource type="Texture2D" uid="uid://0lawamta6urh" path="res://sprites/New Piskel-1.png (1).png" id="8_x3l0u"]
-[ext_resource type="Texture2D" uid="uid://cqrrcugljmqsk" path="res://sprites/New Piskel-2.png (1).png" id="9_tomik"]
-[ext_resource type="Texture2D" uid="uid://71hing1o3upp" path="res://sprites/New Piskel-1.png (2).png" id="10_s8d72"]
-[ext_resource type="Texture2D" uid="uid://b7ggfryor2lps" path="res://sprites/New Piskel-2.png (2).png" id="11_wkcmj"]
-[ext_resource type="Texture2D" uid="uid://bexnruxe75u7" path="res://sprites/New Piskel-1.png (3).png" id="12_dvums"]
-[ext_resource type="Texture2D" uid="uid://c0vej55605ndj" path="res://sprites/New Piskel-2.png (3).png" id="13_2arv3"]
-[ext_resource type="Texture2D" uid="uid://b81qwhwlelqov" path="res://sprites/New Piskel-1.png.png" id="14_dlope"]
-[ext_resource type="Texture2D" uid="uid://bnhgwggushghn" path="res://sprites/New Piskel-2.png.png" id="15_k4u8k"]
-[ext_resource type="Texture2D" uid="uid://degf1fg7eq6hk" path="res://sprites/Health.png" id="16_4gpcf"]
-[ext_resource type="Texture2D" uid="uid://cp5ocwk5y45fy" path="res://sprites/New Piskel-1.png (4)-1.png.png" id="16_jlhdy"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-2.png (4).png" id="5_yfmpb"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-1.png (1).png" id="8_x3l0u"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-2.png (1).png" id="9_tomik"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-1.png (2).png" id="10_s8d72"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-2.png (2).png" id="11_wkcmj"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-1.png (3).png" id="12_dvums"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-2.png (3).png" id="13_2arv3"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-1.png.png" id="14_dlope"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-2.png.png" id="15_k4u8k"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-1.png (4)-1.png.png" id="16_jlhdy"]
 [ext_resource type="Script" path="res://scripts/Healthbar.gd" id="17_p0cqq"]
-[ext_resource type="Texture2D" uid="uid://cs2wg81cpl0q8" path="res://sprites/New Piskel-1.png (4)-2.png.png" id="17_yp6hk"]
+[ext_resource type="Texture2D" path="res://sprites/New Piskel-1.png (4)-2.png.png" id="17_yp6hk"]
+[ext_resource type="Texture2D" uid="uid://ddaboo8pv2h20" path="res://sprites/Health bar/New health 2.webp" id="18_vxggr"]
 [ext_resource type="Script" path="res://scripts/ColonyInfo.gd" id="20_2nwra"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="21_tcjlp"]
 [ext_resource type="PackedScene" uid="uid://tu4wbcgyarvw" path="res://scenes/CancerColony.tscn" id="22_7eyt3"]
 [ext_resource type="Script" path="res://scripts/EconomyHandler.gd" id="25_jl0ia"]
 [ext_resource type="PackedScene" uid="uid://byfliyn7lox7r" path="res://scenes/menus/upgradetree_menu.tscn" id="25_r5fj5"]
 [ext_resource type="PackedScene" uid="uid://ia2lerpknwdq" path="res://scenes/menus/pause_menu.tscn" id="26_15dxr"]
-[ext_resource type="PackedScene" uid="uid://bu5yqconeo332" path="res://scenes/menus/start_menu.tscn" id="27_f7wyd"]
+[ext_resource type="PackedScene" uid="uid://dogs1a7qndlqi" path="res://scenes/menus/start_menu.tscn" id="27_f7wyd"]
 [ext_resource type="PackedScene" uid="uid://bypc7yfbr5hu" path="res://scenes/menus/settings_menu.tscn" id="27_jyjyq"]
 
 [sub_resource type="FontFile" id="FontFile_shofe"]
@@ -1759,11 +1759,10 @@ stretch_mode = 3
 position = Vector2(-1, -1)
 
 [node name="Healthbar" type="Sprite2D" parent="UiHandler/Health"]
-position = Vector2(13, 155)
-scale = Vector2(0.499197, 0.0437501)
-texture = ExtResource("16_4gpcf")
+position = Vector2(14, 155)
+scale = Vector2(10, 0.7)
+texture = ExtResource("18_vxggr")
 centered = false
-offset = Vector2(-80, 0)
 script = ExtResource("17_p0cqq")
 
 [node name="ColonyInfo" type="ColorRect" parent="UiHandler"]
@@ -1807,6 +1806,7 @@ offset_bottom = 40.0
 
 [node name="Heart1" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 165.0
 offset_top = 86.0
 offset_right = 181.0
@@ -1815,6 +1815,7 @@ active = false
 
 [node name="Heart2" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 168.0
 offset_top = 90.0
 offset_right = 184.0
@@ -1829,30 +1830,30 @@ offset_bottom = 40.0
 
 [node name="Lung1" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 145.0
 offset_top = 92.0
 offset_right = 161.0
 offset_bottom = 108.0
 active = false
-organ = 1
 
 [node name="Lung2" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 150.0
 offset_top = 77.0
 offset_right = 166.0
 offset_bottom = 93.0
 active = false
-organ = 1
 
 [node name="Lung3" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 175.0
 offset_top = 81.0
 offset_right = 191.0
 offset_bottom = 97.0
 active = false
-organ = 1
 
 [node name="Liver" type="Control" parent="UiHandler/Colonies"]
 layout_mode = 3
@@ -1862,21 +1863,21 @@ offset_bottom = 40.0
 
 [node name="Liver1" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 147.0
 offset_top = 103.0
 offset_right = 163.0
 offset_bottom = 119.0
 active = false
-organ = 2
 
 [node name="Liver2" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 157.0
 offset_top = 99.0
 offset_right = 173.0
 offset_bottom = 115.0
 active = false
-organ = 2
 
 [node name="Intestines" type="Control" parent="UiHandler/Colonies"]
 layout_mode = 3
@@ -1886,30 +1887,30 @@ offset_bottom = 40.0
 
 [node name="Intestines1" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 156.0
 offset_top = 114.0
 offset_right = 172.0
 offset_bottom = 130.0
 active = false
-organ = 3
 
 [node name="Intestines2" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 173.0
 offset_top = 118.0
 offset_right = 189.0
 offset_bottom = 134.0
 active = false
-organ = 3
 
 [node name="Intestines3" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 146.0
 offset_top = 124.0
 offset_right = 162.0
 offset_bottom = 140.0
 active = false
-organ = 3
 
 [node name="Brain" type="Control" parent="UiHandler/Colonies"]
 layout_mode = 3
@@ -1918,18 +1919,21 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="brain1" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+layout_mode = 0
 offset_left = 152.0
 offset_top = 32.0
 offset_right = 168.0
 offset_bottom = 48.0
 
 [node name="brain2" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+layout_mode = 0
 offset_left = 164.0
 offset_top = 37.0
 offset_right = 180.0
 offset_bottom = 53.0
 
 [node name="brain3" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 26.0
 offset_right = 176.0
