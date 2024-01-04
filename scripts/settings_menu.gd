@@ -11,9 +11,9 @@ func _process(delta):
 	pass
 
 
-func OnBackPressed():
+func _on_back_pressed():
 	self.visible = false
 
 
-func OnMusicToggled(button_pressed):
+func _on_music_toggled(button_pressed):
 	BgMusic.toggleMusic()
