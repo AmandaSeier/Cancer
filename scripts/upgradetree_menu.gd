@@ -27,15 +27,6 @@ func _ready():
 			_BoughtUpgradeTexture(key)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_back_button_pressed():
-	get_tree().change_scene_to_file(StateMachine.previousScene)
-
-
 func _UpdateLabel(button):
 	for item in StateMachine.upgradeUIInfo.values():
 		item["Active"] = false
@@ -54,16 +45,14 @@ func _UpdateLabel(button):
 	
 	
 	_ShowUpgradeDescriptionBox()
-	
+
 
 func _ShowUpgradeDescriptionBox():
 	upgradeDescriptionBox.show()
 
 func _HideUpgradeDescriptionBox():
 	upgradeDescriptionBox.hide()
-	
-	
-	
+
 
 func _TryBuy():
 	for key in StateMachine.upgradeUIInfo.keys():
@@ -72,8 +61,9 @@ func _TryBuy():
 		if item["Active"] and item["State"] == "Unlocked":
 			if item["Price"] > StateMachine.cancerPoints:
 				return
-				
+			
 			item["State"] = "Bought"
+			StateMachine.upgradeHandler.TryUpgrade(key)
 			StateMachine.cancerPoints -= item["Price"]
 			
 			_BoughtUpgradeTexture(key)

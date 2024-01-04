@@ -5,7 +5,7 @@ var pointsPrCancerCell: float = 1.
 
 # arbitrary placeholder variables
 # ------------
-var sizeDifference: int = 100
+var sizeDifference: int = 100 # difference in colony size between payouts.
 # in case of money per payout scaler 
 var moneyScale: float = 1.
 # ------------
@@ -18,9 +18,6 @@ var daysTillPayout: int = payoutDelay
 func _ready():
 	StateMachine.OnNextDay.connect(_CalcCancerPoints)
 
-func _stuff():
-	print("Amount of cancer colonies: ", StateMachine.colonies)
-
 
 func _CalcCancerPoints():
 	if not daysTillPayout == 1:
@@ -29,11 +26,15 @@ func _CalcCancerPoints():
 	daysTillPayout = payoutDelay
 	
 	StateMachine.cancerPoints += pointsPrCancerCell * sizeDifference * moneyScale
-	self.text = "Cancer points: {CP}".format({"CP": StateMachine.cancerPoints})
+	_UpdateCancerPoints()
 
-func _AddCancerPoints():
-	pass
 
 # call on Upgrade-bought
-func _RemoveCancerPoints():
-	pass
+func _RemoveCancerPoints(upgradePrice):
+	StateMachine.cancerPoints -= upgradePrice
+	_UpdateCancerPoints()
+
+
+func _UpdateCancerPoints():
+	self.text = "Cancer points: {CP}".format({"CP": StateMachine.cancerPoints})
+	

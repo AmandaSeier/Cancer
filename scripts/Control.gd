@@ -1,19 +1,17 @@
-extends Control
+extends Node
+
+@onready var colonyGroup := $/root/Node2D/UI_Handler/Colonies
+
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	"""
+	for colony in colonyGroup.get_children():
+		StateMachine.colonies[colony.get_name()] = colonyInfo
+	"""
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_back_pressed():
-	self.visible = false
-
-
-func _on_music_toggled(button_pressed):
-	BgMusic.toggleMusic()

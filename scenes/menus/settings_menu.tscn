@@ -40,11 +40,13 @@ layout_mode = 2
 
 [node name="Music" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("2_l13vl")
 texture_pressed = ExtResource("3_2k7p0")
 
 [node name="Sound" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("4_1rqi7")
 texture_pressed = ExtResource("5_a520h")
 
@@ -54,41 +56,5 @@ texture_normal = ExtResource("6_suypp")
 texture_pressed = ExtResource("7_7tejc")
 stretch_mode = 0
 
-[node name="Background" type="ColorRect" parent="Background"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.188235, 0.188235, 0.188235, 1)
-
-[node name="CenterContainer" type="CenterContainer" parent="Background/Background"]
-custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/Background/CenterContainer"]
-layout_mode = 2
-
-[node name="Music" type="TextureButton" parent="Background/Background/CenterContainer/VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("2_l13vl")
-texture_pressed = ExtResource("3_2k7p0")
-
-[node name="Sound" type="TextureButton" parent="Background/Background/CenterContainer/VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_1rqi7")
-texture_pressed = ExtResource("5_a520h")
-
-[node name="Back" type="TextureButton" parent="Background/Background/CenterContainer/VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("6_suypp")
-texture_pressed = ExtResource("7_7tejc")
-stretch_mode = 0
-
-[connection signal="pressed" from="Background/Background/CenterContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="Background/CenterContainer/VBoxContainer/Music" to="." method="_on_music_toggled"]
+[connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

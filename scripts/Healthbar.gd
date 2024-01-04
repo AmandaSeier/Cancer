@@ -1,8 +1,6 @@
 extends Sprite2D
 
 var _health: int = 100
-var _posX: int = 228
-var _posY: int = 162
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

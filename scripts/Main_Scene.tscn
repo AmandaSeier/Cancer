@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6kv26sqb2udf"]
+[gd_scene load_steps=6 format=3 uid="uid://b1wukkaqi28yj"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
 [ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button sprites/button_group_time_scale.tres" id="2_sj08s"]

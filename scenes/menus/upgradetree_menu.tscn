@@ -176,5 +176,3 @@ offset_right = 145.0
 offset_bottom = 45.0
 texture_normal = ExtResource("11_s04oq")
 texture_pressed = ExtResource("12_ps6xm")
-
-[connection signal="pressed" from="Background/backButton" to="." method="_on_back_button_pressed"]

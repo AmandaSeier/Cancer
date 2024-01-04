@@ -1,8 +1,7 @@
 extends Node
 
 # Global variables
-var previousScene: String = "" 
-var colonies: Array[Colony] # used to refrence colonies outside of script (is in use)
+var colonies: Array[Colony] = [] # used to refrence colonies outside of script (is in use)
 var cancerPoints: float = 100.
 
 
@@ -11,24 +10,25 @@ var _dayTimer: Timer
 var _dayCount: int = 0
 
 var upgradeInfo: Dictionary = {
-	"range": {
+	"range": { # magical game units (aka. mayhaps pixels)
 		"base": 40.,
 		"spread1": 5.,
 		"spread2": 5.,
 		"spread3": 5.,
 		"bigger_colonies": 10.
 	}, # colonyRange
-	"max_size": {
+	"max_size": { # max number of cells in colony
 		"base": 750.,
 		"bigger_colonies": 1500., # duplicate upgrade name means it changes 3 stats
 	}, # max size
-	"grow_chance": {
+	"grow_chance": { # in procent
 		"base": 3.,
 		"larger_blood_supply": 1.,
 		"bigger_colonies": -1.,
+		"Giga Growth": 1000.,
 	}
-	}
-	
+}
+
 var upgradeUIInfo: Dictionary = {
 	"Default": {
 		"Description": "Unlock your first cancer colony.",
@@ -54,12 +54,10 @@ var upgradeUIInfo: Dictionary = {
 		"Price": 10.,
 		"Active": false
 	}
-	}
-
-
-var colonyInfo: Dictionary = {
-	
 }
+
+
+var colonyInfo: Dictionary = {}
 
 var upgradeHandler: UpgradeHandler = UpgradeHandler.new(upgradeInfo)
 
@@ -75,15 +73,10 @@ func _ready():
 	_dayTimer.start()
 	_dayTimer.timeout.connect(_IncementDayCounter)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func _IncementDayCounter():
 	_dayCount += 1
-	print(_dayCount)
-	print(previousScene)
+	print("Day: ", _dayCount)
 	OnNextDay.emit()
 
 
@@ -95,7 +88,12 @@ func ChangeDaySpeed(speed: float):
 	_dayTimer.start()  # restart the timer with the new remaining time
 	_dayTimer.wait_time = 1 / speed  # set the timer to it's actual speed
 
+
 func StopDayCycle():
 	_dayTimer.stop()
+
+
+func ResumeDayCycle():
+	_dayTimer.start()
 
 

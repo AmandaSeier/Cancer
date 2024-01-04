@@ -46,7 +46,7 @@ func GetUpgradeValues() -> Dictionary:
 		outValues[category] = 0.
 		# For each upgrade within the current category 
 		for upgrade in _upgradeValues[category].keys():
-			outValues[category] += _upgradeValues[category][upgrade] * _upgrades[upgrade] as float
+			outValues[category] += _upgradeValues[category][upgrade] * (_upgrades[upgrade] as float)
 	
 	return outValues;
 

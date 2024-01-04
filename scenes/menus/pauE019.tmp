@@ -13,7 +13,8 @@ script/source = "extends Control
 
 
 func _on_resume_button_pressed():
-	self.visible = false
+	get_tree().change_scene_to_file(\"res://scenes/Main_Scene.tscn\")
+	StateMachine.previousScene = \"res://scenes/menus/pause_menu.tscn\"
 
 
 func _on_quit_button_pressed():
@@ -21,7 +22,7 @@ func _on_quit_button_pressed():
 
 
 func _on_settings_button_pressed():
-	get_node(\"SettingsMenu\").visible = true
+	get_tree().change_scene_to_file(\"res://scenes/menus/settings_menu.tscn\")
 "
 
 [node name="PauseMenu" type="Control"]
@@ -45,8 +46,8 @@ color = Color(0.188235, 0.188235, 0.188235, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundStueBlured" type="Sprite2D" parent="Background"]
+position = Vector2(161, 90)
 texture = ExtResource("1_bnmxb")
-offset = Vector2(160, 90)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
