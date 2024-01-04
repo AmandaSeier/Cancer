@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjwfgr4wdo1jo"]
+
+[ext_resource type="Texture2D" uid="uid://dn7bhlq7td0w8" path="res://sprites/1x button-1.png (7)-1.png-1.png-2.png (1).png" id="1_s1tn1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gameover" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s1tn1")
+expand_mode = 3
