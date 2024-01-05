@@ -18,24 +18,31 @@ var upgradeInfo: Dictionary = {
 		"bigger_colonies": 10.
 	}, # colonyRange
 	"max_size": { # max number of cells in colony
-		"base": 750.,
-		"bigger_colonies": 1500., # duplicate upgrade name means it changes 3 stats
+		"base": 1_000_000.,
+		"bigger_colonies": 1_500_000., # duplicate upgrade name means it changes multiple stats
 	}, # max size
-	"grow_multiplier": { # in procent
-		"base": 3.,
-		"larger_blood_supply": 1.,
-		"bigger_colonies": -1.,
-		"Giga Growth": 1.,
-		"cigarettes": 0.2,
-	},
+	"growth_multiplier": {
+		"base": 1.,
+		"larger_blood_supply": .1,
+		"bigger_colonies": -.1,
+		"Giga Growth": .2,
+		"cigarettes": 0.1,
+	}, # growth multiplier
+    "spread_amount": { # Amount of cells colonies spread to adjesant colonies pr. day
+        "base": 0.,
+    }, # spread amount
+    "growth_decrease": { # cells pr. day
+        "base": 1000,
+    }, # growth decrease
 	"damage_multiplyer": {
 		"base": 1.,
 		"cigarettes": .2,
 		"alcohol": .1,
-	},
+	}, # damage multiplier
     "misc.": {
         "brain": 0,
-    },
+        "organ_spread": 0
+    }, # misc
 }
 
 var upgradeUIInfo: Dictionary = {

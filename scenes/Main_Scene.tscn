@@ -1808,6 +1808,7 @@ offset_bottom = 40.0
 
 [node name="Heart1" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 165.0
 offset_top = 86.0
 offset_right = 181.0
@@ -1816,6 +1817,7 @@ active = false
 
 [node name="Heart2" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 168.0
 offset_top = 90.0
 offset_right = 184.0
@@ -1829,16 +1831,17 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Lung1" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
-visible = false
-offset_left = 145.0
-offset_top = 92.0
-offset_right = 161.0
-offset_bottom = 108.0
-active = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.825
+anchor_top = 2.5
+anchor_right = 3.825
+anchor_bottom = 2.5
 organ = 1
 
 [node name="Lung2" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 150.0
 offset_top = 77.0
 offset_right = 166.0
@@ -1848,6 +1851,7 @@ organ = 1
 
 [node name="Lung3" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 175.0
 offset_top = 81.0
 offset_right = 191.0
@@ -1863,6 +1867,7 @@ offset_bottom = 40.0
 
 [node name="Liver1" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 147.0
 offset_top = 103.0
 offset_right = 163.0
@@ -1872,6 +1877,7 @@ organ = 2
 
 [node name="Liver2" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 157.0
 offset_top = 99.0
 offset_right = 173.0
@@ -1887,6 +1893,7 @@ offset_bottom = 40.0
 
 [node name="Intestines1" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 156.0
 offset_top = 114.0
 offset_right = 172.0
@@ -1896,6 +1903,7 @@ organ = 3
 
 [node name="Intestines2" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 173.0
 offset_top = 118.0
 offset_right = 189.0
@@ -1905,6 +1913,7 @@ organ = 3
 
 [node name="Intestines3" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
+layout_mode = 0
 offset_left = 146.0
 offset_top = 124.0
 offset_right = 162.0
@@ -1919,22 +1928,31 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="brain1" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+visible = false
+layout_mode = 0
 offset_left = 152.0
 offset_top = 32.0
 offset_right = 168.0
 offset_bottom = 48.0
+active = false
 
 [node name="brain2" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+visible = false
+layout_mode = 0
 offset_left = 164.0
 offset_top = 37.0
 offset_right = 180.0
 offset_bottom = 53.0
+active = false
 
 [node name="brain3" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+visible = false
+layout_mode = 0
 offset_left = 160.0
 offset_top = 26.0
 offset_right = 176.0
 offset_bottom = 42.0
+active = false
 
 [node name="CancerPoints" type="Label" parent="UiHandler"]
 offset_left = 11.0
