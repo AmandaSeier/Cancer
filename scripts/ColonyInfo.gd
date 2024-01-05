@@ -8,6 +8,9 @@ extends ColorRect
 @onready var colonyGroup := get_node("../Colonies")
 
 
+# var displayColonyAttributes = [Size, GrowthSpeed, OrganDamage]
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     # colonyInfo.hide()
@@ -24,6 +27,7 @@ func _UpdateLabel(colony):
         colonyInfo.show()
     
     colonyInfo.global_position = _CalcOffset(colony)
+    
     
     var labelStr: String = ""
     for key in StateMachine.colonies[colony.get_name()].keys():

@@ -1703,6 +1703,7 @@ script = ExtResource("1_hbd8v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UiHandler/Backgrounds"]
 sprite_frames = SubResource("SpriteFrames_cj5hg")
+frame = 4
 offset = Vector2(160, 90)
 
 [node name="TorsoAnatomy" type="Sprite2D" parent="UiHandler"]
