@@ -1,20 +1,20 @@
 extends ColorRect
 
-@onready var colonyInfo := $/root/Node2D/UI_Handler/ColonyInfo
-@onready var colonyInfoNode := get_node("colo")
-@onready var colonyName := $/root/Node2D/UI_Handler/ColonyInfo/ColonyName
-@onready var colonyInformation := $/root/Node2D/UI_Handler/ColonyInfo/ColonyName/ColonyInformation
+@onready var colonyInfo := get_node(".")
+@onready var colonyName := get_node("ColonyName")
+@onready var colonyInformation := get_node("ColonyName/ColonyInformation")
 
-@onready var colonyGroup := $/root/Node2D/UI_Handler/Colonies
+@onready var colonyGroup := get_node("../Colonies")
+
+
+# var displayColonyAttributes = [Size, GrowthSpeed, OrganDamage]
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
     # colonyInfo.hide()
-    """
     for child in colonyGroup.get_children():
         child.connect("pressed", _UpdateLabel.bind(child))
-    """
 
 
 # Updates the positioning and textual contents of the colony info box.
@@ -25,7 +25,8 @@ func _UpdateLabel(colony):
     else:
         colonyInfo.show()
     
-    colonyInfoNode.global_position = _CalcOffset(colony)
+    colonyInfo.global_position = _CalcOffset(colony)
+    
     
     var labelStr: String = ""
     for key in StateMachine.colonies[colony.get_name()].keys():
@@ -40,7 +41,7 @@ func _UpdateLabel(colony):
 # Calculates the positioning of the colonyinfo box.
 func _CalcOffset(colony) -> Vector2:
     var constOffset 				= Vector2(50, 25)
-    var variableOffset: Vector2 	= colonyInfoNode.size / 2
+    var variableOffset: Vector2 	= colonyInfo.size / 2
     var totalOffset: Vector2
     var colonyPos: Vector2 			= colony.global_position
     var colonySize: Vector2 		= colony.size

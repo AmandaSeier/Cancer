@@ -4,6 +4,7 @@ var _health: float = 100.
 var _dailyDamageTaken: float
 var _dailyHealthGained: float
 
+var frameIndex: int = 0
 
 var _kemoActive: bool = false
 @export var _kemoSandsynlighed: int = 50 # 1/50
@@ -62,4 +63,8 @@ func _calcHealth():
         # call game won scene
     
     
+    # PLEASE FJERN DET HER SENERE DET ER UDELUKKENDE FOR TEST AF BAGGRUNDE
+    if StateMachine._dayCount / 20.0 == frameIndex+1:
+        frameIndex += 1
+        get_node("../../Backgrounds/AnimatedSprite2D").frame = frameIndex
     

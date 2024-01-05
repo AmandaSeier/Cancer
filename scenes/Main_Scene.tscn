@@ -1,14 +1,18 @@
-[gd_scene load_steps=30 format=3 uid="uid://dewp4wiarhp52"]
+[gd_scene load_steps=35 format=3 uid="uid://dewp4wiarhp52"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
 [ext_resource type="Texture2D" uid="uid://iche7snxw465" path="res://sprites/1x button-1.png (22).png" id="2_1ymsy"]
 [ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button sprites/button_group_time_scale.tres" id="2_sj08s"]
-[ext_resource type="Texture2D" uid="uid://cql34cavx4hxx" path="res://sprites/BACKGROUND_stue100%-1.png.png" id="2_uor7j"]
+[ext_resource type="Texture2D" uid="uid://dqphg4dhy7igm" path="res://sprites/background sprites/BACKGROUND_stue100%.png" id="2_vkxts"]
 [ext_resource type="Texture2D" uid="uid://7kvjuaoovqh2" path="res://sprites/1x button-2.png (20).png" id="3_3hfan"]
+[ext_resource type="Texture2D" uid="uid://dbgpl28k4168i" path="res://sprites/background sprites/BACKGROUND_stue75%.png" id="3_4mxwg"]
 [ext_resource type="Texture2D" uid="uid://byrs1ycgrd0t1" path="res://sprites/patient character-models/TORSO_anatomy.png" id="3_fka0q"]
+[ext_resource type="Texture2D" uid="uid://w6h0f55ikrn5" path="res://sprites/background sprites/BACKGROUND_stue50%.png" id="4_pb647"]
 [ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
+[ext_resource type="Texture2D" uid="uid://cs4xa3rxrdh0d" path="res://sprites/background sprites/BACKGROUND_stue25%.png" id="5_4qtq3"]
 [ext_resource type="Texture2D" uid="uid://b00xbgqnrjlh2" path="res://sprites/1x button-1.png (17).png" id="5_hrh14"]
 [ext_resource type="Texture2D" uid="uid://vo52mtqondai" path="res://sprites/1x button-2.png (15).png" id="6_cctsn"]
+[ext_resource type="Texture2D" uid="uid://dxaw24gy3e1i1" path="res://sprites/background sprites/BACKGROUND_stue0%.png" id="6_qn2yb"]
 [ext_resource type="Texture2D" uid="uid://dfrbjjygm87t" path="res://sprites/1x button-1.png (18).png" id="7_kvq4i"]
 [ext_resource type="Texture2D" uid="uid://cd3gvfu1abeh6" path="res://sprites/1x button-1.png (19).png" id="8_udbff"]
 [ext_resource type="Texture2D" uid="uid://ipndbd23jw6a" path="res://sprites/1x button-2.png (16).png" id="8_viyho"]
@@ -28,6 +32,29 @@
 [ext_resource type="PackedScene" uid="uid://ia2lerpknwdq" path="res://scenes/menus/pause_menu.tscn" id="26_15dxr"]
 [ext_resource type="PackedScene" uid="uid://dogs1a7qndlqi" path="res://scenes/menus/start_menu.tscn" id="27_f7wyd"]
 [ext_resource type="PackedScene" uid="uid://bypc7yfbr5hu" path="res://scenes/menus/settings_menu.tscn" id="27_jyjyq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cj5hg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vkxts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4mxwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pb647")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4qtq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qn2yb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 50.0
+}]
 
 [sub_resource type="FontFile" id="FontFile_shofe"]
 cache/0/16/0/ascent = 0.0
@@ -1672,8 +1699,11 @@ position = Vector2(-1, -1)
 editor_description = "En Wrapper rundt om nogle statemachine funktioner der skal kaldes af UI. Så man kan finde dem i editoren "
 script = ExtResource("1_hbd8v")
 
-[node name="Background_Stue" type="Sprite2D" parent="UiHandler"]
-texture = ExtResource("2_uor7j")
+[node name="Backgrounds" type="Node2D" parent="UiHandler"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UiHandler/Backgrounds"]
+sprite_frames = SubResource("SpriteFrames_cj5hg")
+frame = 4
 offset = Vector2(160, 90)
 
 [node name="TorsoAnatomy" type="Sprite2D" parent="UiHandler"]
@@ -1709,7 +1739,6 @@ offset_top = 5.0
 offset_right = 260.0
 offset_bottom = 30.0
 toggle_mode = true
-button_pressed = true
 button_group = ExtResource("2_sj08s")
 texture_normal = ExtResource("5_hrh14")
 texture_pressed = ExtResource("6_cctsn")
@@ -1743,6 +1772,7 @@ offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 30.0
 toggle_mode = true
+keep_pressed_outside = true
 button_group = ExtResource("2_sj08s")
 texture_normal = ExtResource("11_0geu8")
 texture_pressed = ExtResource("12_i8lwu")
@@ -1803,7 +1833,6 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Colony1" type="TextureButton" parent="UiHandler/Colonies"]
-visible = false
 layout_mode = 0
 offset_left = 156.0
 offset_top = 101.0
@@ -1845,10 +1874,6 @@ visible = false
 
 [node name="StartMenu" parent="UiHandler" instance=ExtResource("27_f7wyd")]
 visible = false
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = -1.0
 
 [node name="SettingsMenu" parent="UiHandler" instance=ExtResource("27_jyjyq")]
 visible = false
@@ -1858,5 +1883,5 @@ visible = false
 [connection signal="pressed" from="UiHandler/1x button" to="UiHandler" method="ChangeDaySpeed" binds= [1.0]]
 [connection signal="pressed" from="UiHandler/5x button" to="UiHandler" method="ChangeDaySpeed" binds= [5.0]]
 [connection signal="pressed" from="UiHandler/10x button" to="UiHandler" method="ChangeDaySpeed" binds= [10.0]]
-[connection signal="pressed" from="UiHandler/Pause button" to="UiHandler" method="StopDayCycle"]
+[connection signal="toggled" from="UiHandler/Pause button" to="UiHandler" method="_on_pause_button_toggled"]
 [connection signal="pressed" from="UiHandler/Upgrade" to="UiHandler" method="_on_upgrade_pressed"]
