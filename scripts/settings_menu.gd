@@ -3,17 +3,17 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+    pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+    pass
 
 
 func _on_back_pressed():
-	self.visible = false
+    self.visible = false
 
 
 func _on_music_toggled(button_pressed):
-	BgMusic.toggleMusic()
+    BgMusic.toggleMusic()
