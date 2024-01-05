@@ -1,29 +1,29 @@
 [gd_scene load_steps=35 format=3 uid="uid://dewp4wiarhp52"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
-[ext_resource type="Texture2D" uid="uid://iche7snxw465" path="res://sprites/1x button-1.png (22).png" id="2_1ymsy"]
 [ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button sprites/button_group_time_scale.tres" id="2_sj08s"]
 [ext_resource type="Texture2D" uid="uid://dqphg4dhy7igm" path="res://sprites/background sprites/BACKGROUND_stue100%.png" id="2_vkxts"]
-[ext_resource type="Texture2D" uid="uid://7kvjuaoovqh2" path="res://sprites/1x button-2.png (20).png" id="3_3hfan"]
 [ext_resource type="Texture2D" uid="uid://dbgpl28k4168i" path="res://sprites/background sprites/BACKGROUND_stue75%.png" id="3_4mxwg"]
 [ext_resource type="Texture2D" uid="uid://byrs1ycgrd0t1" path="res://sprites/patient character-models/TORSO_anatomy.png" id="3_fka0q"]
 [ext_resource type="Texture2D" uid="uid://w6h0f55ikrn5" path="res://sprites/background sprites/BACKGROUND_stue50%.png" id="4_pb647"]
 [ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
 [ext_resource type="Texture2D" uid="uid://cs4xa3rxrdh0d" path="res://sprites/background sprites/BACKGROUND_stue25%.png" id="5_4qtq3"]
-[ext_resource type="Texture2D" uid="uid://b00xbgqnrjlh2" path="res://sprites/1x button-1.png (17).png" id="5_hrh14"]
-[ext_resource type="Texture2D" uid="uid://vo52mtqondai" path="res://sprites/1x button-2.png (15).png" id="6_cctsn"]
 [ext_resource type="Texture2D" uid="uid://dxaw24gy3e1i1" path="res://sprites/background sprites/BACKGROUND_stue0%.png" id="6_qn2yb"]
-[ext_resource type="Texture2D" uid="uid://dfrbjjygm87t" path="res://sprites/1x button-1.png (18).png" id="7_kvq4i"]
-[ext_resource type="Texture2D" uid="uid://cd3gvfu1abeh6" path="res://sprites/1x button-1.png (19).png" id="8_udbff"]
-[ext_resource type="Texture2D" uid="uid://ipndbd23jw6a" path="res://sprites/1x button-2.png (16).png" id="8_viyho"]
-[ext_resource type="Texture2D" uid="uid://cycswqypk6xot" path="res://sprites/1x button-2.png (17).png" id="10_130g4"]
-[ext_resource type="Texture2D" uid="uid://df5fa2bh33d4k" path="res://sprites/1x button-1.png (16).png" id="11_0geu8"]
-[ext_resource type="Texture2D" uid="uid://djmb8itju1e5h" path="res://sprites/1x button-2.png (14).png" id="12_i8lwu"]
-[ext_resource type="Texture2D" uid="uid://bxp41tpktk8b1" path="res://sprites/1x button-2.png (19).png" id="14_0ahnw"]
-[ext_resource type="Texture2D" uid="uid://75nymfb6u8l4" path="res://sprites/1x button-1.png (21).png" id="16_bdaav"]
+[ext_resource type="Texture2D" uid="uid://dmi7054j3j2eo" path="res://New Piskel-1.png (4).png" id="8_wab0b"]
+[ext_resource type="Texture2D" uid="uid://ca7toe6qmd1pe" path="res://New Piskel-2.png (4).png" id="9_ybffx"]
+[ext_resource type="Texture2D" uid="uid://b7mtwid5ab5ef" path="res://New Piskel-1.png (1).png" id="12_c6yo8"]
+[ext_resource type="Texture2D" uid="uid://bbd5rf2j6ddl4" path="res://New Piskel-2.png (1).png" id="13_8avvh"]
+[ext_resource type="Texture2D" uid="uid://1bml7tyu7oc0" path="res://New Piskel-1.png (2).png" id="14_7ep6m"]
+[ext_resource type="Texture2D" uid="uid://tog215jfimeq" path="res://New Piskel-2.png (2).png" id="15_wpj5q"]
+[ext_resource type="Texture2D" uid="uid://db7m5rbnr8isx" path="res://New Piskel-1.png (3).png" id="16_bppmb"]
+[ext_resource type="Texture2D" uid="uid://b7kligycqvsjl" path="res://New Piskel-2.png (3).png" id="17_lmshj"]
 [ext_resource type="Script" path="res://scripts/Healthbar.gd" id="17_p0cqq"]
+[ext_resource type="Texture2D" uid="uid://cibgby2mib1hh" path="res://New Piskel-1.png.png" id="18_676pk"]
 [ext_resource type="Texture2D" uid="uid://j6vfmwmbufct" path="res://sprites/Health bar/New health.webp" id="18_dlwf0"]
+[ext_resource type="Texture2D" uid="uid://dps5ngaycy4uc" path="res://New Piskel-2.png.png" id="19_vx2bx"]
 [ext_resource type="Script" path="res://scripts/ColonyInfo.gd" id="20_2nwra"]
+[ext_resource type="Texture2D" uid="uid://c84sipkps4g7y" path="res://New Piskel-1.png (4)-1.png.png" id="20_8wcco"]
+[ext_resource type="Texture2D" uid="uid://lwb7d1j1hweo" path="res://New Piskel-1.png (4)-2.png.png" id="21_ay51r"]
 [ext_resource type="Script" path="res://scripts/cells/Colony.gd" id="21_cbdxg"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="21_tcjlp"]
 [ext_resource type="Texture2D" uid="uid://t3g2y2tddqah" path="res://sprites/game sprites/Cancer-test-Sheet.png" id="23_8orth"]
@@ -1711,12 +1711,12 @@ texture = ExtResource("3_fka0q")
 offset = Vector2(160, 90)
 
 [node name="Pause menu button" type="TextureButton" parent="UiHandler"]
-offset_left = 3.0
-offset_top = 125.0
-offset_right = 51.0
-offset_bottom = 150.0
-texture_normal = ExtResource("2_1ymsy")
-texture_pressed = ExtResource("3_3hfan")
+offset_left = 8.0
+offset_top = 14.0
+offset_right = 36.0
+offset_bottom = 30.0
+texture_normal = ExtResource("8_wab0b")
+texture_pressed = ExtResource("9_ybffx")
 stretch_mode = 3
 script = ExtResource("4_yl7dm")
 
@@ -1734,64 +1734,64 @@ to 15 days pr. second"
 clip_text = true
 
 [node name="1x button" type="TextureButton" parent="UiHandler"]
-offset_left = 235.0
-offset_top = 5.0
-offset_right = 260.0
+offset_left = 256.0
+offset_top = 14.0
+offset_right = 272.0
 offset_bottom = 30.0
 toggle_mode = true
 button_group = ExtResource("2_sj08s")
-texture_normal = ExtResource("5_hrh14")
-texture_pressed = ExtResource("6_cctsn")
+texture_normal = ExtResource("12_c6yo8")
+texture_pressed = ExtResource("13_8avvh")
 stretch_mode = 3
 
 [node name="5x button" type="TextureButton" parent="UiHandler"]
-offset_left = 261.0
-offset_top = 5.0
-offset_right = 286.0
+offset_left = 275.0
+offset_top = 14.0
+offset_right = 291.0
 offset_bottom = 30.0
 toggle_mode = true
 button_group = ExtResource("2_sj08s")
-texture_normal = ExtResource("7_kvq4i")
-texture_pressed = ExtResource("8_viyho")
+texture_normal = ExtResource("14_7ep6m")
+texture_pressed = ExtResource("15_wpj5q")
 stretch_mode = 3
 
 [node name="10x button" type="TextureButton" parent="UiHandler"]
-offset_left = 286.0
-offset_top = 5.0
-offset_right = 316.0
+offset_left = 294.0
+offset_top = 14.0
+offset_right = 310.0
 offset_bottom = 30.0
 toggle_mode = true
 button_group = ExtResource("2_sj08s")
-texture_normal = ExtResource("8_udbff")
-texture_pressed = ExtResource("10_130g4")
+texture_normal = ExtResource("16_bppmb")
+texture_pressed = ExtResource("17_lmshj")
 stretch_mode = 5
 
 [node name="Pause button" type="TextureButton" parent="UiHandler"]
-offset_left = 209.0
-offset_top = 5.0
-offset_right = 234.0
+offset_left = 237.0
+offset_top = 14.0
+offset_right = 253.0
 offset_bottom = 30.0
 toggle_mode = true
 keep_pressed_outside = true
 button_group = ExtResource("2_sj08s")
-texture_normal = ExtResource("11_0geu8")
-texture_pressed = ExtResource("12_i8lwu")
+texture_normal = ExtResource("18_676pk")
+texture_pressed = ExtResource("19_vx2bx")
 stretch_mode = 3
 
 [node name="Upgrade" type="TextureButton" parent="UiHandler"]
-offset_left = 3.0
-offset_top = 152.0
-offset_right = 51.0
-offset_bottom = 177.0
-texture_normal = ExtResource("16_bdaav")
-texture_pressed = ExtResource("14_0ahnw")
+offset_left = 40.0
+offset_top = 14.0
+offset_right = 78.0
+offset_bottom = 30.0
+texture_normal = ExtResource("20_8wcco")
+texture_pressed = ExtResource("21_ay51r")
 stretch_mode = 3
 
 [node name="Health" type="Node2D" parent="UiHandler"]
 position = Vector2(-1, -1)
 
 [node name="Healthbar" type="Sprite2D" parent="UiHandler/Health"]
-position = Vector2(9, 8)
+position = Vector2(8, 157)
 scale = Vector2(10, 0.7)
 texture = ExtResource("18_dlwf0")
 centered = false
@@ -1852,10 +1852,10 @@ texture_normal = ExtResource("23_8orth")
 script = ExtResource("21_cbdxg")
 
 [node name="CancerPoints" type="Label" parent="UiHandler"]
-offset_left = 11.0
-offset_top = 24.0
-offset_right = 51.0
-offset_bottom = 47.0
+offset_left = 7.0
+offset_top = 140.0
+offset_right = 56.0
+offset_bottom = 163.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 1
