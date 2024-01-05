@@ -30,7 +30,7 @@
 [ext_resource type="Script" path="res://scripts/EconomyHandler.gd" id="25_jl0ia"]
 [ext_resource type="PackedScene" uid="uid://byfliyn7lox7r" path="res://scenes/menus/upgradetree_menu.tscn" id="25_r5fj5"]
 [ext_resource type="PackedScene" uid="uid://ia2lerpknwdq" path="res://scenes/menus/pause_menu.tscn" id="26_15dxr"]
-[ext_resource type="PackedScene" uid="uid://dogs1a7qndlqi" path="res://scenes/menus/start_menu.tscn" id="27_f7wyd"]
+[ext_resource type="PackedScene" uid="uid://bu5yqconeo332" path="res://scenes/menus/start_menu.tscn" id="27_f7wyd"]
 [ext_resource type="PackedScene" uid="uid://bypc7yfbr5hu" path="res://scenes/menus/settings_menu.tscn" id="27_jyjyq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cj5hg"]
@@ -1843,12 +1843,11 @@ script = ExtResource("21_cbdxg")
 active = true
 
 [node name="Colony2" type="TextureButton" parent="UiHandler/Colonies"]
-visible = false
 layout_mode = 0
-offset_left = 169.0
-offset_top = 120.0
-offset_right = 185.0
-offset_bottom = 136.0
+offset_left = 176.0
+offset_top = 163.0
+offset_right = 192.0
+offset_bottom = 179.0
 texture_normal = ExtResource("23_8orth")
 script = ExtResource("21_cbdxg")
 
