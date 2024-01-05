@@ -12,9 +12,6 @@ enum Organ {
 @export var active: bool = false
 @export var organ: Organ
 
-const YEARS_TO_GROW: int = 7
-const _DAYS_TO_GROW = YEARS_TO_GROW * 365
-
 var colonySize: int = 0
 const activationSize: int = 300000
 

@@ -17,7 +17,8 @@ func _on_resume_button_pressed():
 
 
 func _on_quit_button_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/menus/start_menu.tscn\")
+	self.visible = false
+	get_node(\"../StartMenu\").visible = true
 
 
 func _on_settings_button_pressed():

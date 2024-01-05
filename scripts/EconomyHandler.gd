@@ -16,25 +16,25 @@ var daysTillPayout: int = payoutDelay
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	StateMachine.OnNextDay.connect(_CalcCancerPoints)
+    StateMachine.OnNextDay.connect(_CalcCancerPoints)
 
 
 func _CalcCancerPoints():
-	if not daysTillPayout == 1:
-		daysTillPayout -= 1
-		return
-	daysTillPayout = payoutDelay
-	
-	StateMachine.cancerPoints += pointsPrCancerCell * sizeDifference * moneyScale
-	_UpdateCancerPoints()
+    if not daysTillPayout == 1:
+        daysTillPayout -= 1
+        return
+    daysTillPayout = payoutDelay
+    
+    StateMachine.cancerPoints += pointsPrCancerCell * sizeDifference * moneyScale
+    _UpdateCancerPoints()
 
 
 # call on Upgrade-bought
 func _RemoveCancerPoints(upgradePrice):
-	StateMachine.cancerPoints -= upgradePrice
-	_UpdateCancerPoints()
+    StateMachine.cancerPoints -= upgradePrice
+    _UpdateCancerPoints()
 
 
 func _UpdateCancerPoints():
-	self.text = "Cancer points: {CP}".format({"CP": StateMachine.cancerPoints})
-	
+    self.text = "Cancer points: {CP}".format({"CP": StateMachine.cancerPoints})
+    
