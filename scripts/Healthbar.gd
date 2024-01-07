@@ -73,5 +73,5 @@ func _calcHealth():
     # PLEASE FJERN DET HER SENERE DET ER UDELUKKENDE FOR TEST AF BAGGRUNDE
     if StateMachine._dayCount / 20.0 == frameIndex+1:
         frameIndex += 1
-        get_node("../../Backgrounds/AnimatedSprite2D").frame = frameIndex
+        get_node("../../Background_Stue").frame = frameIndex
     
