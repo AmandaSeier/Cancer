@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dvmhmflc7ty10"]
+
+[node name="CancerInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 0

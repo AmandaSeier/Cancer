@@ -17,9 +17,9 @@ var colonyInfoText: Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    # colonyInfo.hide()
-    for child in colonyGroup.get_children():
-        child.connect("pressed", _UpdateLabel.bind(child))
+    for organ in colonyGroup.get_children():
+        for child in organ.get_children():
+            child.connect("pressed", _UpdateLabel.bind(child))
 
 
 # Updates the positioning and textual contents of the colony info box.

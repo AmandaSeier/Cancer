@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://ny6jhs2c8k2u" path="res://sprites/background sprites/BACKGROUND Stue75%.png" id="3_8do6h"]
 [ext_resource type="Texture2D" uid="uid://bgmcn40lnseog" path="res://sprites/patient character-sprites/ANATOMY Torso.png" id="3_fka0q"]
 [ext_resource type="Texture2D" uid="uid://b7pke7m5ral4j" path="res://sprites/background sprites/BACKGROUND Stue50%.png.png" id="4_lejsb"]
-[ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
 [ext_resource type="Texture2D" uid="uid://ctyvgs6f3ukgl" path="res://sprites/background sprites/BACKGROUND Stue25%.png.png" id="5_7d3j7"]
 [ext_resource type="Texture2D" uid="uid://2uxlenjmw1dv" path="res://sprites/background sprites/BACKGROUND Stue0%.png" id="6_11l1f"]
 [ext_resource type="Texture2D" uid="uid://bh1chpxdo6cqb" path="res://sprites/button sprites/menu buttons/NORMAL Pause menu.png" id="8_r75uo"]
@@ -31,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://ia2lerpknwdq" path="res://scenes/menus/pause_menu.tscn" id="26_15dxr"]
 [ext_resource type="PackedScene" uid="uid://bu5yqconeo332" path="res://scenes/menus/start_menu.tscn" id="27_f7wyd"]
 [ext_resource type="PackedScene" uid="uid://bypc7yfbr5hu" path="res://scenes/menus/settings_menu.tscn" id="27_jyjyq"]
+[ext_resource type="PackedScene" uid="uid://dvmhmflc7ty10" path="res://scenes/CancerInfo.tscn" id="31_vlkc8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2bgar"]
 animations = [{
@@ -81,7 +81,6 @@ offset_bottom = 18.0
 texture_normal = ExtResource("8_r75uo")
 texture_pressed = ExtResource("9_31fe3")
 stretch_mode = 3
-script = ExtResource("4_yl7dm")
 
 [node name="1x button" type="TextureButton" parent="UiHandler"]
 offset_left = 259.0
@@ -149,6 +148,7 @@ offset = Vector2(-80, 0)
 script = ExtResource("17_p0cqq")
 
 [node name="ColonyInfo" type="ColorRect" parent="UiHandler"]
+visible = false
 offset_left = 63.0
 offset_top = 67.0
 offset_right = 137.0
@@ -187,7 +187,11 @@ sprite_frames = SubResource("SpriteFrames_7twb0")
 [node name="Heart" type="Node" parent="UiHandler/Colonies"]
 
 [node name="Heart1" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
-visible = false
+offset_left = 165.0
+offset_top = 87.0
+offset_right = 181.0
+offset_bottom = 103.0
+active = true
 
 [node name="Heart2" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
 visible = false
@@ -209,7 +213,11 @@ organ = 1
 [node name="Liver" type="Node" parent="UiHandler/Colonies"]
 
 [node name="Liver1" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
-visible = false
+offset_left = 149.0
+offset_top = 102.0
+offset_right = 165.0
+offset_bottom = 118.0
+active = true
 organ = 2
 
 [node name="Liver2" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
@@ -266,6 +274,8 @@ visible = false
 
 [node name="SettingsMenu" parent="UiHandler" instance=ExtResource("27_jyjyq")]
 visible = false
+
+[node name="CancerInfo" parent="UiHandler" instance=ExtResource("31_vlkc8")]
 
 [connection signal="pressed" from="UiHandler/Pause menu button" to="UiHandler" method="_on_pause_menu_button_pressed"]
 [connection signal="pressed" from="UiHandler/1x button" to="UiHandler" method="ChangeDaySpeed" binds= [1.0]]
