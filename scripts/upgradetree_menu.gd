@@ -72,6 +72,6 @@ func _TryBuy():
 
 func _BoughtUpgradeTexture(buttonname: String):
     var path = get_node("Background/" + str(buttonname))
-    path.set_texture_normal(load("res://sprites/upgradetree related/" + buttonname + " - Bought.png"))
+    path.set_texture_normal(load("res://sprites/upgradetree related sprites/bought/" + buttonname))
 
 

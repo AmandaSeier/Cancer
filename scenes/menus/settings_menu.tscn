@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bypc7yfbr5hu"]
 
 [ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_jbtxc"]
-[ext_resource type="Texture2D" uid="uid://c7xl5me7ygiur" path="res://sprites/button sprites/1x button-1.png (4).png" id="2_l13vl"]
-[ext_resource type="Texture2D" uid="uid://bnc1p38l68m1m" path="res://sprites/button sprites/1x button-2.png (4).png" id="3_2k7p0"]
-[ext_resource type="Texture2D" uid="uid://bhd6uki1usn6c" path="res://sprites/button sprites/1x button-1.png (5).png" id="4_1rqi7"]
-[ext_resource type="Texture2D" uid="uid://ej40pact2n7f" path="res://sprites/button sprites/1x button-2.png (5).png" id="5_a520h"]
-[ext_resource type="Texture2D" uid="uid://eprrhcwiba78" path="res://sprites/button sprites/1x button-1.png (7)-1.png-1.png.png" id="6_suypp"]
-[ext_resource type="Texture2D" uid="uid://c4uks8d0kksew" path="res://sprites/button sprites/1x button-1.png (7)-1.png-2.png.png" id="7_7tejc"]
+[ext_resource type="Texture2D" uid="uid://cs77henfqbkwx" path="res://sprites/button sprites/SFX buttons/TOGGLE Music ON.png" id="2_we00s"]
+[ext_resource type="Texture2D" uid="uid://r6xx8w00qkq6" path="res://sprites/button sprites/SFX buttons/TOGGLE Music OFF.png" id="3_7xy06"]
+[ext_resource type="Texture2D" uid="uid://cvkctamt0x1tf" path="res://sprites/button sprites/SFX buttons/TOGGLE Sound ON.png" id="4_ai8ep"]
+[ext_resource type="Texture2D" uid="uid://cvemhapy8d37i" path="res://sprites/button sprites/SFX buttons/TOGGLE Sound OFF.png" id="5_7x74c"]
+[ext_resource type="Texture2D" uid="uid://cc8rb4ajhoei7" path="res://sprites/button sprites/menu buttons/NORMAL Back.png" id="6_xr243"]
+[ext_resource type="Texture2D" uid="uid://cpm508jdmgyli" path="res://sprites/button sprites/menu buttons/PRESSED Back.png" id="7_se5vl"]
 
 [node name="settings_menu" type="Control"]
 layout_mode = 3
@@ -41,19 +41,19 @@ layout_mode = 2
 [node name="Music" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("2_l13vl")
-texture_pressed = ExtResource("3_2k7p0")
+texture_normal = ExtResource("2_we00s")
+texture_pressed = ExtResource("3_7xy06")
 
 [node name="Sound" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("4_1rqi7")
-texture_pressed = ExtResource("5_a520h")
+texture_normal = ExtResource("4_ai8ep")
+texture_pressed = ExtResource("5_7x74c")
 
 [node name="Back" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("6_suypp")
-texture_pressed = ExtResource("7_7tejc")
+texture_normal = ExtResource("6_xr243")
+texture_pressed = ExtResource("7_se5vl")
 stretch_mode = 0
 
 [connection signal="toggled" from="Background/CenterContainer/VBoxContainer/Music" to="." method="_on_music_toggled"]

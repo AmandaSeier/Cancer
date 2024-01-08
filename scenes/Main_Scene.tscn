@@ -1,29 +1,29 @@
-[gd_scene load_steps=33 format=3 uid="uid://dewp4wiarhp52"]
+[gd_scene load_steps=34 format=3 uid="uid://dewp4wiarhp52"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
-[ext_resource type="Texture2D" uid="uid://dqphg4dhy7igm" path="res://sprites/background sprites/BACKGROUND_stue100%.png" id="2_bil64"]
-[ext_resource type="ButtonGroup" uid="uid://cq15tv1x3rmhk" path="res://sprites/button sprites/button_group_time_scale.tres" id="2_sj08s"]
-[ext_resource type="Texture2D" uid="uid://dbgpl28k4168i" path="res://sprites/background sprites/BACKGROUND_stue75%.png" id="3_8do6h"]
-[ext_resource type="Texture2D" uid="uid://byrs1ycgrd0t1" path="res://sprites/patient character-models/TORSO_anatomy.png" id="3_fka0q"]
-[ext_resource type="Texture2D" uid="uid://c84sipkps4g7y" path="res://New Piskel-1.png (4)-1.png.png" id="4_klmx3"]
-[ext_resource type="Texture2D" uid="uid://w6h0f55ikrn5" path="res://sprites/background sprites/BACKGROUND_stue50%.png" id="4_lejsb"]
+[ext_resource type="Texture2D" uid="uid://dejq08lgvl0on" path="res://sprites/background sprites/BACKGROUND Stue100%.png" id="2_bil64"]
+[ext_resource type="Texture2D" uid="uid://ny6jhs2c8k2u" path="res://sprites/background sprites/BACKGROUND Stue75%.png" id="3_8do6h"]
+[ext_resource type="Texture2D" uid="uid://bgmcn40lnseog" path="res://sprites/patient character-sprites/ANATOMY Torso.png" id="3_fka0q"]
+[ext_resource type="Texture2D" uid="uid://b7pke7m5ral4j" path="res://sprites/background sprites/BACKGROUND Stue50%.png.png" id="4_lejsb"]
 [ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
-[ext_resource type="Texture2D" uid="uid://cs4xa3rxrdh0d" path="res://sprites/background sprites/BACKGROUND_stue25%.png" id="5_7d3j7"]
-[ext_resource type="Texture2D" uid="uid://ca7toe6qmd1pe" path="res://New Piskel-2.png (4).png" id="5_jgjbg"]
-[ext_resource type="Texture2D" uid="uid://dxaw24gy3e1i1" path="res://sprites/background sprites/BACKGROUND_stue0%.png" id="6_11l1f"]
-[ext_resource type="Texture2D" uid="uid://b7mtwid5ab5ef" path="res://New Piskel-1.png (1).png" id="8_asfl0"]
-[ext_resource type="Texture2D" uid="uid://dmi7054j3j2eo" path="res://New Piskel-1.png (4).png" id="8_oy7nv"]
-[ext_resource type="Texture2D" uid="uid://bbd5rf2j6ddl4" path="res://New Piskel-2.png (1).png" id="9_nyyp1"]
-[ext_resource type="Texture2D" uid="uid://1bml7tyu7oc0" path="res://New Piskel-1.png (2).png" id="10_w8j5b"]
-[ext_resource type="Texture2D" uid="uid://tog215jfimeq" path="res://New Piskel-2.png (2).png" id="11_a2x4b"]
-[ext_resource type="Texture2D" uid="uid://db7m5rbnr8isx" path="res://New Piskel-1.png (3).png" id="12_b2foc"]
-[ext_resource type="Texture2D" uid="uid://b7kligycqvsjl" path="res://New Piskel-2.png (3).png" id="13_6ys2a"]
-[ext_resource type="Texture2D" uid="uid://cibgby2mib1hh" path="res://New Piskel-1.png.png" id="14_bslfx"]
-[ext_resource type="Texture2D" uid="uid://dps5ngaycy4uc" path="res://New Piskel-2.png.png" id="15_4eyjr"]
-[ext_resource type="Texture2D" uid="uid://degf1fg7eq6hk" path="res://sprites/Health.png" id="16_4gpcf"]
-[ext_resource type="Texture2D" uid="uid://lwb7d1j1hweo" path="res://New Piskel-1.png (4)-2.png.png" id="16_ltjbg"]
+[ext_resource type="Texture2D" uid="uid://ctyvgs6f3ukgl" path="res://sprites/background sprites/BACKGROUND Stue25%.png.png" id="5_7d3j7"]
+[ext_resource type="Texture2D" uid="uid://2uxlenjmw1dv" path="res://sprites/background sprites/BACKGROUND Stue0%.png" id="6_11l1f"]
+[ext_resource type="Texture2D" uid="uid://bh1chpxdo6cqb" path="res://sprites/button sprites/menu buttons/NORMAL Pause menu.png" id="8_r75uo"]
+[ext_resource type="Texture2D" uid="uid://cq70k5h4wspvg" path="res://sprites/button sprites/menu buttons/PRESSED Pause menu.png" id="9_31fe3"]
+[ext_resource type="ButtonGroup" uid="uid://cilyt63asr71p" path="res://Time speed button group.tres" id="11_k5206"]
+[ext_resource type="Texture2D" uid="uid://dephfamr2iaok" path="res://sprites/button sprites/time buttons/PRESSED 1x Speed.png" id="12_lq2aj"]
+[ext_resource type="Texture2D" uid="uid://cjqd2pbfpvy3i" path="res://sprites/button sprites/time buttons/NORMAL 5x Speed.png" id="13_045p2"]
+[ext_resource type="Texture2D" uid="uid://bpqcmgjun72y3" path="res://sprites/button sprites/time buttons/PRESSED 5x Speed.png" id="14_38pjk"]
+[ext_resource type="Texture2D" uid="uid://c054njm6k5806" path="res://sprites/button sprites/time buttons/NORMAL 10x Speed.png" id="15_2dm4q"]
+[ext_resource type="Texture2D" uid="uid://degf1fg7eq6hk" path="res://sprites/healthbar sprites/Health.png" id="16_4gpcf"]
+[ext_resource type="Texture2D" uid="uid://xaam1kg2ibyk" path="res://sprites/button sprites/time buttons/PRESSED 10x Speed.png" id="16_6yn8q"]
+[ext_resource type="Texture2D" uid="uid://cq51x4w3arpbv" path="res://sprites/button sprites/time buttons/NORMAL 1x Speed.png" id="16_ltjbg"]
+[ext_resource type="Texture2D" uid="uid://bpaj7gyujxjq1" path="res://sprites/button sprites/time buttons/NORMAL Pause time.png" id="17_14g4m"]
 [ext_resource type="Script" path="res://scripts/Healthbar.gd" id="17_p0cqq"]
+[ext_resource type="Texture2D" uid="uid://cf6cc8view1wu" path="res://sprites/button sprites/time buttons/PRESSED Pause time.png" id="18_o8d0d"]
+[ext_resource type="Texture2D" uid="uid://qnebdewd7dvb" path="res://sprites/button sprites/menu buttons/NORMAL Upgrade menu .png" id="19_1vmbv"]
 [ext_resource type="Script" path="res://scripts/ColonyInfo.gd" id="20_2nwra"]
+[ext_resource type="Texture2D" uid="uid://b5vnunvdrx2pg" path="res://sprites/button sprites/menu buttons/PRESSED Upgrade menu.png" id="20_hybmq"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="21_tcjlp"]
 [ext_resource type="PackedScene" uid="uid://tu4wbcgyarvw" path="res://scenes/CancerColony.tscn" id="22_7eyt3"]
 [ext_resource type="Script" path="res://scripts/EconomyHandler.gd" id="25_jl0ia"]
@@ -55,6 +55,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_7twb0"]
+
 [node name="MainScene" type="Node2D"]
 position = Vector2(-1, -1)
 
@@ -63,6 +65,7 @@ editor_description = "En Wrapper rundt om nogle statemachine funktioner der skal
 script = ExtResource("1_hbd8v")
 
 [node name="Background_Stue" type="AnimatedSprite2D" parent="UiHandler"]
+scale = Vector2(1, 0.991044)
 sprite_frames = SubResource("SpriteFrames_2bgar")
 offset = Vector2(160, 90)
 
@@ -75,8 +78,8 @@ offset_left = 5.0
 offset_top = 2.0
 offset_right = 33.0
 offset_bottom = 18.0
-texture_normal = ExtResource("8_oy7nv")
-texture_pressed = ExtResource("5_jgjbg")
+texture_normal = ExtResource("8_r75uo")
+texture_pressed = ExtResource("9_31fe3")
 stretch_mode = 3
 script = ExtResource("4_yl7dm")
 
@@ -86,9 +89,9 @@ offset_top = 2.0
 offset_right = 275.0
 offset_bottom = 18.0
 toggle_mode = true
-button_group = ExtResource("2_sj08s")
-texture_normal = ExtResource("8_asfl0")
-texture_pressed = ExtResource("9_nyyp1")
+button_group = ExtResource("11_k5206")
+texture_normal = ExtResource("16_ltjbg")
+texture_pressed = ExtResource("12_lq2aj")
 stretch_mode = 3
 
 [node name="5x button" type="TextureButton" parent="UiHandler"]
@@ -97,9 +100,9 @@ offset_top = 2.0
 offset_right = 295.0
 offset_bottom = 18.0
 toggle_mode = true
-button_group = ExtResource("2_sj08s")
-texture_normal = ExtResource("10_w8j5b")
-texture_pressed = ExtResource("11_a2x4b")
+button_group = ExtResource("11_k5206")
+texture_normal = ExtResource("13_045p2")
+texture_pressed = ExtResource("14_38pjk")
 stretch_mode = 3
 
 [node name="10x button" type="TextureButton" parent="UiHandler"]
@@ -108,9 +111,9 @@ offset_top = 2.0
 offset_right = 315.0
 offset_bottom = 18.0
 toggle_mode = true
-button_group = ExtResource("2_sj08s")
-texture_normal = ExtResource("12_b2foc")
-texture_pressed = ExtResource("13_6ys2a")
+button_group = ExtResource("11_k5206")
+texture_normal = ExtResource("15_2dm4q")
+texture_pressed = ExtResource("16_6yn8q")
 stretch_mode = 5
 
 [node name="Pause button" type="TextureButton" parent="UiHandler"]
@@ -120,9 +123,9 @@ offset_right = 255.0
 offset_bottom = 18.0
 toggle_mode = true
 button_pressed = true
-button_group = ExtResource("2_sj08s")
-texture_normal = ExtResource("14_bslfx")
-texture_pressed = ExtResource("15_4eyjr")
+button_group = ExtResource("11_k5206")
+texture_normal = ExtResource("17_14g4m")
+texture_pressed = ExtResource("18_o8d0d")
 stretch_mode = 3
 
 [node name="Upgrade" type="TextureButton" parent="UiHandler"]
@@ -130,8 +133,8 @@ offset_left = 5.0
 offset_top = 20.0
 offset_right = 43.0
 offset_bottom = 36.0
-texture_normal = ExtResource("4_klmx3")
-texture_pressed = ExtResource("16_ltjbg")
+texture_normal = ExtResource("19_1vmbv")
+texture_pressed = ExtResource("20_hybmq")
 stretch_mode = 3
 
 [node name="Health" type="Node2D" parent="UiHandler"]
@@ -146,7 +149,6 @@ offset = Vector2(-80, 0)
 script = ExtResource("17_p0cqq")
 
 [node name="ColonyInfo" type="ColorRect" parent="UiHandler"]
-visible = false
 offset_left = 63.0
 offset_top = 67.0
 offset_right = 137.0
@@ -165,6 +167,7 @@ offset_right = -3.0
 offset_bottom = -3.0
 theme_override_fonts/font = ExtResource("21_tcjlp")
 theme_override_font_sizes/font_size = 5
+text = "something"
 
 [node name="ColonyInformation" type="Label" parent="UiHandler/ColonyInfo/ColonyName"]
 layout_mode = 1
@@ -175,6 +178,9 @@ anchor_bottom = 1.0
 offset_top = 0.0140004
 theme_override_fonts/font = ExtResource("21_tcjlp")
 theme_override_font_sizes/font_size = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UiHandler/ColonyInfo"]
+sprite_frames = SubResource("SpriteFrames_7twb0")
 
 [node name="Colonies" type="Node" parent="UiHandler"]
 

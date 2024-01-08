@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://byfliyn7lox7r"]
 
 [ext_resource type="Script" path="res://scripts/upgradetree_menu.gd" id="1_0ooo3"]
-[ext_resource type="Texture2D" uid="uid://dbk4yuwp4mu4d" path="res://sprites/upgradetree related/LockedUpgrade.png" id="3_w6yu4"]
-[ext_resource type="Texture2D" uid="uid://eprrhcwiba78" path="res://sprites/button sprites/1x button-1.png (7)-1.png-1.png.png" id="7_tbih3"]
-[ext_resource type="Texture2D" uid="uid://c67s1cacsc4vf" path="res://1x button-1.png (7)-1.png-1.png-1.png.png" id="8_52sn6"]
-[ext_resource type="Texture2D" uid="uid://c4uks8d0kksew" path="res://sprites/button sprites/1x button-1.png (7)-1.png-2.png.png" id="8_i32xd"]
-[ext_resource type="Texture2D" uid="uid://b7sfn8pdgyawv" path="res://1x button-1.png (7)-1.png-1.png-2.png.png" id="9_mwf80"]
+[ext_resource type="Texture2D" uid="uid://cc8rb4ajhoei7" path="res://sprites/button sprites/menu buttons/NORMAL Back.png" id="3_dk5s7"]
+[ext_resource type="Texture2D" uid="uid://bnoe71idkb36i" path="res://sprites/upgradetree related sprites/Locked upgrade.png" id="3_w6yu4"]
+[ext_resource type="Texture2D" uid="uid://cpm508jdmgyli" path="res://sprites/button sprites/menu buttons/PRESSED Back.png" id="4_237om"]
+[ext_resource type="Texture2D" uid="uid://dhu63r5x5v2mv" path="res://sprites/upgradetree related sprites/NORMAL Purchase upgrade.png" id="7_id0an"]
+[ext_resource type="Texture2D" uid="uid://dbc8s4n7ov363" path="res://sprites/upgradetree related sprites/PRESSED Purchase upgrade.png" id="8_dr3e6"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="10_jbs4u"]
-[ext_resource type="Texture2D" uid="uid://dvpw6m3vj0tqs" path="res://sprites/upgradetree related/BorderRing.png" id="13_iijyw"]
+[ext_resource type="Texture2D" uid="uid://dkhdldxqy8gnv" path="res://sprites/upgradetree related sprites/BorderRing.png" id="13_iijyw"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -109,8 +109,8 @@ offset_right = -109.0
 offset_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("7_tbih3")
-texture_pressed = ExtResource("8_i32xd")
+texture_normal = ExtResource("3_dk5s7")
+texture_pressed = ExtResource("4_237om")
 
 [node name="UpgradeDescriptionBox" type="ColorRect" parent="."]
 layout_mode = 1
@@ -170,5 +170,5 @@ offset_left = 122.0
 offset_top = 23.0
 offset_right = 148.0
 offset_bottom = 48.0
-texture_normal = ExtResource("8_52sn6")
-texture_pressed = ExtResource("9_mwf80")
+texture_normal = ExtResource("7_id0an")
+texture_pressed = ExtResource("8_dr3e6")

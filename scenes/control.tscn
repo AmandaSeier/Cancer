@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dxwc2pw3qhjid"]
 
-[ext_resource type="Texture2D" uid="uid://c7xl5me7ygiur" path="res://sprites/button sprites/1x button-1.png (4).png" id="1_yif0p"]
-[ext_resource type="Texture2D" uid="uid://bnc1p38l68m1m" path="res://sprites/button sprites/1x button-2.png (4).png" id="2_3gw1c"]
-[ext_resource type="Texture2D" uid="uid://bhd6uki1usn6c" path="res://sprites/button sprites/1x button-1.png (5).png" id="3_76qgq"]
-[ext_resource type="Texture2D" uid="uid://ej40pact2n7f" path="res://sprites/button sprites/1x button-2.png (5).png" id="4_6ro7i"]
-[ext_resource type="Texture2D" uid="uid://eprrhcwiba78" path="res://sprites/button sprites/1x button-1.png (7)-1.png-1.png.png" id="5_veovw"]
-[ext_resource type="Texture2D" uid="uid://c4uks8d0kksew" path="res://sprites/button sprites/1x button-1.png (7)-1.png-2.png.png" id="6_hir1a"]
+[ext_resource type="Texture2D" path="res://sprites/button sprites/1x button-1.png (4).png" id="1_yif0p"]
+[ext_resource type="Texture2D" path="res://sprites/button sprites/1x button-2.png (4).png" id="2_3gw1c"]
+[ext_resource type="Texture2D" path="res://sprites/button sprites/1x button-1.png (5).png" id="3_76qgq"]
+[ext_resource type="Texture2D" path="res://sprites/button sprites/1x button-2.png (5).png" id="4_6ro7i"]
+[ext_resource type="Texture2D" path="res://sprites/button sprites/1x button-1.png (7)-1.png-1.png.png" id="5_veovw"]
+[ext_resource type="Texture2D" path="res://sprites/button sprites/1x button-1.png (7)-1.png-2.png.png" id="6_hir1a"]
 
 [node name="settings_menu" type="Control"]
 layout_mode = 3
