@@ -1,5 +1,65 @@
-[gd_scene format=3 uid="uid://dvmhmflc7ty10"]
+[gd_scene load_steps=4 format=3 uid="uid://dvmhmflc7ty10"]
+
+[ext_resource type="Texture2D" uid="uid://cb7uvxka8qqsn" path="res://sprites/cancer sprites/CANCER_cell1.png" id="1_5hrk4"]
+[ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="2_fdlgr"]
+[ext_resource type="Texture2D" uid="uid://bh2swm8d7e2uh" path="res://sprites/cancer sprites/HEALTHY_cell1.png" id="3_08xk2"]
 
 [node name="CancerInfo" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="CancerCell1" type="Sprite2D" parent="."]
+position = Vector2(203, 34)
+texture = ExtResource("1_5hrk4")
+
+[node name="CancerCell1 Info" type="Label" parent="CancerCell1"]
+offset_left = 22.0
+offset_top = -18.0
+offset_right = 109.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 3
+text = "Cancer is a disease in which some of the body’s cells grow uncontrollably and can possibly spread to other parts of the body. A tumour contains millions, even billions of cancer cells. Cancer is caused by changes in a body’s genes due to lifestyle, radiation and even genetics. "
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CancerCell Header" type="Label" parent="CancerCell1"]
+offset_left = 22.0
+offset_top = -22.0
+offset_right = 47.0
+offset_bottom = -15.0
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 4
+text = "CANCER CELL"
+
+[node name="HealthyCell1" type="Sprite2D" parent="."]
+position = Vector2(104, 34)
+texture = ExtResource("3_08xk2")
+
+[node name="HealthyCell Info" type="Label" parent="HealthyCell1"]
+offset_left = -96.0
+offset_top = -15.0
+offset_right = -21.0
+offset_bottom = 6.0
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 3
+text = "A healthy cell is created from a process called MITOSIS in which a cell duplicates, dies regularly and the process repeats itself. "
+horizontal_alignment = 3
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="HealthyCell Header" type="Label" parent="HealthyCell1"]
+offset_left = -52.0
+offset_top = -22.0
+offset_right = -22.0
+offset_bottom = -15.0
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 4
+text = "HEALTHY CELL"
