@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvmhmflc7ty10"]
+[gd_scene load_steps=12 format=3 uid="uid://dvmhmflc7ty10"]
 
 [ext_resource type="Texture2D" uid="uid://cb7uvxka8qqsn" path="res://sprites/cancer sprites/CANCER_cell1.png" id="1_5hrk4"]
 [ext_resource type="Script" path="res://scenes/CancerInfo.gd" id="1_5ivfq"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="2_fdlgr"]
 [ext_resource type="Texture2D" uid="uid://bh2swm8d7e2uh" path="res://sprites/cancer sprites/HEALTHY_cell1.png" id="3_08xk2"]
+[ext_resource type="Texture2D" uid="uid://c61ysrtb3jjkb" path="res://sprites/cancer sprites/CANCER_cell2benigntumor.png" id="5_rlqy5"]
+[ext_resource type="Texture2D" uid="uid://dvr3c4y6yy10a" path="res://sprites/cancer sprites/CANCER_malignanttumor.png" id="6_gqrc3"]
+[ext_resource type="Texture2D" uid="uid://ecny46ftkjys" path="res://sprites/cancer sprites/CANCER_sarcoma.png" id="7_31cug"]
+[ext_resource type="Texture2D" uid="uid://bw4dc3k7dai7e" path="res://sprites/cancer sprites/CANCER_leukemia.png" id="7_44dfh"]
+[ext_resource type="Texture2D" uid="uid://od3gmyrsllun" path="res://sprites/cancer sprites/CANCER_melanoma.png" id="8_8y5ew"]
+[ext_resource type="Texture2D" uid="uid://dwdvrvvbg0nas" path="res://sprites/cancer sprites/CANCER_carcinoma.png" id="9_kclo7"]
+[ext_resource type="Texture2D" uid="uid://lrqjgkpxjqjq" path="res://sprites/cancer sprites/CANCER_lymphoma.png" id="11_vtex4"]
 
 [node name="CancerInfo" type="Control"]
 layout_mode = 3
@@ -13,16 +20,16 @@ script = ExtResource("1_5ivfq")
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 320.0
-offset_bottom = 180.0
+offset_bottom = 405.0
 color = Color(0.188235, 0.188235, 0.188235, 1)
 
 [node name="Info" type="Node2D" parent="."]
 
-[node name="CancerCell1" type="Sprite2D" parent="Info"]
-position = Vector2(203, 34)
+[node name="CancerCell" type="Sprite2D" parent="Info"]
+position = Vector2(202, 59)
 texture = ExtResource("1_5hrk4")
 
-[node name="CancerCell1 Info" type="Label" parent="Info/CancerCell1"]
+[node name="CancerCell Info" type="Label" parent="Info/CancerCell"]
 offset_left = 22.0
 offset_top = -18.0
 offset_right = 109.0
@@ -35,21 +42,22 @@ vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="CancerCell Header" type="Label" parent="Info/CancerCell1"]
+[node name="CancerCell Header" type="Label" parent="Info/CancerCell"]
 offset_left = 22.0
 offset_top = -22.0
 offset_right = 47.0
 offset_bottom = -15.0
+theme_override_colors/font_color = Color(0.807843, 0.270588, 0.298039, 1)
 theme_override_fonts/font = ExtResource("2_fdlgr")
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 5
 text = "CANCER CELL"
 metadata/_edit_use_anchors_ = true
 
-[node name="HealthyCell1" type="Sprite2D" parent="Info"]
-position = Vector2(104, 34)
+[node name="HealthyCell" type="Sprite2D" parent="Info"]
+position = Vector2(103, 59)
 texture = ExtResource("3_08xk2")
 
-[node name="HealthyCell Info" type="Label" parent="Info/HealthyCell1"]
+[node name="HealthyCell Info" type="Label" parent="Info/HealthyCell"]
 offset_left = -96.0
 offset_top = -15.0
 offset_right = -21.0
@@ -62,12 +70,252 @@ vertical_alignment = 2
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="HealthyCell Header" type="Label" parent="Info/HealthyCell1"]
-offset_left = -52.0
-offset_top = -22.0
-offset_right = -22.0
-offset_bottom = -15.0
+[node name="HealthyCell Header" type="Label" parent="Info/HealthyCell"]
+offset_left = -60.0
+offset_top = -19.0
+offset_right = -21.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0.482353, 0.678431, 0.713726, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 5
+text = "HEALTHY CELL"
+metadata/_edit_use_anchors_ = true
+
+[node name="BenignTumor" type="Sprite2D" parent="Info"]
+position = Vector2(34, 98)
+texture = ExtResource("5_rlqy5")
+
+[node name="BenignTumor Header" type="Label" parent="Info/BenignTumor"]
+offset_left = 21.0
+offset_top = -16.0
+offset_right = 56.0
+offset_bottom = -9.0
+theme_override_colors/font_color = Color(0.403922, 0.333333, 0.431373, 1)
 theme_override_fonts/font = ExtResource("2_fdlgr")
 theme_override_font_sizes/font_size = 4
-text = "HEALTHY CELL"
+text = "BENIGN TUMOUR"
+
+[node name="HealthyCell Info" type="Label" parent="Info/BenignTumor"]
+anchors_preset = -1
+anchor_left = 1.77333
+anchor_top = 2.71429
+anchor_right = 1.77333
+anchor_bottom = 2.71429
+offset_left = -35.7467
+offset_top = -99.8571
+offset_right = 39.2533
+offset_bottom = -57.8571
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 3
+text = "Tumours are groups of cells that form lumps of tissues that grow throughout the body and behave differently depending on which type. Malignant Tumours are cancerous which means they invade other sites of the body from the primary site via the bloodstream or the lymphatic system."
+horizontal_alignment = 3
+vertical_alignment = 2
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="MalignantTumor" type="Sprite2D" parent="Info"]
+position = Vector2(284, 98)
+texture = ExtResource("6_gqrc3")
+
+[node name="MalignantTumor Header" type="Label" parent="Info/MalignantTumor"]
+offset_left = -64.0
+offset_top = -12.0
+offset_right = -22.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0.541176, 0.278431, 0.278431, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 4
+text = "MALIGNANT TUMOUR"
+horizontal_alignment = 2
+
+[node name="MalignantTumor Info" type="Label" parent="Info/MalignantTumor"]
+anchors_preset = -1
+anchor_left = 2.20496
+anchor_top = 3.05761
+anchor_right = 2.32996
+anchor_bottom = 2.83886
+offset_left = -171.559
+offset_top = -105.844
+offset_right = -96.5586
+offset_bottom = -63.8435
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 3
+text = "Tumours are groups of cells that form lumps of tissues that grow throughout the body and behave differently depending on which type. Benign Tumours are not cancerous and stay in the primary site.  They grow slowly and have distinct borders."
+horizontal_alignment = 3
+vertical_alignment = 2
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TYPES OF CANCER HEADER" type="Label" parent="Info"]
+offset_left = 116.0
+offset_top = 150.0
+offset_right = 216.0
+offset_bottom = 165.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 8
+text = "TYPES OF CANCER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancerSarcoma" type="Sprite2D" parent="Info"]
+position = Vector2(69, 194)
+texture = ExtResource("7_31cug")
+
+[node name="Sarcoma Header" type="Label" parent="Info/CancerSarcoma"]
+offset_left = -16.0
+offset_top = -23.0
+offset_right = 13.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(1, 0.737255, 0.345098, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 4
+text = "SARCOMA"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sarcoma Info" type="Label" parent="Info/CancerSarcoma"]
+anchors_preset = -1
+anchor_right = 0.3125
+offset_left = -39.0
+offset_top = 15.0
+offset_right = 27.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 0.74902, 0.384314, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 3
+text = "Sarcoma is a cancer that develops in the body’s bones and soft tissues. These include lymph vessels, blood vessels, nerves, fat, muscles, tendons, ligaments and cartilage.  "
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CancerMelanoma" type="Sprite2D" parent="Info"]
+position = Vector2(165, 193)
+texture = ExtResource("8_8y5ew")
+
+[node name="Melanoma Header" type="Label" parent="Info/CancerMelanoma"]
+offset_left = -18.0
+offset_top = -23.0
+offset_right = 11.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(0.52549, 0.380392, 0.258824, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 4
+text = "MELANOMA"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Melanoma Info" type="Label" parent="Info/CancerMelanoma"]
+offset_left = -35.0
+offset_top = 18.0
+offset_right = 34.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.52549, 0.380392, 0.258824, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 3
+text = "Melanoma is a cancer that develops in the skin’s melanocytes (cells that make pigment giving the skin colour). This cancer is often caused by overexposure to the UV-rays from for example indoor or outdoor tanning."
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CancerCarcinoma" type="Sprite2D" parent="Info"]
+position = Vector2(255, 194)
+texture = ExtResource("9_kclo7")
+
+[node name="Carcinoma Header" type="Label" parent="Info/CancerCarcinoma"]
+offset_left = -13.0
+offset_top = -23.0
+offset_right = 16.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(0.65098, 0.352941, 0.352941, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 4
+text = "CARCINOMA"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Carcinoma Info" type="Label" parent="Info/CancerCarcinoma"]
+offset_left = -35.0
+offset_top = 17.0
+offset_right = 44.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.686275, 0.360784, 0.360784, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 3
+text = "Carcinoma is a cancer that forms in epithelial tissue. This tissue lines most of the body’s organs; the esophagus, breasts, kidney, liver, lungs, pancreas, neck, head and so on. Lung cancer is considered the most dangerous cancer in men and women."
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CancerLeukemia" type="Sprite2D" parent="Info"]
+position = Vector2(107, 280)
+texture = ExtResource("7_44dfh")
+
+[node name="Leukemia Header" type="Label" parent="Info/CancerLeukemia"]
+offset_left = -15.0
+offset_top = -23.0
+offset_right = 14.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 4
+text = "LEUKEMIA
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Leukemia Info" type="Label" parent="Info/CancerLeukemia"]
+anchors_preset = -1
+anchor_left = -0.09375
+anchor_right = 0.0625
+offset_left = -41.0
+offset_top = 14.0
+offset_right = 40.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 3
+text = "Leukemia is a cancer of the body’s forming tissues - this includes the lymphatic system and the bone marrow. Leukemia is a blood cancer and affects white blood cells. White blood cells are bacteria and virus fighting cells in the body which is crucial for the immune system."
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CancerLymphoma" type="Sprite2D" parent="Info"]
+position = Vector2(219, 279)
+texture = ExtResource("11_vtex4")
+
+[node name="Lymphoma Header" type="Label" parent="Info/CancerLymphoma"]
+offset_left = -14.0
+offset_top = -23.0
+offset_right = 15.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(0.419608, 0.384314, 0.568627, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 4
+text = "LYMPHOMA
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Lymphoma Info" type="Label" parent="Info/CancerLymphoma"]
+anchors_preset = -1
+anchor_right = 0.21875
+offset_left = -43.0
+offset_top = 14.0
+offset_right = 35.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.415686, 0.34902, 0.517647, 1)
+theme_override_fonts/font = ExtResource("2_fdlgr")
+theme_override_font_sizes/font_size = 3
+text = "Lymphoma develops in the cells of the body’s lymph system. The lymph system are made up of lymph vessels that keep body fluid levels in balance against infections. The two main types are Hodgkin lymphoma and non-Hodgkin lymphoma (NHL). Hodgkin lymphoma can often be cured."
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
