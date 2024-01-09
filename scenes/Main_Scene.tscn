@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://b5vnunvdrx2pg" path="res://sprites/button sprites/menu buttons/PRESSED Upgrade menu.png" id="20_hybmq"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="21_tcjlp"]
 [ext_resource type="PackedScene" uid="uid://tu4wbcgyarvw" path="res://scenes/CancerColony.tscn" id="22_7eyt3"]
+[ext_resource type="Texture2D" uid="uid://dt5e4a6ppxgke" path="res://sprites/button sprites/other graphical/Info icon.png" id="24_0wvr0"]
 [ext_resource type="Script" path="res://scripts/EconomyHandler.gd" id="25_jl0ia"]
 [ext_resource type="PackedScene" uid="uid://byfliyn7lox7r" path="res://scenes/menus/upgradetree_menu.tscn" id="25_r5fj5"]
 [ext_resource type="PackedScene" uid="uid://ia2lerpknwdq" path="res://scenes/menus/pause_menu.tscn" id="26_15dxr"]
@@ -54,8 +55,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7twb0"]
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(-1, -1)
@@ -179,8 +178,13 @@ offset_top = 0.0140004
 theme_override_fonts/font = ExtResource("21_tcjlp")
 theme_override_font_sizes/font_size = 3
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UiHandler/ColonyInfo"]
-sprite_frames = SubResource("SpriteFrames_7twb0")
+[node name="InfoIcon" type="TextureButton" parent="UiHandler/ColonyInfo"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 2.0
+offset_right = 72.0
+offset_bottom = 8.0
+texture_normal = ExtResource("24_0wvr0")
 
 [node name="Colonies" type="Node" parent="UiHandler"]
 
@@ -276,6 +280,7 @@ visible = false
 visible = false
 
 [node name="CancerInfo" parent="UiHandler" instance=ExtResource("31_vlkc8")]
+visible = false
 
 [connection signal="pressed" from="UiHandler/Pause menu button" to="UiHandler" method="_on_pause_menu_button_pressed"]
 [connection signal="pressed" from="UiHandler/1x button" to="UiHandler" method="ChangeDaySpeed" binds= [1.0]]
@@ -283,3 +288,4 @@ visible = false
 [connection signal="pressed" from="UiHandler/10x button" to="UiHandler" method="ChangeDaySpeed" binds= [10.0]]
 [connection signal="pressed" from="UiHandler/Pause button" to="UiHandler" method="StopDayCycle"]
 [connection signal="pressed" from="UiHandler/Upgrade" to="UiHandler" method="_on_upgrade_pressed"]
+[connection signal="pressed" from="UiHandler/ColonyInfo/InfoIcon" to="UiHandler" method="_on_info_icon_pressed"]

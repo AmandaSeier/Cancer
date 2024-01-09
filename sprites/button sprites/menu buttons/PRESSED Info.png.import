@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1peescvpl6o6"
-path="res://.godot/imported/Lymph nodes.png-d5649cb11c144edf6a9d3c122b4a1202.ctex"
+uid="uid://du3b8ys7cie21"
+path="res://.godot/imported/PRESSED Info.png-fb2238fa4701e26b9bcef112acca502d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgradetree related sprites/bought/Lymph nodes.png"
-dest_files=["res://.godot/imported/Lymph nodes.png-d5649cb11c144edf6a9d3c122b4a1202.ctex"]
+source_file="res://sprites/button sprites/menu buttons/PRESSED Info.png"
+dest_files=["res://.godot/imported/PRESSED Info.png-fb2238fa4701e26b9bcef112acca502d.ctex"]
 
 [params]
 

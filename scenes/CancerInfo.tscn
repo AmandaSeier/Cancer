@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvmhmflc7ty10"]
+[gd_scene load_steps=14 format=3 uid="uid://dvmhmflc7ty10"]
 
 [ext_resource type="Texture2D" uid="uid://cb7uvxka8qqsn" path="res://sprites/cancer sprites/CANCER_cell1.png" id="1_5hrk4"]
 [ext_resource type="Script" path="res://scenes/CancerInfo.gd" id="1_5ivfq"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://od3gmyrsllun" path="res://sprites/cancer sprites/CANCER_melanoma.png" id="8_8y5ew"]
 [ext_resource type="Texture2D" uid="uid://dwdvrvvbg0nas" path="res://sprites/cancer sprites/CANCER_carcinoma.png" id="9_kclo7"]
 [ext_resource type="Texture2D" uid="uid://lrqjgkpxjqjq" path="res://sprites/cancer sprites/CANCER_lymphoma.png" id="11_vtex4"]
+[ext_resource type="Texture2D" uid="uid://cc8rb4ajhoei7" path="res://sprites/button sprites/menu buttons/NORMAL Back.png" id="12_bg2gx"]
+[ext_resource type="Texture2D" uid="uid://cpm508jdmgyli" path="res://sprites/button sprites/menu buttons/PRESSED Back.png" id="13_prrtk"]
 
 [node name="CancerInfo" type="Control"]
 layout_mode = 3
@@ -25,8 +27,23 @@ color = Color(0.188235, 0.188235, 0.188235, 1)
 
 [node name="Info" type="Node2D" parent="."]
 
+[node name="backButton" type="TextureButton" parent="Info"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 51.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("12_bg2gx")
+texture_pressed = ExtResource("13_prrtk")
+
 [node name="CancerCell" type="Sprite2D" parent="Info"]
-position = Vector2(202, 59)
+position = Vector2(200, 60)
 texture = ExtResource("1_5hrk4")
 
 [node name="CancerCell Info" type="Label" parent="Info/CancerCell"]
@@ -44,9 +61,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CancerCell Header" type="Label" parent="Info/CancerCell"]
 offset_left = 22.0
-offset_top = -22.0
-offset_right = 47.0
-offset_bottom = -15.0
+offset_top = -23.0
+offset_right = 59.0
+offset_bottom = -14.0
 theme_override_colors/font_color = Color(0.807843, 0.270588, 0.298039, 1)
 theme_override_fonts/font = ExtResource("2_fdlgr")
 theme_override_font_sizes/font_size = 5
@@ -54,7 +71,7 @@ text = "CANCER CELL"
 metadata/_edit_use_anchors_ = true
 
 [node name="HealthyCell" type="Sprite2D" parent="Info"]
-position = Vector2(103, 59)
+position = Vector2(120, 60)
 texture = ExtResource("3_08xk2")
 
 [node name="HealthyCell Info" type="Label" parent="Info/HealthyCell"]
@@ -82,7 +99,7 @@ text = "HEALTHY CELL"
 metadata/_edit_use_anchors_ = true
 
 [node name="BenignTumor" type="Sprite2D" parent="Info"]
-position = Vector2(34, 98)
+position = Vector2(35, 110)
 texture = ExtResource("5_rlqy5")
 
 [node name="BenignTumor Header" type="Label" parent="Info/BenignTumor"]
@@ -114,7 +131,7 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="MalignantTumor" type="Sprite2D" parent="Info"]
-position = Vector2(284, 98)
+position = Vector2(285, 110)
 texture = ExtResource("6_gqrc3")
 
 [node name="MalignantTumor Header" type="Label" parent="Info/MalignantTumor"]
@@ -131,7 +148,7 @@ horizontal_alignment = 2
 [node name="MalignantTumor Info" type="Label" parent="Info/MalignantTumor"]
 anchors_preset = -1
 anchor_left = 2.20496
-anchor_top = 3.05761
+anchor_top = 2.83886
 anchor_right = 2.32996
 anchor_bottom = 2.83886
 offset_left = -171.559
@@ -159,7 +176,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CancerSarcoma" type="Sprite2D" parent="Info"]
-position = Vector2(69, 194)
+position = Vector2(54, 195)
 texture = ExtResource("7_31cug")
 
 [node name="Sarcoma Header" type="Label" parent="Info/CancerSarcoma"]
@@ -192,7 +209,7 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="CancerMelanoma" type="Sprite2D" parent="Info"]
-position = Vector2(165, 193)
+position = Vector2(160, 195)
 texture = ExtResource("8_8y5ew")
 
 [node name="Melanoma Header" type="Label" parent="Info/CancerMelanoma"]
@@ -223,7 +240,7 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="CancerCarcinoma" type="Sprite2D" parent="Info"]
-position = Vector2(255, 194)
+position = Vector2(266, 195)
 texture = ExtResource("9_kclo7")
 
 [node name="Carcinoma Header" type="Label" parent="Info/CancerCarcinoma"]
@@ -254,7 +271,7 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="CancerLeukemia" type="Sprite2D" parent="Info"]
-position = Vector2(107, 280)
+position = Vector2(106, 280)
 texture = ExtResource("7_44dfh")
 
 [node name="Leukemia Header" type="Label" parent="Info/CancerLeukemia"]
@@ -287,7 +304,7 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="CancerLymphoma" type="Sprite2D" parent="Info"]
-position = Vector2(219, 279)
+position = Vector2(214, 280)
 texture = ExtResource("11_vtex4")
 
 [node name="Lymphoma Header" type="Label" parent="Info/CancerLymphoma"]
@@ -319,3 +336,5 @@ horizontal_alignment = 3
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Info/backButton" to="." method="_on_back_button_pressed"]

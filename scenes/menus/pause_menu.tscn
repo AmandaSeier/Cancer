@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ia2lerpknwdq"]
+[gd_scene load_steps=10 format=3 uid="uid://ia2lerpknwdq"]
 
 [ext_resource type="Texture2D" uid="uid://cou8ort0e2k0j" path="res://sprites/button sprites/menu buttons/NORMAL Resume.png" id="1_rdw0h"]
 [ext_resource type="Texture2D" uid="uid://doievmw252s7k" path="res://sprites/button sprites/menu buttons/PRESSED Resume.png" id="2_6ms5a"]
 [ext_resource type="Texture2D" uid="uid://cud01rpvy57fy" path="res://sprites/button sprites/menu buttons/NORMAL Settings.png" id="2_rqavt"]
 [ext_resource type="Texture2D" uid="uid://dxjehcyt5ojh" path="res://sprites/button sprites/menu buttons/PRESSED Settings.png" id="3_aic38"]
+[ext_resource type="Texture2D" uid="uid://b628q853yh8o2" path="res://sprites/button sprites/menu buttons/NORMAL Info.png" id="3_eacme"]
 [ext_resource type="Texture2D" uid="uid://7ic8myp707np" path="res://sprites/button sprites/menu buttons/NORMAL Quit.png" id="4_eafyv"]
+[ext_resource type="Texture2D" uid="uid://du3b8ys7cie21" path="res://sprites/button sprites/menu buttons/PRESSED Info.png" id="4_jq33o"]
 [ext_resource type="Texture2D" uid="uid://b6jcnojuw13h8" path="res://sprites/button sprites/menu buttons/PRESSED Quit.png" id="5_7m220"]
 
 [sub_resource type="GDScript" id="GDScript_65wvy"]
@@ -22,6 +24,10 @@ func _on_quit_button_pressed():
 
 func _on_settings_button_pressed():
     get_node(\"../SettingsMenu\").visible = true
+
+
+func _on_info_button_pressed():
+    get_node(\"../CancerInfo\").visible = true
 "
 
 [node name="PauseMenu" type="Control"]
@@ -63,6 +69,11 @@ layout_mode = 2
 texture_normal = ExtResource("1_rdw0h")
 texture_pressed = ExtResource("2_6ms5a")
 
+[node name="Info button" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_eacme")
+texture_pressed = ExtResource("4_jq33o")
+
 [node name="Settings button" type="TextureButton" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_rqavt")
@@ -74,5 +85,6 @@ texture_normal = ExtResource("4_eafyv")
 texture_pressed = ExtResource("5_7m220")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Info button" to="." method="_on_info_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Settings button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit button" to="." method="_on_quit_button_pressed"]

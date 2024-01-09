@@ -4,7 +4,7 @@ var scrollIndex: int = 0
 var scrollBy: int = 10
 
 var initialPos: int = 0
-var maxScroll: int = -100 # Subtracting from the position moves the content up.
+var maxScroll: int = -175 # Subtracting from the position moves the content up.
 
 
 func _ready():
@@ -37,3 +37,7 @@ func _input(event):
 
 func _updateInfoNodePos(offset: int):
     get_node("Info").global_position[1] += offset
+
+
+func _on_back_button_pressed():
+    self.visible = false
