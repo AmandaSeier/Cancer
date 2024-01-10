@@ -1,11 +1,13 @@
 extends Control
 
-@onready var upgradeTitle := $UpgradeDescriptionBox/upgradeTitle
-@onready var upgradeDescription := $UpgradeDescriptionBox/upgradeDescription
-@onready var buyButton := $UpgradeDescriptionBox/buyButton
-@onready var upgradeDescriptionBox := $UpgradeDescriptionBox
-@onready var borderRing := $UpgradeDescriptionBox/BorderRing
-@onready var backButton := $Background/backButton
+@onready var upgradeDescriptionBox := get_node("UpgradeDescriptionBox")
+@onready var upgradeTitle := get_node("UpgradeDescriptionBox/upgradeTitle")
+@onready var upgradeDescription := get_node("UpgradeDescriptionBox/upgradeDescription")
+@onready var buyButton := get_node("UpgradeDescriptionBox/buyButton")
+@onready var upgradeCost := get_node("UpgradeDescriptionBox/buyButton/upgradeCost")
+@onready var borderRing := get_node("UpgradeDescriptionBox/BorderRing")
+
+@onready var backButton := get_node("Background/backButton")
 
 var highlightedUpgrade = ""
 
@@ -33,15 +35,16 @@ func _UpdateLabel(button):
     _UpdateBorderRingPos(button)
     _UpdateBuyButton(button)
         
+    upgradeDescriptionBox.show()
+    
     if StateMachine.upgradeUIInfo[button]["State"] == "Locked":
         upgradeTitle.text = "Locked"
         upgradeDescription.text = "Locked"
-        upgradeDescriptionBox.show()
         return
+    
     upgradeTitle.text = str(button)
     upgradeDescription.text = str(StateMachine.upgradeUIInfo[button]["Description"])
-    
-    upgradeDescriptionBox.show()
+    upgradeCost.text = "Cost: " + str(StateMachine.upgradeUIInfo[button]["Cost"])
 
 
 func _TryBuy():
@@ -49,12 +52,12 @@ func _TryBuy():
         var item = StateMachine.upgradeUIInfo[key]
         
         if item["Active"] and item["State"] == "Unlocked":
-            if item["Price"] > StateMachine.cancerPoints:
+            if item["Cost"] > StateMachine.cancerPoints:
                 return
             
             item["State"] = "Bought"
             StateMachine.upgradeHandler.TryUpgrade(key)
-            StateMachine.cancerPoints -= item["Price"]
+            StateMachine.cancerPoints -= item["Cost"]
             
             _BoughtUpgradeTexture(key)
             return
