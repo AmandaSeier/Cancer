@@ -12,9 +12,6 @@ var _dayCount: int = 0
 var upgradeInfo: Dictionary = {
     "range": { # magical game units (aka. mayhaps pixels)
         "base": 40.,
-        "spread1": 5.,
-        "spread2": 5.,
-        "spread3": 5.,
         "bigger_colonies": 10.
     }, # colonyRange
     "max_size": { # max number of cells in colony
@@ -23,24 +20,19 @@ var upgradeInfo: Dictionary = {
     }, # max size
     "growth_multiplier": {
         "base": 1.,
-        "larger_blood_supply": .1,
         "bigger_colonies": -.1,
-        "Giga Growth": .2,
-        "cigarettes": 0.1,
+        "giga_growth": .2,
     }, # growth multiplier
     "spread_amount": { # Amount of cells colonies spread to adjesant colonies pr. day
-        "base": 0.,
+        "base": 5000.,
     }, # spread amount
     "growth_decrease": { # cells pr. day
         "base": 1000,
     }, # growth decrease
     "damage_multiplyer": {
         "base": 1.,
-        "cigarettes": .2,
-        "alcohol": .1,
     }, # damage multiplier
     "misc.": {
-        "brain": 0,
         "organ_spread": 0
     }, # misc
 }

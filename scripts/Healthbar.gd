@@ -27,10 +27,10 @@ var cancerFound := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    StateMachine.OnNextDay.connect(_healthCalculations)	
-    
-    
-func _healthCalculations():
+    StateMachine.OnNextDay.connect(_HealthCalculations)	
+
+
+func _HealthCalculations():
     _ActivateHealthEvents()
     _GetTreatment()
     _UpdateHealth()
