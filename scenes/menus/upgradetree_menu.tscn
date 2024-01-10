@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://byfliyn7lox7r"]
+[gd_scene load_steps=10 format=3 uid="uid://byfliyn7lox7r"]
 
 [ext_resource type="Script" path="res://scripts/upgradetree_menu.gd" id="1_0ooo3"]
-[ext_resource type="Texture2D" uid="uid://cs8iqx80t3ppo" path="res://sprites/upgradetree related sprites/bought/Default.png" id="2_gg8c1"]
+[ext_resource type="Texture2D" uid="uid://ccbqpkf5stiwp" path="res://sprites/upgradetree related sprites/unbought/Default.png" id="2_x4hnj"]
 [ext_resource type="Texture2D" uid="uid://cc8rb4ajhoei7" path="res://sprites/button sprites/menu buttons/NORMAL Back.png" id="3_dk5s7"]
 [ext_resource type="Texture2D" uid="uid://bnoe71idkb36i" path="res://sprites/upgradetree related sprites/Locked upgrade.png" id="3_w6yu4"]
-[ext_resource type="Texture2D" uid="uid://drhpquvc4oahj" path="res://sprites/upgradetree related sprites/unbought/Giga Growth.png" id="3_wk1ik"]
 [ext_resource type="Texture2D" uid="uid://cpm508jdmgyli" path="res://sprites/button sprites/menu buttons/PRESSED Back.png" id="4_237om"]
 [ext_resource type="Texture2D" uid="uid://dhu63r5x5v2mv" path="res://sprites/upgradetree related sprites/NORMAL Purchase upgrade.png" id="7_id0an"]
 [ext_resource type="Texture2D" uid="uid://dbc8s4n7ov363" path="res://sprites/upgradetree related sprites/PRESSED Purchase upgrade.png" id="8_dr3e6"]
@@ -51,7 +50,7 @@ offset_right = 16.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_gg8c1")
+texture_normal = ExtResource("2_x4hnj")
 
 [node name="Giga Growth" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -66,7 +65,7 @@ offset_right = 62.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_wk1ik")
+texture_normal = ExtResource("3_w6yu4")
 
 [node name="Medical Resistance" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -167,7 +166,6 @@ theme_override_fonts/font = ExtResource("10_jbs4u")
 theme_override_font_sizes/font_size = 7
 
 [node name="buyButton" type="TextureButton" parent="UpgradeDescriptionBox"]
-visible = false
 layout_mode = 0
 offset_left = 122.0
 offset_top = 23.0
@@ -175,3 +173,11 @@ offset_right = 148.0
 offset_bottom = 48.0
 texture_normal = ExtResource("7_id0an")
 texture_pressed = ExtResource("8_dr3e6")
+
+[node name="upgradeCost" type="Label" parent="UpgradeDescriptionBox/buyButton"]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = 3.0
+theme_override_fonts/font = ExtResource("10_jbs4u")
+theme_override_font_sizes/font_size = 5

@@ -40,26 +40,26 @@ var upgradeInfo: Dictionary = {
 var upgradeUIInfo: Dictionary = {
     "Default": {
         "Description": "Unlock your first cancer colony.",
-        "State": "Bought", # Three states: Locked, unlocked and bought.
-        "Price": 0.,
+        "State": "Unlocked", # Three states: Locked, unlocked and bought.
+        "Cost": 0.,
         "Active": false
     },
     "Giga Growth": {
         "Description": "Increase the growth-rate of your cancer by xxx.",
-        "State": "Unlocked",
-        "Price": 10.,
+        "State": "Locked",
+        "Cost": 10.,
         "Active": false
     },
     "Lymph Nodes": {
         "Description": "Gain access to the lymph nodes.",
         "State": "Locked",
-        "Price": 10.,
+        "Cost": 10.,
         "Active": false
     },
     "Medical Resistance": {
         "Description": "Become more resistant to cancer treatment.",
         "State": "Locked",
-        "Price": 10.,
+        "Cost": 10.,
         "Active": false
     }
 }
