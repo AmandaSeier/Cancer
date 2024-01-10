@@ -1,19 +1,29 @@
 extends Sprite2D
 
-var _health: float = 100.
-var _dailyHealthGained: float
+var _health := 100.
 
-var frameIndex: int = 0
+var frameIndex := 0
 
-var _kemoActive: bool = false
-@export var _kemoSandsynlighed := 2.0 # 1/50
-@export var _kemoDageImellemEvents: int = 7 # 1 gang om ugen
-@export var _kemoHealth: float = 5
-@export var _kemoTotalEvents: int = 10
-var _kemoFinishedEvents: int = 0
+@export var _discoverCancerCellNum := 2_000_000
 
-const damagePrDay: float = 0.2
+# Kemo
+@export var _cemoChance := 2. # in percent
+@export var _cemoCooldownDays := 7 # 1 gang om ugen
+@export var _cemoCancerDamage := 500_000
+@export var _cemoCancerDmg := 250_000
+@export var _cemoDamage := 2.
+@export var _cemoTotalEvents := 10
+var _cemoActive := false
+var _cemoFinishedEvents := 0
 
+# Operation
+@export var _operationCellNum := 3_000_000
+@export var _operationCooldownDays := 60
+var _operationDays := 0
+
+const damagePrDay := 0.2
+var rng := RandomNumberGenerator.new()
+var cancerFound := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,57 +31,79 @@ func _ready():
     
     
 func _healthCalculations():
-    _randomPatientMoves()
-    _calcHealthGained()
-    _calcHealth()
+    _ActivateHealthEvents()
+    _GetTreatment()
+    _UpdateHealth()
 
 
-func _randomPatientMoves():
-    var number = RandomNumberGenerator.new()
-    if !_kemoActive:
-        if number.rand_range(100) <= _kemoSandsynlighed:
-            _kemoActive = true
-            print("Patienten får nu kemo behandling en gang om ugen")
+func _ActivateHealthEvents():
+    if not cancerFound:
+        var num := rng.randf_range(0, 100)
+        if num <= StateMachine.GetTotalNumCells() / (_discoverCancerCellNum as float):
+            cancerFound = true
+            print("HE KNOWS PANIIIC!!")
+        return
+
+    var num := rng.randf_range(0, 100)
+    # random events
+    if num <= _cemoChance:
+        _cemoActive = true
+        print("He will now get cemo")
 
 
-func _calcHealthGained():
-    _dailyHealthGained = 0
-    if not _kemoActive:
+func _GetCemo() -> void:
+    if not _cemoActive:
         return
         
-    if not _kemoFinishedEvents < _kemoTotalEvents:
-        _kemoFinishedEvents = 0
-        _kemoActive = false
+    if not _cemoFinishedEvents < _cemoTotalEvents:
+        _cemoFinishedEvents = 0
+        _cemoActive = false
         return
     
-    if StateMachine._dayCount % _kemoDageImellemEvents != 0:
+    if StateMachine.GetCurrentDay() % _cemoCooldownDays != 0:
         return
         
-    _dailyHealthGained = _kemoHealth
-    print("Patienten har nu været til kemo behandling")
-    _kemoFinishedEvents += 1
+    for colony in StateMachine.colonies:
+        colony.DamageColony(_cemoCancerDamage + randi_range(-_cemoCancerDmg, _cemoCancerDmg))
+
+    _health -= _cemoDamage
+
+    _cemoFinishedEvents += 1
+    print("Finished cemo event number ", _cemoFinishedEvents, " out of ", _cemoTotalEvents)
 
 
-func _calcHealth():
+func _GetTreatment() -> void:
+    if not cancerFound:
+        return
+
+    _GetCemo()
+
+    # operation
+    if StateMachine.GetTotalNumCells() > _operationCellNum:
+        if _operationDays >= _operationCooldownDays:
+            StateMachine.GetActiveColonies().pick_random().KillColony()
+            _operationDays = 0
+        else:
+            _operationDays += 1
+
+
+func _UpdateHealth():
     var dailyDamageTaken: float = damagePrDay * StateMachine.upgradeHandler.GetUpgradeValues()["damage_multiplyer"]
     
     if _health > 0:
         # Update the health variable 
         _health -= dailyDamageTaken
-        _health += _dailyHealthGained
         print("Health: ", _health)
         scale.x = _health * 0.1 # scale.x = 10 is the same as 100% health
-        if _health >= 100:
-            print("GAME OVER")
-            # call game over scene
     else:
         _health = 0
         print("Yaiii you won")
         # call game won scene
-    
-    
+
+    #######################################################################
     # PLEASE FJERN DET HER SENERE DET ER UDELUKKENDE FOR TEST AF BAGGRUNDE
     if StateMachine._dayCount / 20.0 == frameIndex+1:
         frameIndex += 1
         get_node("../../Background_Stue").frame = frameIndex
-    
+    #######################################################################
+

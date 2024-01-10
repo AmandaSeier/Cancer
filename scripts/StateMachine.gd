@@ -105,6 +105,27 @@ func ChangeDaySpeed(speed: float):
     _dayTimer.wait_time = 1 / speed  # set the timer to it's actual speed
 
 
+func GetCurrentDay() -> int:
+    return _dayCount
+
+
+func GetTotalNumCells() -> int:
+    var numCells := 0
+    for colony in colonies:
+        numCells += colony.colonySize
+
+    return numCells
+
+
+func GetActiveColonies() -> Array[Colony]:
+    var activeColonies: Array[Colony] = []
+    for colony in colonies:
+        if colony.active:
+            activeColonies.append(colony)
+
+    return activeColonies
+
+
 func StopDayCycle():
     _dayTimer.stop()
 
