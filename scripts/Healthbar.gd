@@ -6,7 +6,7 @@ var _dailyHealthGained: float
 var frameIndex: int = 0
 
 var _kemoActive: bool = false
-@export var _kemoSandsynlighed: int = 50 # 1/50
+@export var _kemoSandsynlighed := 2.0 # 1/50
 @export var _kemoDageImellemEvents: int = 7 # 1 gang om ugen
 @export var _kemoHealth: float = 5
 @export var _kemoTotalEvents: int = 10
@@ -29,10 +29,10 @@ func _healthCalculations():
 func _randomPatientMoves():
     var number = RandomNumberGenerator.new()
     if !_kemoActive:
-        if number.randi_range(0,_kemoSandsynlighed) == 1:
-            # activate kemo if random number equals 1
+        if number.rand_range(100) <= _kemoSandsynlighed:
             _kemoActive = true
             print("Patienten får nu kemo behandling en gang om ugen")
+
 
 func _calcHealthGained():
     _dailyHealthGained = 0
