@@ -75,10 +75,3 @@ func _stopAndReset(fadeIn: bool, fadeOut: bool) -> void:
         fadeOutTimer.stop()
         fadeOutCount = 100
 
-
-func _on_button_pressed() -> void:
-    _fadeOut()
-
-
-func _on_button_2_pressed() -> void:
-    _fadeIn()
