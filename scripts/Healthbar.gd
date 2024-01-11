@@ -119,7 +119,7 @@ func _UpdateHealth() -> void:
         _health -= dailyDamageTaken
         # print("Health: ", _health)
         scale.x = _health * 0.048 # scale.x = 4.8 is the same as 100% health
-        if _health >= 100:
+        if StateMachine.GetActiveColonies().size() == 0:
             print("GAME OVER")
             # call game over scene
             StateMachine.StopDayCycle()
