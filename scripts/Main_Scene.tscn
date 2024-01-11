@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxowsm8n2o27g"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
-[ext_resource type="ButtonGroup" path="res://Time speed button group.tres" id="2_sj08s"]
+[ext_resource type="ButtonGroup" uid="uid://bclyhusuyshad" path="res://Time speed button group.tres" id="2_sj08s"]
 [ext_resource type="Script" path="res://scripts/Pause menu button.gd" id="4_yl7dm"]
 [ext_resource type="Script" path="res://scripts/Healthbar.gd" id="17_p0cqq"]
 

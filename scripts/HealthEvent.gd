@@ -1,6 +1,7 @@
 extends ColorRect
+class_name HealthEvent
 
-@onready var HealthEventTitle := get_node("HealthEventTitle")
+@onready var HealthEventTitle: Label = get_node("HealthEventTitle")
 
 var colorValBox: float = 31. / 255.
 var colorValText: float = 1
@@ -9,10 +10,10 @@ var fadeInTimer: Timer
 var fadeOutTimer: Timer
 var fadeOutCount: float = 100
 var fadeInCount: float = 0
-var fadeBy: float = 5
+const fadeBy: float = 5
 
 
-func _ready():
+func _ready() -> void:
     fadeInTimer = Timer.new()
     fadeOutTimer = Timer.new()
     fadeInTimer.wait_time = 0.01
@@ -21,9 +22,24 @@ func _ready():
     add_child(fadeOutTimer)
     fadeInTimer.timeout.connect(_fadeIn)
     fadeOutTimer.timeout.connect(_fadeOut)
-    
 
-func _fadeOut():
+
+func NewMessage(msg: String, time: float) -> void:
+    HealthEventTitle.text = msg
+
+    var timer := Timer.new()
+    timer.wait_time = time
+    timer.one_shot = true
+    timer.timeout.connect(_fadeOut)
+    timer.timeout.connect(func(): remove_child(timer))
+    add_child(timer)
+    timer.start()
+
+    _fadeIn()
+
+
+
+func _fadeOut() -> void:
     fadeOutTimer.start()
     if fadeOutCount > 0:
         self.color = Color(colorValBox, colorValBox, colorValBox, fadeOutCount / 100)
@@ -37,7 +53,7 @@ func _fadeOut():
         _stopAndReset(false, true)
     
 
-func _fadeIn():
+func _fadeIn() -> void:
     fadeInTimer.start()
     if fadeInCount <= 100:
         self.color = Color(colorValBox, colorValBox, colorValBox, fadeInCount / 100)
@@ -51,7 +67,7 @@ func _fadeIn():
         _stopAndReset(true, false)
 
 
-func _stopAndReset(fadeIn: bool, fadeOut: bool):
+func _stopAndReset(fadeIn: bool, fadeOut: bool) -> void:
     if fadeIn:
         fadeInTimer.stop()
         fadeInCount = 0
@@ -60,9 +76,9 @@ func _stopAndReset(fadeIn: bool, fadeOut: bool):
         fadeOutCount = 100
 
 
-func _on_button_pressed():
+func _on_button_pressed() -> void:
     _fadeOut()
 
 
-func _on_button_2_pressed():
+func _on_button_2_pressed() -> void:
     _fadeIn()
