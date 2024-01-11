@@ -43,19 +43,19 @@ var upgradeUIInfo: Dictionary = {
     "Giga Growth": {
         "Description": "Increase the growth-rate of your cancer by 150 K cells/day.",
         "State": "Unlocked",
-        "Cost": 10.,
+        "Cost": 100.,
         "Active": false
     },
     "Lymph Nodes": {
         "Description": "Gain access to the lymph nodes. Increase your colonies spread reach.",
         "State": "Unlocked",
-        "Cost": 10.,
+        "Cost": 100.,
         "Active": false
     },
     "Medical Resistance": {
         "Description": "Become more resistant to cancer treatment.",
         "State": "Unlocked",
-        "Cost": 10.,
+        "Cost": 100.,
         "Active": false
     }
 }
@@ -115,6 +115,13 @@ func GetActiveColonies() -> Array[Colony]:
     return activeColonies
 
 
+var _previousDayCells := 0
+func GetTotalGrowth() -> int:
+    var change = GetTotalNumCells() - _previousDayCells
+    _previousDayCells = GetTotalNumCells()
+    return change
+
+
 func StopDayCycle():
     _dayTimer.stop()
 
@@ -123,3 +130,6 @@ func ResumeDayCycle():
     _dayTimer.start()
 
 
+func Restart():
+    _previousDayCells = 0
+    colonies = []

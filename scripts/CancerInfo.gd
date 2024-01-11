@@ -40,4 +40,5 @@ func _updateInfoNodePos(offset: int):
 
 
 func _on_back_button_pressed():
+    Sfx.playSoundEffect()
     self.visible = false

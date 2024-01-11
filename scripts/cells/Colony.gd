@@ -14,6 +14,9 @@ enum Organ {
 
 var colonySize := 0
 const activationSize := 300000
+const size2 := 750_000
+const size3 := 1_500_000
+var currentSize := 1
 
 # hard coded growth value for the growth function. needs to be manually changed :(
 const growthConstant := 0.0045
@@ -92,9 +95,17 @@ func _UpdateColony() -> void:
     var maxSize: int = StateMachine.upgradeHandler.GetUpgradeValues()["max_size"]
     colonySize = clamp(colonySize, 0, maxSize)
     
-    if (colonySize < activationSize):
+    if colonySize < activationSize:
         _DeactivateColony()
         return
+
+    if colonySize > size3 and currentSize != 3:
+        texture_normal = load("res://sprites/cancer sprites/CANCERCOLONY Medium.png")
+        currentSize = 3
+
+    elif colonySize > size2 and currentSize != 2:
+        texture_normal = load("res://sprites/cancer sprites/CANCERCOLONY Large.png")
+        currentSize = 2
 
     if active:
         _TrySpread()

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bllmst7a8ommr"]
+[gd_scene load_steps=5 format=3 uid="uid://bllmst7a8ommr"]
 
+[ext_resource type="Script" path="res://scenes/gameover_screen.gd" id="1_2kd58"]
 [ext_resource type="Texture2D" uid="uid://2bowplbuloxx" path="res://sprites/background sprites/BACKGROUND Lose condition.png" id="1_o2bor"]
+[ext_resource type="Texture2D" uid="uid://ctjj46jc3wskx" path="res://sprites/button sprites/menu buttons/NORMAL Restart.png" id="3_n1ogn"]
+[ext_resource type="Texture2D" uid="uid://cewe6imsilo8w" path="res://sprites/button sprites/menu buttons/PRESSED Restart.png" id="4_1gdw5"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2kd58")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -18,6 +22,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="CenterContainer"]
-position = Vector2(160, 90)
+[node name="LoseSprite" type="Sprite2D" parent="CenterContainer"]
 texture = ExtResource("1_o2bor")
+offset = Vector2(160, 90)
+
+[node name="Restart" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 136.0
+offset_top = 144.0
+offset_right = 184.0
+offset_bottom = 169.0
+texture_normal = ExtResource("3_n1ogn")
+texture_pressed = ExtResource("4_1gdw5")
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

@@ -1,14 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://w6bmhq533kge"]
+[gd_scene load_steps=2 format=3 uid="uid://dfx8dhyflrtlm"]
 
-[ext_resource type="Texture2D" uid="uid://dqtpa14j2rbt" path="res://sprites/1x button-2.png (6)-1.png.png" id="1_eb023"]
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_f08o0"]
-[ext_resource type="Texture2D" uid="uid://df0w0p23pobls" path="res://sprites/1x button-2.png (6)-2.png.png" id="2_d8md5"]
-[ext_resource type="Texture2D" uid="uid://byouu81g60wrk" path="res://sprites/1x button-1.png (7)-1.png.png" id="3_8smkx"]
-[ext_resource type="Texture2D" uid="uid://qqfhaemxfcgy" path="res://sprites/1x button-1.png (20).png" id="3_304fw"]
-[ext_resource type="Texture2D" uid="uid://dr0ibmbf4yyct" path="res://sprites/1x button-1.png (7)-2.png.png" id="4_dum61"]
-[ext_resource type="Texture2D" uid="uid://barfme1w27icw" path="res://sprites/1x button-2.png (18).png" id="4_wlphb"]
-[ext_resource type="Texture2D" uid="uid://csv7jvyacd6if" path="res://sprites/1x button-1.png (23)-1.png.png" id="5_544kq"]
-[ext_resource type="Texture2D" uid="uid://b5nvy5jf0mg3f" path="res://sprites/1x button-1.png (23)-2.png.png" id="6_lf5h3"]
 
 [node name="Start_Menu" type="Control"]
 layout_mode = 3
@@ -42,23 +34,15 @@ layout_mode = 2
 
 [node name="Start button" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_eb023")
-texture_pressed = ExtResource("2_d8md5")
 
 [node name="Settings button" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_304fw")
-texture_pressed = ExtResource("4_wlphb")
 
 [node name="Credits button" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_544kq")
-texture_pressed = ExtResource("6_lf5h3")
 
 [node name="Quit button" type="TextureButton" parent="Background/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_8smkx")
-texture_pressed = ExtResource("4_dum61")
 
 [connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Start button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Quit button" to="." method="_on_quit_button_pressed"]

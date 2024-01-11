@@ -1,16 +1,9 @@
 extends Node 
 
 
-var pointsPrCancerCell: float = 1.
+const pointsPrCancerCell: float = 0.0001
 
-# arbitrary placeholder variables
-# ------------
-var sizeDifference: int = 100 # difference in colony size between payouts.
-# in case of money per payout scaler 
-var moneyScale: float = 1.
-# ------------
-
-var payoutDelay: int = 10 # 10 days
+const payoutDelay: int = 30 # days
 var daysTillPayout: int = payoutDelay
 
 
@@ -25,7 +18,7 @@ func _CalcCancerPoints():
         return
     daysTillPayout = payoutDelay
     
-    StateMachine.cancerPoints += pointsPrCancerCell * sizeDifference * moneyScale
+    StateMachine.cancerPoints += round(pointsPrCancerCell * StateMachine.GetTotalGrowth())
     _UpdateCancerPoints()
 
 
