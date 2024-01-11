@@ -70,7 +70,7 @@ func _TryBuy():
 
 func _BoughtUpgradeTexture(buttonname: String):
     var buttonNode = get_node("Background/" + str(buttonname))
-    buttonNode.set_texture_normal(load("res://sprites/upgradetree related sprites/bought/" + buttonname + ".png"))
+    buttonNode.set_texture_normal("res://sprites/upgradetree related sprites/bought/" + buttonname + ".png")
     _UpdateBuyButton(buttonname)
 
 
