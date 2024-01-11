@@ -6,12 +6,13 @@ extends ColorRect
 
 @onready var colonyGroup := get_node("../Colonies")
 
-var highlightedColony: String = ""
+var highlightedColonyStr: String = ""
+var highlightedColonyNode: Colony = null
 
 var colonyInfoText: Dictionary = {
-    "Size": 0,
-    "GrowthSpeed": 0,
-    "OrganDamage": 0
+    "Size": "0 k",
+    "Growth Speed": 0,
+    "Organ Damage": 0,
     }
 
 
@@ -19,30 +20,43 @@ var colonyInfoText: Dictionary = {
 func _ready():
     for organ in colonyGroup.get_children():
         for child in organ.get_children():
-            child.connect("pressed", _UpdateLabel.bind(child))
+            child.connect("pressed", _UpdateLabelPos.bind(child))
+    
+    StateMachine.OnNextDay.connect(_UpdateLabelText)
 
 
 # Updates the positioning and textual contents of the colony info box.
-func _UpdateLabel(colony):
-    if colony.get_name() == highlightedColony:
+func _UpdateLabelPos(colony):
+    if colony.get_name() == highlightedColonyStr:
         colonyInfo.visible = false
-        highlightedColony = ""
+        highlightedColonyStr = ""
         return
     colonyInfo.visible = true
-    highlightedColony = colony.get_name()
+    highlightedColonyStr = colony.get_name()
+    highlightedColonyNode = colony
     
+    _UpdateLabelText()
     colonyInfo.global_position = _CalcOffset(colony)
-    
 
+
+func _UpdateLabelText():
+    if highlightedColonyNode == null:
+        return
+    
+    # Update values in the colony info dictionary
+    colonyInfoText["Size"] = str(highlightedColonyNode.colonySize / 1000) + " Mil"
+    colonyInfoText["Growth Speed"] = str(highlightedColonyNode.GetGrowth() as int) + " K/day"
+    
+    # Append the values in the colony info dictionary to a string
     var labelStr: String = ""
     for key in colonyInfoText.keys():
-        print(key)
         var keyStr: String = "{key}: {information}\n"
         labelStr += keyStr.format({"key": str(key), "information": str(colonyInfoText[key])})
     
-    colonyName.text = str(colony.get_name())
+    # Update the label with the string
+    colonyName.text = str(highlightedColonyNode.get_name())
     colonyInformation.text = str(labelStr)
-
+    
 
 # Calculates the positioning of the colonyinfo box.
 func _CalcOffset(colony) -> Vector2:

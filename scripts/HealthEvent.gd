@@ -22,6 +22,7 @@ func _ready() -> void:
     add_child(fadeOutTimer)
     fadeInTimer.timeout.connect(_fadeIn)
     fadeOutTimer.timeout.connect(_fadeOut)
+    
 
 
 func NewMessage(msg: String, time: float) -> void:
@@ -75,3 +76,10 @@ func _stopAndReset(fadeIn: bool, fadeOut: bool) -> void:
         fadeOutTimer.stop()
         fadeOutCount = 100
 
+
+func _on_button_pressed():
+    _fadeOut()
+
+
+func _on_button_2_pressed():
+    _fadeIn()
