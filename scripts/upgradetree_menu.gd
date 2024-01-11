@@ -54,8 +54,7 @@ func _TryBuy():
         if item["Active"] and item["State"] == "Unlocked":
             if key == "Default":
                 var firstColony: Colony = get_node("/root/MainScene/UiHandler/Colonies/Lungs/Lung2")
-                firstColony.visible = true
-                firstColony.active = true
+                firstColony.AliveColony()
                 _BoughtUpgradeTexture(key)
             
             if item["Cost"] > StateMachine.cancerPoints:

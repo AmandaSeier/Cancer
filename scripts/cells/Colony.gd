@@ -25,8 +25,7 @@ func _ready() -> void:
     StateMachine.colonies.append(self)
 
     if active:
-        ActivateColony()
-        colonySize = activationSize + 100_000
+        AliveColony()
 
 
 func _CalcCurveX_0() -> float:
@@ -60,7 +59,13 @@ func GetGrowth() -> float:
     
     return increase * (active as int) - decrease
 
-func ActivateColony() -> void:
+
+func AliveColony() -> void:
+    colonySize = activationSize + 100_000
+    _ActivateColony()
+
+
+func _ActivateColony() -> void:
     active = true
     visible = true
 
@@ -104,7 +109,7 @@ func _TrySpread() -> void:
         if not position.distance_to(colony.position) <= colonyRange:
             continue
 
-        if colony.organ != organ && not StateMachine.upgradeHandler.IsUpgraded("organ_spread"):
+        if colony.organ != organ && not StateMachine.upgradeHandler.IsUpgraded("Lymph Nodes"):
             continue
 
         colony.Spread()
@@ -117,5 +122,5 @@ func Spread() -> void:
     print("New size is: ", colonySize)
 
     if (colonySize >= activationSize):
-        ActivateColony()
+        _ActivateColony()
 

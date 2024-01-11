@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1peescvpl6o6"
-path="res://.godot/imported/Lymph nodes.png-d5649cb11c144edf6a9d3c122b4a1202.ctex"
+path="res://.godot/imported/Lymph Nodes.png-26e66ab657739ecf73123f59d3670a0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgradetree related sprites/bought/Lymph nodes.png"
-dest_files=["res://.godot/imported/Lymph nodes.png-d5649cb11c144edf6a9d3c122b4a1202.ctex"]
+source_file="res://sprites/upgradetree related sprites/bought/Lymph Nodes.png"
+dest_files=["res://.godot/imported/Lymph Nodes.png-26e66ab657739ecf73123f59d3670a0d.ctex"]
 
 [params]
 
