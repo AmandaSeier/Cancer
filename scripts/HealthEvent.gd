@@ -19,11 +19,11 @@ func _ready():
     fadeOutTimer.wait_time = 0.01
     add_child(fadeInTimer)
     add_child(fadeOutTimer)
-    fadeInTimer.timeout.connect(_fadeIn)
-    fadeOutTimer.timeout.connect(_fadeOut)
+    fadeInTimer.timeout.connect(fadeIn)
+    fadeOutTimer.timeout.connect(fadeOut)
     
 
-func _fadeOut():
+func fadeOut():
     fadeOutTimer.start()
     if fadeOutCount > 0:
         self.color = Color(colorValBox, colorValBox, colorValBox, fadeOutCount / 100)
@@ -37,7 +37,7 @@ func _fadeOut():
         _stopAndReset(false, true)
     
 
-func _fadeIn():
+func fadeIn():
     fadeInTimer.start()
     if fadeInCount <= 100:
         self.color = Color(colorValBox, colorValBox, colorValBox, fadeInCount / 100)
@@ -61,8 +61,8 @@ func _stopAndReset(fadeIn: bool, fadeOut: bool):
 
 
 func _on_button_pressed():
-    _fadeOut()
+    fadeOut()
 
 
 func _on_button_2_pressed():
-    _fadeIn()
+    fadeIn()
