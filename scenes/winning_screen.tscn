@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dctmv4goslbml"]
+[gd_scene load_steps=2 format=3 uid="uid://djper0up7moo3"]
 
-[ext_resource type="Texture2D" uid="uid://c80b00d0tamq0" path="res://1x button-1.png (7)-1.png-1.png-1.png (1).png" id="1_1q5dl"]
+[ext_resource type="Texture2D" uid="uid://cmrsqkqexjx46" path="res://sprites/background sprites/BACKGROUND Win condition.png" id="1_3jky5"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -18,7 +18,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="1xButton-1_png(7)-1_png-1_png-1_png(1)" type="Sprite2D" parent="CenterContainer"]
-position = Vector2(160, 90)
-scale = Vector2(1.125, 1.125)
-texture = ExtResource("1_1q5dl")
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer"]
+texture = ExtResource("1_3jky5")
+offset = Vector2(160, 90)

@@ -27,7 +27,7 @@ var upgradeInfo: Dictionary = {
         "base": 5000.,
     }, # spread amount
     "growth_decrease": { # cells pr. day
-        "base": 800.,
+        "base": 1000.,
     }, # growth decrease
     "damage_multiplyer": {
         "base": 1.,

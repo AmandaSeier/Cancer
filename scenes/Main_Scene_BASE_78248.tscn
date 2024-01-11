@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dewp4wiarhp52"]
+[gd_scene load_steps=36 format=3 uid="uid://dewp4wiarhp52"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
 [ext_resource type="Texture2D" uid="uid://dejq08lgvl0on" path="res://sprites/background sprites/BACKGROUND Stue100%.png" id="2_bil64"]
@@ -26,17 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://bds3xuqpmmt2v" path="res://icon.svg" id="21_bcx0g"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="21_tcjlp"]
 [ext_resource type="PackedScene" uid="uid://tu4wbcgyarvw" path="res://scenes/CancerColony.tscn" id="22_7eyt3"]
-[ext_resource type="Texture2D" uid="uid://j6vfmwmbufct" path="res://sprites/healthbar sprites/New health.webp" id="22_vos0v"]
 [ext_resource type="Script" path="res://scripts/HealthEvent.gd" id="23_c1v2g"]
 [ext_resource type="Texture2D" uid="uid://dt5e4a6ppxgke" path="res://sprites/button sprites/other graphical/Info icon.png" id="24_0wvr0"]
 [ext_resource type="Script" path="res://scripts/EconomyHandler.gd" id="25_jl0ia"]
 [ext_resource type="PackedScene" uid="uid://byfliyn7lox7r" path="res://scenes/menus/upgradetree_menu.tscn" id="25_r5fj5"]
 [ext_resource type="PackedScene" uid="uid://ia2lerpknwdq" path="res://scenes/menus/pause_menu.tscn" id="26_15dxr"]
-[ext_resource type="Texture2D" uid="uid://dteaf0phxsexf" path="res://sprites/healthbar sprites/Healtbar.png" id="26_ev75u"]
 [ext_resource type="PackedScene" uid="uid://bu5yqconeo332" path="res://scenes/menus/start_menu.tscn" id="27_f7wyd"]
 [ext_resource type="PackedScene" uid="uid://bypc7yfbr5hu" path="res://scenes/menus/settings_menu.tscn" id="27_jyjyq"]
 [ext_resource type="PackedScene" path="res://scenes/CancerInfo.tscn" id="31_vlkc8"]
-[ext_resource type="PackedScene" uid="uid://djper0up7moo3" path="res://scenes/winning_screen.tscn" id="35_x27k8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2bgar"]
 animations = [{
@@ -157,16 +154,12 @@ scale = Vector2(0.145, 0.145)
 icon = ExtResource("21_bcx0g")
 
 [node name="Healthbar" type="Sprite2D" parent="UiHandler/Health"]
-position = Vector2(15, 171)
-scale = Vector2(4.8, 0.5)
-texture = ExtResource("22_vos0v")
+position = Vector2(6, 171)
+scale = Vector2(0.499197, 0.0437501)
+texture = ExtResource("16_4gpcf")
 centered = false
 offset = Vector2(-80, 0)
 script = ExtResource("17_p0cqq")
-_minCellDmgNum = 500000
-_maxCellDmgNum = 3000000
-_cemoChance = 1.0
-_cemoDamage = 0.5
 
 [node name="HealthEvent" type="ColorRect" parent="UiHandler/Health"]
 offset_left = 242.0
@@ -197,10 +190,6 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_bottom = -1.17
-
-[node name="Healtbar_heart" type="Sprite2D" parent="UiHandler/Health"]
-position = Vector2(35, 171)
-texture = ExtResource("26_ev75u")
 
 [node name="ColonyInfo" type="ColorRect" parent="UiHandler"]
 visible = false
@@ -247,124 +236,67 @@ texture_normal = ExtResource("24_0wvr0")
 [node name="Heart" type="Node" parent="UiHandler/Colonies"]
 
 [node name="Heart1" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
-visible = false
-offset_left = 169.0
-offset_top = 90.0
-offset_right = 174.0
-offset_bottom = 95.0
-texture_normal = ExtResource("29_qd6wt")
+offset_left = 165.0
+offset_top = 87.0
+offset_right = 181.0
+offset_bottom = 103.0
+active = true
 
 [node name="Heart2" parent="UiHandler/Colonies/Heart" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 174.0
-offset_top = 96.0
-offset_right = 179.0
-offset_bottom = 101.0
-texture_normal = ExtResource("29_qd6wt")
 
 [node name="Lungs" type="Node" parent="UiHandler/Colonies"]
 
 [node name="Lung1" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 176.0
-offset_top = 79.0
-offset_right = 181.0
-offset_bottom = 84.0
-texture_normal = ExtResource("29_qd6wt")
 organ = 1
 
 [node name="Lung2" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 152.0
-offset_top = 84.0
-offset_right = 157.0
-offset_bottom = 89.0
-texture_normal = ExtResource("29_qd6wt")
 organ = 1
 
 [node name="Lung3" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 148.0
-offset_top = 97.0
-offset_right = 153.0
-offset_bottom = 102.0
-texture_normal = ExtResource("29_qd6wt")
 organ = 1
 
 [node name="Liver" type="Node" parent="UiHandler/Colonies"]
 
 [node name="Liver1" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
-visible = false
-offset_left = 152.0
-offset_top = 109.0
-offset_right = 157.0
-offset_bottom = 114.0
-texture_normal = ExtResource("29_qd6wt")
+offset_left = 149.0
+offset_top = 102.0
+offset_right = 165.0
+offset_bottom = 118.0
+active = true
 organ = 2
 
 [node name="Liver2" parent="UiHandler/Colonies/Liver" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 161.0
-offset_top = 105.0
-offset_right = 166.0
-offset_bottom = 110.0
-texture_normal = ExtResource("29_qd6wt")
 organ = 2
 
 [node name="Intestines" type="Node" parent="UiHandler/Colonies"]
 
 [node name="Intestines1" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 157.0
-offset_top = 118.0
-offset_right = 162.0
-offset_bottom = 123.0
-texture_normal = ExtResource("29_qd6wt")
 organ = 3
 
 [node name="Intestines2" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 179.0
-offset_top = 123.0
-offset_right = 184.0
-offset_bottom = 128.0
-texture_normal = ExtResource("29_qd6wt")
 organ = 3
 
 [node name="Intestines3" parent="UiHandler/Colonies/Intestines" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 151.0
-offset_top = 134.0
-offset_right = 156.0
-offset_bottom = 139.0
-texture_normal = ExtResource("29_qd6wt")
 organ = 3
 
 [node name="Brain" type="Node" parent="UiHandler/Colonies"]
 
-[node name="Brain1" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+[node name="brain1" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 164.0
-offset_top = 34.0
-offset_right = 169.0
-offset_bottom = 39.0
-texture_normal = ExtResource("29_qd6wt")
 
-[node name="Brain2" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+[node name="brain2" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 158.0
-offset_top = 39.0
-offset_right = 163.0
-offset_bottom = 44.0
-texture_normal = ExtResource("29_qd6wt")
 
-[node name="Brain3" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
+[node name="brain3" parent="UiHandler/Colonies/Brain" instance=ExtResource("22_7eyt3")]
 visible = false
-offset_left = 170.0
-offset_top = 38.0
-offset_right = 175.0
-offset_bottom = 43.0
-texture_normal = ExtResource("29_qd6wt")
 
 [node name="CancerPoints" type="Label" parent="UiHandler"]
 offset_left = 6.0
@@ -392,15 +324,8 @@ visible = false
 [node name="SettingsMenu" parent="UiHandler" instance=ExtResource("27_jyjyq")]
 visible = false
 
-[node name="winning_screen" parent="UiHandler" instance=ExtResource("35_x27k8")]
-visible = false
-
 [node name="CancerInfo" parent="UiHandler" instance=ExtResource("31_vlkc8")]
 visible = false
-
-[node name="Healtbar" type="Sprite2D" parent="."]
-position = Vector2(57, 137)
-texture = ExtResource("26_ev75u")
 
 [connection signal="pressed" from="UiHandler/Pause menu button" to="UiHandler" method="_on_pause_menu_button_pressed"]
 [connection signal="pressed" from="UiHandler/1x button" to="UiHandler" method="ChangeDaySpeed" binds= [1.0]]
