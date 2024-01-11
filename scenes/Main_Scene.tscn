@@ -149,8 +149,10 @@ _minCellDmgNum = 500000
 _maxCellDmgNum = 3000000
 _cemoChance = 1.0
 _cemoDamage = 0.5
+_HealthLabelPath = NodePath("../HealthEvent")
 
 [node name="HealthEvent" type="ColorRect" parent="UiHandler/Health"]
+visible = false
 offset_left = 242.0
 offset_top = 147.0
 offset_right = 317.0
@@ -170,7 +172,6 @@ offset_bottom = -2.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("21_tcjlp")
 theme_override_font_sizes/font_size = 4
-text = "dasd"
 autowrap_mode = 3
 
 [node name="Healtbar_heart" type="Sprite2D" parent="UiHandler/Health"]
