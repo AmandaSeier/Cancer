@@ -147,14 +147,18 @@ scale = Vector2(4.8, 0.5)
 texture = ExtResource("22_vos0v")
 centered = false
 script = ExtResource("17_p0cqq")
+_discoverCancerCellNum = 4000000
 _minCellDmgNum = 500000
 _maxCellDmgNum = 3000000
-_cemoChance = 1.0
+_minDmg = 0.002
+_maxDmg = 0.1
+_cemoChance = 0.15
+_cemoCancerDamage = 50000
+_cemoCancerDmgVariation = 15000
 _cemoDamage = 0.5
 _HealthLabelPath = NodePath("../HealthEvent")
 
 [node name="HealthEvent" type="ColorRect" parent="UiHandler/Health"]
-visible = false
 offset_left = 242.0
 offset_top = 147.0
 offset_right = 317.0
@@ -252,12 +256,12 @@ texture_normal = ExtResource("29_qd6wt")
 organ = 1
 
 [node name="Lung2" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
-visible = false
 offset_left = 152.0
 offset_top = 84.0
 offset_right = 157.0
 offset_bottom = 89.0
 texture_normal = ExtResource("29_qd6wt")
+active = true
 organ = 1
 
 [node name="Lung3" parent="UiHandler/Colonies/Lungs" instance=ExtResource("22_7eyt3")]
