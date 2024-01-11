@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://byfliyn7lox7r"]
+[gd_scene load_steps=12 format=3 uid="uid://byfliyn7lox7r"]
 
 [ext_resource type="Script" path="res://scripts/upgradetree_menu.gd" id="1_0ooo3"]
 [ext_resource type="Texture2D" uid="uid://ccbqpkf5stiwp" path="res://sprites/upgradetree related sprites/unbought/Default.png" id="2_x4hnj"]
 [ext_resource type="Texture2D" uid="uid://cc8rb4ajhoei7" path="res://sprites/button sprites/menu buttons/NORMAL Back.png" id="3_dk5s7"]
-[ext_resource type="Texture2D" uid="uid://bnoe71idkb36i" path="res://sprites/upgradetree related sprites/Locked upgrade.png" id="3_w6yu4"]
+[ext_resource type="Texture2D" uid="uid://drhpquvc4oahj" path="res://sprites/upgradetree related sprites/unbought/Giga Growth.png" id="3_dlxui"]
+[ext_resource type="Texture2D" uid="uid://cxsrve1es2pcu" path="res://sprites/upgradetree related sprites/unbought/Medical Resistance.png" id="4_6fesr"]
 [ext_resource type="Texture2D" uid="uid://cpm508jdmgyli" path="res://sprites/button sprites/menu buttons/PRESSED Back.png" id="4_237om"]
+[ext_resource type="Texture2D" uid="uid://csjq4658330jn" path="res://sprites/upgradetree related sprites/unbought/Lymph Nodes.png" id="5_swgxa"]
 [ext_resource type="Texture2D" uid="uid://dhu63r5x5v2mv" path="res://sprites/upgradetree related sprites/NORMAL Purchase upgrade.png" id="7_id0an"]
 [ext_resource type="Texture2D" uid="uid://dbc8s4n7ov363" path="res://sprites/upgradetree related sprites/PRESSED Purchase upgrade.png" id="8_dr3e6"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="10_jbs4u"]
@@ -65,7 +67,7 @@ offset_right = 62.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_w6yu4")
+texture_normal = ExtResource("3_dlxui")
 
 [node name="Medical Resistance" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -80,7 +82,7 @@ offset_right = -28.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_w6yu4")
+texture_normal = ExtResource("4_6fesr")
 
 [node name="Lymph Nodes" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -95,7 +97,7 @@ offset_right = 16.0
 offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_w6yu4")
+texture_normal = ExtResource("5_swgxa")
 
 [node name="backButton" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -143,12 +145,13 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -70.0
 offset_top = -10.0
-offset_right = 70.0
+offset_right = 37.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("10_jbs4u")
 theme_override_font_sizes/font_size = 5
+autowrap_mode = 3
 
 [node name="upgradeTitle" type="Label" parent="UpgradeDescriptionBox"]
 layout_mode = 1
@@ -159,11 +162,12 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -70.0
 offset_top = -20.0
-offset_right = 70.0
+offset_right = 37.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("10_jbs4u")
 theme_override_font_sizes/font_size = 7
+autowrap_mode = 3
 
 [node name="buyButton" type="TextureButton" parent="UpgradeDescriptionBox"]
 layout_mode = 0

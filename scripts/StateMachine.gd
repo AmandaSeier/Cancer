@@ -12,16 +12,14 @@ var _dayCount: int = 0
 var upgradeInfo: Dictionary = {
     "range": { # magical game units (aka. mayhaps pixels)
         "base": 40.,
-        "bigger_colonies": 10.
+        "Lymph Nodes": 10.,
     }, # colonyRange
     "max_size": { # max number of cells in colony
-        "base": 1_000_000.,
-        "bigger_colonies": 1_500_000., # duplicate upgrade name means it changes multiple stats
+        "base": 3_000_000.,
     }, # max size
     "growth_multiplier": {
         "base": 1.,
-        "bigger_colonies": -.1,
-        "giga_growth": .2,
+        "Giga Growth": .2,
     }, # growth multiplier
     "spread_amount": { # Amount of cells colonies spread to adjesant colonies pr. day
         "base": 5000.,
@@ -32,9 +30,6 @@ var upgradeInfo: Dictionary = {
     "damage_multiplyer": {
         "base": 1.,
     }, # damage multiplier
-    "misc.": {
-        "organ_spread": 0
-    }, # misc
 }
 
 var upgradeUIInfo: Dictionary = {
@@ -45,20 +40,20 @@ var upgradeUIInfo: Dictionary = {
         "Active": false
     },
     "Giga Growth": {
-        "Description": "Increase the growth-rate of your cancer by xxx.",
-        "State": "Locked",
+        "Description": "Increase the growth-rate of your cancer by 150 K cells/day.",
+        "State": "Unlocked",
         "Cost": 10.,
         "Active": false
     },
     "Lymph Nodes": {
-        "Description": "Gain access to the lymph nodes.",
-        "State": "Locked",
+        "Description": "Gain access to the lymph nodes. Increase your colonies spread reach.",
+        "State": "Unlocked",
         "Cost": 10.,
         "Active": false
     },
     "Medical Resistance": {
         "Description": "Become more resistant to cancer treatment.",
-        "State": "Locked",
+        "State": "Unlocked",
         "Cost": 10.,
         "Active": false
     }
@@ -85,6 +80,7 @@ func _ready():
 func _IncementDayCounter():
     _dayCount += 1
     print("Day: ", _dayCount)
+    get_node("/root/MainScene/UiHandler/dayCount").text = "Day: " + str(_dayCount)
     OnNextDay.emit()
 
 

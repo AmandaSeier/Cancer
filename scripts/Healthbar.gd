@@ -120,11 +120,13 @@ func _UpdateHealth() -> void:
         if _health >= 100:
             print("GAME OVER")
             # call game over scene
+            StateMachine.StopDayCycle()
             get_tree().change_scene_to_file("res://scenes/gameover_screen.tscn")
     else:
         _health = 0
         print("Yaiii you won")
         # call game won scene
+        StateMachine.StopDayCycle()
         get_tree().change_scene_to_file("res://scenes/winning_screen.tscn")
 
     

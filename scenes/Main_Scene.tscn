@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://2uxlenjmw1dv" path="res://sprites/background sprites/BACKGROUND Stue0%.png" id="6_11l1f"]
 [ext_resource type="Texture2D" uid="uid://bh1chpxdo6cqb" path="res://sprites/button sprites/menu buttons/NORMAL Pause menu.png" id="8_r75uo"]
 [ext_resource type="Texture2D" uid="uid://cq70k5h4wspvg" path="res://sprites/button sprites/menu buttons/PRESSED Pause menu.png" id="9_31fe3"]
-[ext_resource type="ButtonGroup" uid="uid://bclyhusuyshad" path="res://Time speed button group.tres" id="11_k5206"]
+[ext_resource type="ButtonGroup" uid="uid://cilyt63asr71p" path="res://Time speed button group.tres" id="11_k5206"]
 [ext_resource type="Texture2D" uid="uid://dephfamr2iaok" path="res://sprites/button sprites/time buttons/PRESSED 1x Speed.png" id="12_lq2aj"]
 [ext_resource type="Texture2D" uid="uid://cjqd2pbfpvy3i" path="res://sprites/button sprites/time buttons/NORMAL 5x Speed.png" id="13_045p2"]
 [ext_resource type="Texture2D" uid="uid://bpqcmgjun72y3" path="res://sprites/button sprites/time buttons/PRESSED 5x Speed.png" id="14_38pjk"]
@@ -61,6 +61,8 @@ animations = [{
 }]
 
 [node name="MainScene" type="Node2D"]
+metadata/_edit_vertical_guides_ = [165.0]
+metadata/_edit_horizontal_guides_ = [82.0]
 
 [node name="UiHandler" type="Node" parent="."]
 editor_description = "En Wrapper rundt om nogle statemachine funktioner der skal kaldes af UI. Så man kan finde dem i editoren "
@@ -155,7 +157,7 @@ offset_left = 242.0
 offset_top = 147.0
 offset_right = 317.0
 offset_bottom = 177.0
-color = Color(0.121569, 0.121569, 0.121569, 1)
+color = Color(0.121569, 0.121569, 0.121569, 0)
 script = ExtResource("23_c1v2g")
 
 [node name="HealthEventTitle" type="Label" parent="UiHandler/Health/HealthEvent"]
@@ -170,7 +172,6 @@ offset_bottom = -2.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("21_tcjlp")
 theme_override_font_sizes/font_size = 4
-text = "dasd"
 autowrap_mode = 3
 
 [node name="Healtbar_heart" type="Sprite2D" parent="UiHandler/Health"]
@@ -340,6 +341,20 @@ offset_top = 38.0
 offset_right = 175.0
 offset_bottom = 43.0
 texture_normal = ExtResource("29_qd6wt")
+
+[node name="dayCount" type="Label" parent="UiHandler"]
+offset_left = 206.0
+offset_top = 6.0
+offset_right = 235.0
+offset_bottom = 16.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("21_tcjlp")
+theme_override_font_sizes/font_size = 6
+text = "Day: 0"
+vertical_alignment = 1
 
 [node name="CancerPoints" type="Label" parent="UiHandler"]
 offset_left = 7.0

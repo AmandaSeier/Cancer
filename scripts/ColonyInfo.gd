@@ -45,7 +45,7 @@ func _UpdateLabelText():
     
     # Update values in the colony info dictionary
     colonyInfoText["Size"] = str(highlightedColonyNode.colonySize / 1000) + " Mil"
-    colonyInfoText["Growth Speed"] = str(highlightedColonyNode.GetGrowth() as int) + " K/day"
+    colonyInfoText["Growth Speed"] = str(highlightedColonyNode.GetGrowth() as int) + " K cells/day"
     
     # Append the values in the colony info dictionary to a string
     var labelStr: String = ""

@@ -51,6 +51,12 @@ func _TryBuy():
     for key in StateMachine.upgradeUIInfo.keys():
         var item = StateMachine.upgradeUIInfo[key]
         
+        if key == "Default":
+            var firstColony: Colony = get_node("/root/MainScene/UiHandler/Colonies/Lungs/Lung2")
+            firstColony.visible = true
+            firstColony.active = true
+            return
+        
         if item["Active"] and item["State"] == "Unlocked":
             if item["Cost"] > StateMachine.cancerPoints:
                 return
