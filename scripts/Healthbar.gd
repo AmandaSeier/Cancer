@@ -33,6 +33,7 @@ var _operationDays := 0
 @export var _HealthLabelPath: NodePath
 var _HealthLabel: HealthEvent
 
+
 var rng := RandomNumberGenerator.new()
 var cancerFound := false
 
@@ -53,6 +54,7 @@ func _ActivateHealthEvents() -> void:
         var num := rng.randf_range(0, 100)
         if num <= StateMachine.GetTotalNumCells() / (_discoverCancerCellNum as float):
             cancerFound = true
+            _HealthLabel.NewMessage("The patiant knows he has cancer", 5)
             print("HE KNOWS PANIIIC!!")
         return
 
@@ -115,7 +117,7 @@ func _UpdateHealth() -> void:
     if _health > 0:
         # Update the health variable
         _health -= dailyDamageTaken
-        print("Health: ", _health)
+        # print("Health: ", _health)
         scale.x = _health * 0.048 # scale.x = 4.8 is the same as 100% health
         if StateMachine.GetActiveColonies().size() == 0:
             print("GAME OVER")
@@ -134,6 +136,4 @@ func _UpdateHealth() -> void:
         if _health < i * 20:
             get_node("../../Background_Stue").frame = 5 - i
             break
-        
-        
 

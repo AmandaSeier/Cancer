@@ -16,7 +16,7 @@ var colonySize := 0
 const activationSize := 300000
 
 # hard coded growth value for the growth function. needs to be manually changed :(
-const growthConstant := 0.0033
+const growthConstant := 0.0045
 const maxSizeMargin := 50000 # In order to avoid infinite values from the growth curve
 
 
@@ -25,8 +25,7 @@ func _ready() -> void:
     StateMachine.colonies.append(self)
 
     if active:
-        ActivateColony()
-        colonySize = activationSize + 100_000
+        AliveColony()
 
 
 func _CalcCurveX_0() -> float:
@@ -60,13 +59,22 @@ func GetGrowth() -> float:
     
     return increase * (active as int) - decrease
 
-func ActivateColony() -> void:
+
+func AliveColony() -> void:
+    colonySize = activationSize + 100_000
+    _ActivateColony()
+
+
+func _ActivateColony() -> void:
     active = true
     visible = true
 
 
 func KillColony() -> void:
     colonySize = 0
+    _DeactivateColony()
+
+func _DeactivateColony() -> void:
     active = false
     visible = false
 
@@ -85,16 +93,14 @@ func _UpdateColony() -> void:
     colonySize = clamp(colonySize, 0, maxSize)
     
     if (colonySize < activationSize):
-        KillColony()
+        _DeactivateColony()
         return
 
-    _TrySpread()
+    if active:
+        _TrySpread()
 
 
 func _TrySpread() -> void:
-    if not active:
-        return
-
     for colony in StateMachine.colonies:
         if colony == self:
             continue
@@ -103,7 +109,7 @@ func _TrySpread() -> void:
         if not position.distance_to(colony.position) <= colonyRange:
             continue
 
-        if colony.organ != organ && not StateMachine.upgradeHandler.IsUpgraded("organ_spread"):
+        if colony.organ != organ && not StateMachine.upgradeHandler.IsUpgraded("Lymph Nodes"):
             continue
 
         colony.Spread()
@@ -113,7 +119,8 @@ func _TrySpread() -> void:
 func Spread() -> void:
     var growth = StateMachine.upgradeHandler.GetUpgradeValues()["spread_amount"] * (1. / (1. + (active as float) * 3))
     colonySize += growth
+    print("New size is: ", colonySize)
 
     if (colonySize >= activationSize):
-        ActivateColony()
+        _ActivateColony()
 

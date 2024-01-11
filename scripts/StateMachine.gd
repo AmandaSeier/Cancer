@@ -22,7 +22,8 @@ var upgradeInfo: Dictionary = {
         "Giga Growth": .2,
     }, # growth multiplier
     "spread_amount": { # Amount of cells colonies spread to adjesant colonies pr. day
-        "base": 5000.,
+        "base": 2000.,
+        "Giga Growth": 250.,
     }, # spread amount
     "growth_decrease": { # cells pr. day
         "base": 1000.,
@@ -79,7 +80,7 @@ func _ready():
 
 func _IncementDayCounter():
     _dayCount += 1
-    print("Day: ", _dayCount)
+    # print("Day: ", _dayCount)
     get_node("/root/MainScene/UiHandler/dayCount").text = "Day: " + str(_dayCount)
     OnNextDay.emit()
 
