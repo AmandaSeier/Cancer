@@ -398,10 +398,6 @@ visible = false
 [node name="CancerInfo" parent="UiHandler" instance=ExtResource("31_vlkc8")]
 visible = false
 
-[node name="Healtbar" type="Sprite2D" parent="."]
-position = Vector2(57, 137)
-texture = ExtResource("26_ev75u")
-
 [connection signal="pressed" from="UiHandler/Pause menu button" to="UiHandler" method="_on_pause_menu_button_pressed"]
 [connection signal="pressed" from="UiHandler/1x button" to="UiHandler" method="ChangeDaySpeed" binds= [1.0]]
 [connection signal="pressed" from="UiHandler/5x button" to="UiHandler" method="ChangeDaySpeed" binds= [5.0]]
