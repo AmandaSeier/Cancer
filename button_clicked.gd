@@ -5,6 +5,14 @@ extends AudioStreamPlayer2D
 func _ready():
     stop()
 
+var active := true
+
+func turnOnOffSounds():
+    active = !active
 
 func playSoundEffect():
-    play()
+    if active:
+        play()
+
+
+ 
