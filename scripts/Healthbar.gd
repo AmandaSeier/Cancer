@@ -119,10 +119,11 @@ func _UpdateHealth() -> void:
         # call game won scene
         get_tree().change_scene_to_file("res://scenes/winning_screen.tscn")
 
-    #######################################################################
-    # PLEASE FJERN DET HER SENERE DET ER UDELUKKENDE FOR TEST AF BAGGRUNDE
-    if StateMachine._dayCount / 20.0 == frameIndex+1:
-        frameIndex += 1
-        get_node("../../Background_Stue").frame = frameIndex
-    #######################################################################
+    
+    for i in range(5):
+        if _health < i * 20:
+            get_node("../../Background_Stue").frame = 5 - i
+            break
+        
+        
 
