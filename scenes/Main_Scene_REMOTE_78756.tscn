@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://cjqd2pbfpvy3i" path="res://sprites/button sprites/time buttons/NORMAL 5x Speed.png" id="13_045p2"]
 [ext_resource type="Texture2D" uid="uid://bpqcmgjun72y3" path="res://sprites/button sprites/time buttons/PRESSED 5x Speed.png" id="14_38pjk"]
 [ext_resource type="Texture2D" uid="uid://c054njm6k5806" path="res://sprites/button sprites/time buttons/NORMAL 10x Speed.png" id="15_2dm4q"]
-[ext_resource type="Texture2D" uid="uid://degf1fg7eq6hk" path="res://sprites/healthbar sprites/Health.png" id="16_4gpcf"]
 [ext_resource type="Texture2D" uid="uid://xaam1kg2ibyk" path="res://sprites/button sprites/time buttons/PRESSED 10x Speed.png" id="16_6yn8q"]
 [ext_resource type="Texture2D" uid="uid://cq51x4w3arpbv" path="res://sprites/button sprites/time buttons/NORMAL 1x Speed.png" id="16_ltjbg"]
 [ext_resource type="Texture2D" uid="uid://bpaj7gyujxjq1" path="res://sprites/button sprites/time buttons/NORMAL Pause time.png" id="17_14g4m"]
@@ -161,7 +160,6 @@ position = Vector2(15, 171)
 scale = Vector2(4.8, 0.5)
 texture = ExtResource("22_vos0v")
 centered = false
-offset = Vector2(-80, 0)
 script = ExtResource("17_p0cqq")
 
 [node name="HealthEvent" type="ColorRect" parent="UiHandler/Health"]

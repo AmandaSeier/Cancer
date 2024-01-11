@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dewp4wiarhp52"]
+[gd_scene load_steps=36 format=3 uid="uid://dewp4wiarhp52"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
 [ext_resource type="Texture2D" uid="uid://dejq08lgvl0on" path="res://sprites/background sprites/BACKGROUND Stue100%.png" id="2_bil64"]
@@ -26,17 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://bds3xuqpmmt2v" path="res://icon.svg" id="21_bcx0g"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="21_tcjlp"]
 [ext_resource type="PackedScene" uid="uid://tu4wbcgyarvw" path="res://scenes/CancerColony.tscn" id="22_7eyt3"]
-[ext_resource type="Texture2D" uid="uid://j6vfmwmbufct" path="res://sprites/healthbar sprites/New health.webp" id="22_vos0v"]
 [ext_resource type="Script" path="res://scripts/HealthEvent.gd" id="23_c1v2g"]
 [ext_resource type="Texture2D" uid="uid://dt5e4a6ppxgke" path="res://sprites/button sprites/other graphical/Info icon.png" id="24_0wvr0"]
 [ext_resource type="Script" path="res://scripts/EconomyHandler.gd" id="25_jl0ia"]
 [ext_resource type="PackedScene" uid="uid://byfliyn7lox7r" path="res://scenes/menus/upgradetree_menu.tscn" id="25_r5fj5"]
 [ext_resource type="PackedScene" uid="uid://ia2lerpknwdq" path="res://scenes/menus/pause_menu.tscn" id="26_15dxr"]
-[ext_resource type="Texture2D" uid="uid://dteaf0phxsexf" path="res://sprites/healthbar sprites/Healtbar.png" id="26_ev75u"]
 [ext_resource type="PackedScene" uid="uid://bu5yqconeo332" path="res://scenes/menus/start_menu.tscn" id="27_f7wyd"]
 [ext_resource type="PackedScene" uid="uid://bypc7yfbr5hu" path="res://scenes/menus/settings_menu.tscn" id="27_jyjyq"]
 [ext_resource type="PackedScene" path="res://scenes/CancerInfo.tscn" id="31_vlkc8"]
-[ext_resource type="PackedScene" uid="uid://djper0up7moo3" path="res://scenes/winning_screen.tscn" id="35_x27k8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2bgar"]
 animations = [{
@@ -157,9 +154,9 @@ scale = Vector2(0.145, 0.145)
 icon = ExtResource("21_bcx0g")
 
 [node name="Healthbar" type="Sprite2D" parent="UiHandler/Health"]
-position = Vector2(15, 171)
-scale = Vector2(4.8, 0.5)
-texture = ExtResource("22_vos0v")
+position = Vector2(6, 171)
+scale = Vector2(0.499197, 0.0437501)
+texture = ExtResource("16_4gpcf")
 centered = false
 offset = Vector2(-80, 0)
 script = ExtResource("17_p0cqq")
@@ -193,10 +190,6 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_bottom = -1.17
-
-[node name="Healtbar_heart" type="Sprite2D" parent="UiHandler/Health"]
-position = Vector2(35, 171)
-texture = ExtResource("26_ev75u")
 
 [node name="ColonyInfo" type="ColorRect" parent="UiHandler"]
 visible = false
@@ -331,15 +324,8 @@ visible = false
 [node name="SettingsMenu" parent="UiHandler" instance=ExtResource("27_jyjyq")]
 visible = false
 
-[node name="winning_screen" parent="UiHandler" instance=ExtResource("35_x27k8")]
-visible = false
-
 [node name="CancerInfo" parent="UiHandler" instance=ExtResource("31_vlkc8")]
 visible = false
-
-[node name="Healtbar" type="Sprite2D" parent="."]
-position = Vector2(57, 137)
-texture = ExtResource("26_ev75u")
 
 [connection signal="pressed" from="UiHandler/Pause menu button" to="UiHandler" method="_on_pause_menu_button_pressed"]
 [connection signal="pressed" from="UiHandler/1x button" to="UiHandler" method="ChangeDaySpeed" binds= [1.0]]
