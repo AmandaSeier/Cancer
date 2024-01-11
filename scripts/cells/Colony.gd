@@ -100,12 +100,16 @@ func _UpdateColony() -> void:
         return
 
     if colonySize > size3 and currentSize != 3:
-        texture_normal = load("res://sprites/cancer sprites/CANCERCOLONY Medium.png")
+        texture_normal = load("res://sprites/cancer sprites/CANCERCOLONY Large.png")
         currentSize = 3
 
-    elif colonySize > size2 and currentSize != 2:
-        texture_normal = load("res://sprites/cancer sprites/CANCERCOLONY Large.png")
+    elif colonySize > size2 and colonySize < size3 and currentSize != 2:
+        texture_normal = load("res://sprites/cancer sprites/CANCERCOLONY Medium.png")
         currentSize = 2
+
+    elif colonySize < size2 and currentSize != 1:
+        texture_normal = load("res://sprites/cancer sprites/CANCERCOLONY Small.png")
+        currentSize = 1
 
     if active:
         _TrySpread()
