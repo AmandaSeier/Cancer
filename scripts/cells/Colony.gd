@@ -78,7 +78,6 @@ func DamageColony(dmg: int) -> void:
 
     colonySize -= dmg
 
-
 func _UpdateColony() -> void:
     colonySize += round(GetGrowth())
     var maxSize: int = StateMachine.upgradeHandler.GetUpgradeValues()["max_size"]
