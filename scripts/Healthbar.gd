@@ -28,12 +28,18 @@ var _cemoFinishedEvents := 0
 @export var _operationCooldownDays := 60
 var _operationDays := 0
 
+
+@export_category("Messages")
+@export var _HealthLabelPath: NodePath
+var _HealthLabel: HealthEvent
+
 var rng := RandomNumberGenerator.new()
 var cancerFound := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
     StateMachine.OnNextDay.connect(_HealthCalculations)	
+    _HealthLabel = get_node(_HealthLabelPath)
 
 
 func _HealthCalculations():
@@ -52,8 +58,9 @@ func _ActivateHealthEvents() -> void:
 
     var num := rng.randf_range(0, 100)
     # random events
-    if num <= _cemoChance:
+    if num <= _cemoChance and not _cemoActive:
         _cemoActive = true
+        _HealthLabel.NewMessage("Patient now gets cemo treatment once a week for 10 weeks", 5)
         print("He will now get cemo")
 
 
@@ -89,6 +96,7 @@ func _GetTreatment() -> void:
         if _operationDays >= _operationCooldownDays:
             StateMachine.GetActiveColonies().pick_random().KillColony()
             _operationDays = 0
+            _HealthLabel.NewMessage("Patient got an operation", 5)
         else:
             _operationDays += 1
 
@@ -99,11 +107,11 @@ func _UpdateHealth() -> void:
     elif StateMachine.GetTotalNumCells() > _maxCellDmgNum:
         _dmgPrDay = _maxDmg
     else:
-        var t := (StateMachine.GetTotalNumCells() - _minCellDmgNum) / (_maxCellDmgNum - _minCellDmgNum)
+        var t := (StateMachine.GetTotalNumCells() - _minCellDmgNum) / ((_maxCellDmgNum - _minCellDmgNum) as float)
         _dmgPrDay = lerpf(_minDmg, _maxDmg, t)
-    print(_dmgPrDay)
+
     var dailyDamageTaken: float = _dmgPrDay * StateMachine.upgradeHandler.GetUpgradeValues()["damage_multiplyer"]
-    print(dailyDamageTaken)
+
     if _health > 0:
         # Update the health variable
         _health -= dailyDamageTaken
