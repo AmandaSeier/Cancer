@@ -19,14 +19,17 @@ func _on_resume_button_pressed():
 
 func _on_quit_button_pressed():
     get_tree().change_scene_to_file(\"res://scenes/Main_Scene.tscn\")
+    Sfx.playSoundEffect()
 
 
 func _on_settings_button_pressed():
     get_node(\"../SettingsMenu\").visible = true
+    Sfx.playSoundEffect()
 
 
 func _on_info_button_pressed():
     get_node(\"../CancerInfo\").visible = true
+    Sfx.playSoundEffect()
 "
 
 [node name="PauseMenu" type="Control"]

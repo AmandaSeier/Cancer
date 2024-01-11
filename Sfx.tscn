@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbsg4m1qf0f8e"]
+
+[ext_resource type="AudioStream" uid="uid://ch2pkkw5w87xq" path="res://sounds/Sound effects/Button Press   Sound Effect.mp3" id="1_4vssj"]
+[ext_resource type="Script" path="res://button_clicked.gd" id="2_v5u8i"]
+
+[node name="Sfx" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_4vssj")
+volume_db = -10.0
+script = ExtResource("2_v5u8i")

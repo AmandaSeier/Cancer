@@ -159,6 +159,7 @@ _cemoDamage = 0.5
 _HealthLabelPath = NodePath("../HealthEvent")
 
 [node name="HealthEvent" type="ColorRect" parent="UiHandler/Health"]
+visible = false
 offset_left = 242.0
 offset_top = 147.0
 offset_right = 317.0

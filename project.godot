@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 StateMachine="*res://scripts/StateMachine.gd"
 BgMusic="*res://scenes/bg_music.tscn"
+Sfx="*res://Sfx.tscn"
 
 [display]
 
