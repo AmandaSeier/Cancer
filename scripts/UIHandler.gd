@@ -2,7 +2,7 @@ extends Node
 
 
 func _ready():
-    get_node("Pause button").button_pressed = true
+    StateMachine.StopDayCycle()
     
     # Upgrade tree scene
     get_node("UpgradeMenu/Background/backButton").connect("pressed", backButtonPressed)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dewp4wiarhp52"]
+[gd_scene load_steps=36 format=3 uid="uid://dewp4wiarhp52"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
 [ext_resource type="Texture2D" uid="uid://dejq08lgvl0on" path="res://sprites/background sprites/BACKGROUND Stue100%.png" id="2_bil64"]
@@ -23,8 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://qnebdewd7dvb" path="res://sprites/button sprites/menu buttons/NORMAL Upgrade menu .png" id="19_1vmbv"]
 [ext_resource type="Script" path="res://scripts/ColonyInfo.gd" id="20_2nwra"]
 [ext_resource type="Texture2D" uid="uid://b5vnunvdrx2pg" path="res://sprites/button sprites/menu buttons/PRESSED Upgrade menu.png" id="20_hybmq"]
+[ext_resource type="Texture2D" uid="uid://bds3xuqpmmt2v" path="res://icon.svg" id="21_bcx0g"]
 [ext_resource type="FontFile" uid="uid://dojxg0x4imlua" path="res://sprites/fonts/Minecraft.ttf" id="21_tcjlp"]
 [ext_resource type="PackedScene" uid="uid://tu4wbcgyarvw" path="res://scenes/CancerColony.tscn" id="22_7eyt3"]
+[ext_resource type="Script" path="res://scripts/HealthEvent.gd" id="23_c1v2g"]
 [ext_resource type="Texture2D" uid="uid://dt5e4a6ppxgke" path="res://sprites/button sprites/other graphical/Info icon.png" id="24_0wvr0"]
 [ext_resource type="Script" path="res://scripts/EconomyHandler.gd" id="25_jl0ia"]
 [ext_resource type="PackedScene" uid="uid://byfliyn7lox7r" path="res://scenes/menus/upgradetree_menu.tscn" id="25_r5fj5"]
@@ -57,14 +59,12 @@ animations = [{
 }]
 
 [node name="MainScene" type="Node2D"]
-position = Vector2(-1, -1)
 
 [node name="UiHandler" type="Node" parent="."]
 editor_description = "En Wrapper rundt om nogle statemachine funktioner der skal kaldes af UI. Så man kan finde dem i editoren "
 script = ExtResource("1_hbd8v")
 
 [node name="Background_Stue" type="AnimatedSprite2D" parent="UiHandler"]
-scale = Vector2(1, 0.991044)
 sprite_frames = SubResource("SpriteFrames_2bgar")
 offset = Vector2(160, 90)
 
@@ -136,15 +136,60 @@ texture_pressed = ExtResource("20_hybmq")
 stretch_mode = 3
 
 [node name="Health" type="Node2D" parent="UiHandler"]
-position = Vector2(-1, -1)
+
+[node name="Button2" type="TextureButton" parent="UiHandler/Health"]
+offset_left = 279.0
+offset_top = 114.0
+offset_right = 407.0
+offset_bottom = 242.0
+scale = Vector2(0.175, 0.175)
+texture_normal = ExtResource("21_bcx0g")
+
+[node name="Button" type="Button" parent="UiHandler/Health"]
+offset_left = 248.0
+offset_top = 117.0
+offset_right = 384.0
+offset_bottom = 253.0
+scale = Vector2(0.145, 0.145)
+icon = ExtResource("21_bcx0g")
 
 [node name="Healthbar" type="Sprite2D" parent="UiHandler/Health"]
-position = Vector2(6, 172)
+position = Vector2(6, 171)
 scale = Vector2(0.499197, 0.0437501)
 texture = ExtResource("16_4gpcf")
 centered = false
 offset = Vector2(-80, 0)
 script = ExtResource("17_p0cqq")
+
+[node name="HealthEvent" type="ColorRect" parent="UiHandler/Health"]
+offset_left = 242.0
+offset_top = 147.0
+offset_right = 317.0
+offset_bottom = 177.0
+color = Color(0.121569, 0.121569, 0.121569, 1)
+script = ExtResource("23_c1v2g")
+
+[node name="HealthEventTitle" type="Label" parent="UiHandler/Health/HealthEvent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.208
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 2.76
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("21_tcjlp")
+theme_override_font_sizes/font_size = 4
+text = "dasd"
+
+[node name="HealthEventInfo" type="Label" parent="UiHandler/Health/HealthEvent/HealthEventTitle"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = -1.17
 
 [node name="ColonyInfo" type="ColorRect" parent="UiHandler"]
 visible = false
@@ -286,6 +331,8 @@ visible = false
 [connection signal="pressed" from="UiHandler/1x button" to="UiHandler" method="ChangeDaySpeed" binds= [1.0]]
 [connection signal="pressed" from="UiHandler/5x button" to="UiHandler" method="ChangeDaySpeed" binds= [5.0]]
 [connection signal="pressed" from="UiHandler/10x button" to="UiHandler" method="ChangeDaySpeed" binds= [10.0]]
-[connection signal="pressed" from="UiHandler/Pause button" to="UiHandler" method="StopDayCycle"]
+[connection signal="toggled" from="UiHandler/Pause button" to="UiHandler" method="_on_pause_button_toggled"]
 [connection signal="pressed" from="UiHandler/Upgrade" to="UiHandler" method="_on_upgrade_pressed"]
+[connection signal="pressed" from="UiHandler/Health/Button2" to="UiHandler/Health/HealthEvent" method="_on_button_2_pressed"]
+[connection signal="pressed" from="UiHandler/Health/Button" to="UiHandler/Health/HealthEvent" method="_on_button_pressed"]
 [connection signal="pressed" from="UiHandler/ColonyInfo/InfoIcon" to="UiHandler" method="_on_info_icon_pressed"]

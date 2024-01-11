@@ -74,4 +74,3 @@ func _calcHealth():
     if StateMachine._dayCount / 20.0 == frameIndex+1:
         frameIndex += 1
         get_node("../../Background_Stue").frame = frameIndex
-    
