@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://2uxlenjmw1dv" path="res://sprites/background sprites/BACKGROUND Stue0%.png" id="6_11l1f"]
 [ext_resource type="Texture2D" uid="uid://bh1chpxdo6cqb" path="res://sprites/button sprites/menu buttons/NORMAL Pause menu.png" id="8_r75uo"]
 [ext_resource type="Texture2D" uid="uid://cq70k5h4wspvg" path="res://sprites/button sprites/menu buttons/PRESSED Pause menu.png" id="9_31fe3"]
-[ext_resource type="ButtonGroup" path="res://Time speed button group.tres" id="11_k5206"]
+[ext_resource type="ButtonGroup" uid="uid://cilyt63asr71p" path="res://Time speed button group.tres" id="11_k5206"]
 [ext_resource type="Texture2D" uid="uid://dephfamr2iaok" path="res://sprites/button sprites/time buttons/PRESSED 1x Speed.png" id="12_lq2aj"]
 [ext_resource type="Texture2D" uid="uid://cjqd2pbfpvy3i" path="res://sprites/button sprites/time buttons/NORMAL 5x Speed.png" id="13_045p2"]
 [ext_resource type="Texture2D" uid="uid://bpqcmgjun72y3" path="res://sprites/button sprites/time buttons/PRESSED 5x Speed.png" id="14_38pjk"]
@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://ia2lerpknwdq" path="res://scenes/menus/pause_menu.tscn" id="26_15dxr"]
 [ext_resource type="PackedScene" uid="uid://bu5yqconeo332" path="res://scenes/menus/start_menu.tscn" id="27_f7wyd"]
 [ext_resource type="PackedScene" uid="uid://bypc7yfbr5hu" path="res://scenes/menus/settings_menu.tscn" id="27_jyjyq"]
-[ext_resource type="PackedScene" path="res://scenes/CancerInfo.tscn" id="31_vlkc8"]
+[ext_resource type="PackedScene" uid="uid://dvmhmflc7ty10" path="res://scenes/CancerInfo.tscn" id="31_vlkc8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2bgar"]
 animations = [{

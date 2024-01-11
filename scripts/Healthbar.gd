@@ -93,7 +93,6 @@ func _UpdateHealth():
     if _health > 0:
         # Update the health variable 
         _health -= dailyDamageTaken
-        _health += _dailyHealthGained
         print("Health: ", _health)
         scale.x = _health * 0.1 # scale.x = 10 is the same as 100% health
         if _health >= 100:

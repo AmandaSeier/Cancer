@@ -9,24 +9,24 @@ enum Organ {
     Brain,
 }
 
-@export var active := false
+@export var active: bool = false
 @export var organ: Organ
 
-var colonySize := 0
-const activationSize := 300000
+var colonySize: int = 0
+const activationSize: int = 300000
 
 # hard coded growth value for the growth function. needs to be manually changed :(
-const growthConstant := 0.0033
-const maxSizeMargin := 50000 # In order to avoid infinite values from the growth curve
+const growthConstant = 0.0033
+const maxSizeMargin = 50000 # In order to avoid infinite values from the growth curve
 
 
-func _ready() -> void:
+func _ready():
     StateMachine.OnNextDay.connect(_UpdateColony)
     StateMachine.colonies.append(self)
 
     if active:
         ActivateColony()
-        colonySize = activationSize + 100_000
+        colonySize = activationSize + 100000
 
 
 func _CalcCurveX_0() -> float:
@@ -60,26 +60,17 @@ func GetGrowth() -> float:
     
     return increase * (active as int) - decrease
 
-func ActivateColony() -> void:
+func ActivateColony():
     active = true
     visible = true
 
 
-func KillColony() -> void:
-    colonySize = 0
+func KillColony():
     active = false
     visible = false
 
 
-func DamageColony(dmg: int) -> void:
-    if (colonySize < dmg):
-        KillColony()
-        return
-
-    colonySize -= dmg
-
-
-func _UpdateColony() -> void:
+func _UpdateColony():
     colonySize += round(GetGrowth())
     var maxSize: int = StateMachine.upgradeHandler.GetUpgradeValues()["max_size"]
     colonySize = clamp(colonySize, 0, maxSize)
@@ -91,7 +82,7 @@ func _UpdateColony() -> void:
     _TrySpread()
 
 
-func _TrySpread() -> void:
+func _TrySpread():
     if not active:
         return
 
@@ -110,7 +101,7 @@ func _TrySpread() -> void:
 
 
 # When being spread to
-func Spread() -> void:
+func Spread():
     var growth = StateMachine.upgradeHandler.GetUpgradeValues()["spread_amount"] * (1. / (1. + (active as float) * 3))
     colonySize += growth
 
