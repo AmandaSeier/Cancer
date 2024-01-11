@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dctmv4goslbml"]
 
 [ext_resource type="Texture2D" uid="uid://d2qfdb3yb3h8d" path="res://sprites/background sprites/BACKGROUND Win condition.png" id="1_3jky5"]
-[ext_resource type="Script" path="res://scenes/winning_screen.gd" id="1_18a1n"]
+[ext_resource type="Script" path="res://scripts/winning_screen.gd" id="1_hygi8"]
 [ext_resource type="Texture2D" uid="uid://ctjj46jc3wskx" path="res://sprites/button sprites/menu buttons/NORMAL Restart.png" id="3_stdor"]
 [ext_resource type="Texture2D" uid="uid://cewe6imsilo8w" path="res://sprites/button sprites/menu buttons/PRESSED Restart.png" id="4_e3cqc"]
 
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_18a1n")
+script = ExtResource("1_hygi8")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -22,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="CenterContainer"]
+[node name="WinSprite" type="Sprite2D" parent="CenterContainer"]
 texture = ExtResource("1_3jky5")
 offset = Vector2(160, 90)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dewp4wiarhp52"]
+[gd_scene load_steps=38 format=3 uid="uid://dewp4wiarhp52"]
 
 [ext_resource type="Script" path="res://scripts/UIHandler.gd" id="1_hbd8v"]
 [ext_resource type="Texture2D" uid="uid://dejq08lgvl0on" path="res://sprites/background sprites/BACKGROUND Stue100%.png" id="2_bil64"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://bypc7yfbr5hu" path="res://scenes/menus/settings_menu.tscn" id="27_jyjyq"]
 [ext_resource type="Texture2D" uid="uid://cm5a3tdmwuklm" path="res://sprites/cancer sprites/CANCERCOLONY Small.png" id="29_qd6wt"]
 [ext_resource type="PackedScene" uid="uid://dvmhmflc7ty10" path="res://scenes/CancerInfo.tscn" id="31_vlkc8"]
+[ext_resource type="PackedScene" uid="uid://dctmv4goslbml" path="res://scenes/winning_screen.tscn" id="35_x27k8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2bgar"]
 animations = [{
@@ -150,9 +151,9 @@ _discoverCancerCellNum = 4000000
 _minCellDmgNum = 500000
 _maxCellDmgNum = 3000000
 _minDmg = 0.002
-_maxDmg = 0.1
+_maxDmg = 0.25
 _cemoChance = 0.35
-_cemoCancerDamage = 75000
+_cemoCancerDamage = 100000
 _cemoCancerDmgVariation = 15000
 _cemoDamage = 0.5
 _HealthLabelPath = NodePath("../HealthEvent")
@@ -182,46 +183,6 @@ autowrap_mode = 3
 [node name="Healtbar_heart" type="Sprite2D" parent="UiHandler/Health"]
 position = Vector2(35, 171)
 texture = ExtResource("26_ev75u")
-
-[node name="ColonyInfo" type="ColorRect" parent="UiHandler"]
-visible = false
-offset_left = 63.0
-offset_top = 67.0
-offset_right = 137.0
-offset_bottom = 102.0
-color = Color(0.121569, 0.121569, 0.121569, 1)
-script = ExtResource("20_2nwra")
-
-[node name="ColonyName" type="Label" parent="UiHandler/ColonyInfo"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = -3.0
-offset_bottom = -3.0
-theme_override_fonts/font = ExtResource("21_tcjlp")
-theme_override_font_sizes/font_size = 5
-text = "something"
-
-[node name="ColonyInformation" type="Label" parent="UiHandler/ColonyInfo/ColonyName"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.254
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 0.0140004
-theme_override_fonts/font = ExtResource("21_tcjlp")
-theme_override_font_sizes/font_size = 3
-
-[node name="InfoIcon" type="TextureButton" parent="UiHandler/ColonyInfo"]
-layout_mode = 0
-offset_left = 67.0
-offset_top = 2.0
-offset_right = 72.0
-offset_bottom = 8.0
-texture_normal = ExtResource("24_0wvr0")
 
 [node name="Colonies" type="Node" parent="UiHandler"]
 
@@ -347,6 +308,46 @@ offset_right = 175.0
 offset_bottom = 43.0
 texture_normal = ExtResource("29_qd6wt")
 
+[node name="ColonyInfo" type="ColorRect" parent="UiHandler"]
+visible = false
+offset_left = 63.0
+offset_top = 67.0
+offset_right = 137.0
+offset_bottom = 102.0
+color = Color(0.121569, 0.121569, 0.121569, 1)
+script = ExtResource("20_2nwra")
+
+[node name="ColonyName" type="Label" parent="UiHandler/ColonyInfo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+theme_override_fonts/font = ExtResource("21_tcjlp")
+theme_override_font_sizes/font_size = 5
+text = "something"
+
+[node name="ColonyInformation" type="Label" parent="UiHandler/ColonyInfo/ColonyName"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.254
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0140004
+theme_override_fonts/font = ExtResource("21_tcjlp")
+theme_override_font_sizes/font_size = 3
+
+[node name="InfoIcon" type="TextureButton" parent="UiHandler/ColonyInfo"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 2.0
+offset_right = 72.0
+offset_bottom = 8.0
+texture_normal = ExtResource("24_0wvr0")
+
 [node name="dayCount" type="Label" parent="UiHandler"]
 offset_left = 206.0
 offset_top = 6.0
@@ -385,6 +386,9 @@ visible = false
 visible = false
 
 [node name="SettingsMenu" parent="UiHandler" instance=ExtResource("27_jyjyq")]
+visible = false
+
+[node name="winning_screen" parent="UiHandler" instance=ExtResource("35_x27k8")]
 visible = false
 
 [node name="CancerInfo" parent="UiHandler" instance=ExtResource("31_vlkc8")]
