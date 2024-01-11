@@ -106,9 +106,8 @@ func _UpdateHealth() -> void:
     var dailyDamageTaken: float = _dmgPrDay * StateMachine.upgradeHandler.GetUpgradeValues()["damage_multiplyer"]
     print(dailyDamageTaken)
     if _health > 0:
-        # Update the health variable 
+        # Update the health variable
         _health -= dailyDamageTaken
-        _health += _dailyHealthGained
         print("Health: ", _health)
         scale.x = _health * 0.048 # scale.x = 4.8 is the same as 100% health
         if _health >= 100:
