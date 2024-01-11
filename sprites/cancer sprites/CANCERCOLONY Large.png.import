@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duwx7hln0ce2r"
-path="res://.godot/imported/CANCERCELL3.png-aecf6551c568cbce8c258a5fcd648e14.ctex"
+uid="uid://5rpnw582b3no"
+path="res://.godot/imported/CANCERCOLONY Large.png-898d7e8a8bf7d5054dece52fe09fd164.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/cancer sprites/CANCERCELL3.png"
-dest_files=["res://.godot/imported/CANCERCELL3.png-aecf6551c568cbce8c258a5fcd648e14.ctex"]
+source_file="res://sprites/cancer sprites/CANCERCOLONY Large.png"
+dest_files=["res://.godot/imported/CANCERCOLONY Large.png-898d7e8a8bf7d5054dece52fe09fd164.ctex"]
 
 [params]
 
