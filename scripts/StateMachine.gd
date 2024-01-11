@@ -115,6 +115,13 @@ func GetActiveColonies() -> Array[Colony]:
     return activeColonies
 
 
+var previousDayCells := 0
+func GetTotalGrowth() -> int:
+    var change = GetTotalNumCells() - previousDayCells
+    previousDayCells = GetTotalNumCells()
+    return change
+
+
 func StopDayCycle():
     _dayTimer.stop()
 
