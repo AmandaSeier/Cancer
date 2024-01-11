@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bllmst7a8ommr"]
 
-[ext_resource type="Texture2D" uid="uid://bms38xb0r0ny7" path="res://sprites/background sprites/BACKGROUND Lose condition.png" id="1_o2bor"]
+[ext_resource type="Texture2D" uid="uid://2bowplbuloxx" path="res://sprites/background sprites/BACKGROUND Lose condition.png" id="1_o2bor"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
